@@ -44,3 +44,6 @@ function loadDesain() {
 
 loadDesain();
 AOS.refresh();
+document.addEventListener("scroll", () => {
+    AOS.refresh();
+});
