@@ -2,7 +2,6 @@ const toggleBtn = document.getElementById("themeToggle");
 const menuToggle = document.querySelector('.menu-toggle');
 const headerPill = document.querySelector('.header-pill');
 
-// 1. Inisialisasi Dark Mode
 if (localStorage.getItem("theme") === "dark") {
     document.body.classList.add("dark");
     toggleBtn.textContent = "☀️";	
@@ -20,19 +19,34 @@ toggleBtn.addEventListener("click", () => {
     }
 });
 
-
-// 2. Fungsionalitas Hamburger Menu
 if(menuToggle) {
     menuToggle.addEventListener('click', () => {
         headerPill.classList.toggle('active');
     });
 }
 
-
-// 3. Tutup menu saat link diklik
 document.querySelectorAll('.pill-nav a').forEach(link => {
     link.addEventListener('click', () => {
         headerPill.classList.remove('active');
     });
 });
-// (Kode AOS Dihapus karena konflik yang sering terjadi)
+
+const desainList = [
+  { img: "img/Waguri.png"},
+  { img: "img/Dream Journey.png"},
+  { img: "img/Tenka.png"},
+];
+
+const gallery = document.getElementById("desain-gallery");
+
+if (gallery) {
+    desainList.forEach((d, index) => {
+        const item = document.createElement("div");
+        item.className = "gallery-item";
+        item.setAttribute("data-aos", "fade-up");       
+        item.setAttribute("data-aos-duration", "1000"); 
+        item.setAttribute("data-aos-delay", index * 200); 
+        item.innerHTML = `<img src="${d.img}">`;
+        gallery.appendChild(item);
+    });
+}
