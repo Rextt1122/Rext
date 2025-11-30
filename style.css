@@ -154,6 +154,42 @@ section {
   box-shadow: 0 6px 20px rgba(255, 255, 255, 0.2);
 }
 
+/* --- Menu Toggle (Hamburger) CSS BARU --- */
+.menu-toggle {
+    display: none; /* Sembunyikan secara default (desktop) */
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 24px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 3; 
+}
+
+.menu-toggle .bar {
+    width: 100%;
+    height: 3px;
+    background-color: var(--text);
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Animasi Hamburger menjadi 'X' saat aktif */
+.header-pill.active .menu-toggle .bar:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.header-pill.active .menu-toggle .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.header-pill.active .menu-toggle .bar:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+
 .hero {
   width: 100%;
   min-height: calc(100vh - 180px);
@@ -308,22 +344,65 @@ section {
   margin: 0;
 }
 
-@media (max-width: 900px) {
-  .pill-inner { padding: 0 20px; }
-  .hero { padding: 40px 18px; }
-}
 
+/* --- MOBILE STYLES (Hamburger Menu) --- */
 @media (max-width: 768px) {
-  body { padding-top: 100px; }
-  .pill-inner {
-    justify-content: space-around;
-    padding: 0 10px;
-  }
-  
-  .pill-nav {
-    position: static;
-    transform: none; 
-    gap: 18px; 
-  }
+    /* 1. Tampilkan tombol toggle dan sembunyikan menu desktop */
+    .menu-toggle { 
+        display: flex; /* Tampilkan tombol hamburger di HP */
+    }
+
+    .pill-nav { 
+        /* Sembunyikan menu di mode HP secara default */
+        display: none; 
+        
+        /* Ubah posisi menu saat terbuka */
+        flex-direction: column;
+        width: 90%; /* Sesuaikan dengan lebar .pill-inner */
+        position: absolute;
+        top: 60px; /* Tepat di bawah pill-inner */
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 10px 0 20px 0; /* Padding vertikal */
+        margin-top: 10px;
+        border-radius: 20px;
+        background: var(--card); /* Gunakan warna card untuk background menu */
+        box-shadow: var(--shadow);
+    }
+    
+    .dark .pill-nav {
+        background: var(--card); 
+    }
+    
+    .pill-nav li {
+        width: 100%;
+        text-align: center;
+        padding: 8px 0;
+    }
+
+    .pill-nav a {
+        display: block;
+        padding: 5px 0;
+        font-size: 18px;
+    }
+    
+    /* 2. Saat kelas 'active' ditambahkan (oleh JS), menu akan ditampilkan */
+    .header-pill.active .pill-nav {
+        display: flex;
+    }
+
+    .pill-inner { 
+        /* Jangan gunakan justify-content: space-around; */
+        justify-content: space-between;
+        padding: 0 20px; 
+    }
+
+    /* Memindahkan logo dan dark mode agar tidak terlalu dekat */
+    .pill-logo { order: 1; }
+    .menu-toggle { order: 2; margin-left: 10px; }
+    .pill-btn { order: 3; }
+    
+    /* Atur ulang padding body agar header pas */
+    body { padding-top: 100px; }
 
 }
