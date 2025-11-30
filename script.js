@@ -1,4 +1,3 @@
-// Theme Toggle
 document.addEventListener("DOMContentLoaded", () => {
     const toggleBtn = document.getElementById("themeToggle");
 
@@ -25,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 const desainList = [
-  { img: "img/Miyabi.png" }
+  { img: "img/Miyabi.png" },
   { img: "img/Waguri.png" },
   { img: "img/Dream Journey.png" },
   { img: "img/Tenka.png" },
