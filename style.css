@@ -66,15 +66,6 @@ section {
   border: 1px solid rgba(0, 0, 0, 0.03);
 }
 
-/* 🔥 FIX NAV KANAN MENDEPAT & NAVBAR CENTER VISUAL */
-.pill-inner {
-  padding-right: 70px !important;
-}
-
-.pill-nav {
-  transform: translateX(-47%) !important;
-}
-
 .dark .pill-inner {
   background: linear-gradient(180deg, #2a3138, #23272b);
   border: 1px solid rgba(255, 255, 255, 0.04);
@@ -245,9 +236,10 @@ section {
 
 .gallery-item img {
   width: 100%;
-  height: auto;
+  height: 100%;
   display: block;
-  object-fit: contain;
+  object-fit: cover;
+  object-position: top;
 }
 
 .footer {
