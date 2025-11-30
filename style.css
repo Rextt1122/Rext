@@ -228,20 +228,22 @@ section {
 .gallery-item {
   background: var(--card);
   border-radius: 16px;
-  overflow: hidden;
+  overflow: visible;
   box-shadow: var(--shadow);
   padding: 0;
   width: 100%;
   height: auto;
+  min-height: unset;
 }
 
 .gallery-item img {
   width: 100%;
   height: auto;
   display: block;
-  object-fit: unset; 
-  object-position: center;
+  object-fit: contain;
+  object-position: top;
 }
+
 
 .footer {
   margin-top: 100px;
