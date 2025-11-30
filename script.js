@@ -23,9 +23,13 @@ toggleBtn.addEventListener("click", () => {
 const menuToggle = document.querySelector('.menu-toggle');
 const headerPill = document.querySelector('.header-pill');
 
-menuToggle.addEventListener('click', () => {
-    headerPill.classList.toggle('active');
-});
+// Cek apakah elemen menuToggle ada sebelum menambahkan event listener
+if(menuToggle) {
+    menuToggle.addEventListener('click', () => {
+        headerPill.classList.toggle('active');
+    });
+}
+
 
 // Tutup menu saat link di dalam menu diklik (agar lebih ramah HP)
 document.querySelectorAll('.pill-nav a').forEach(link => {
@@ -44,12 +48,14 @@ const desainList = [
 
 const gallery = document.getElementById("desain-gallery");
 
-desainList.forEach((d, index) => {
-    const item = document.createElement("div");
-    item.className = "gallery-item";
-    item.setAttribute("data-aos", "fade-up");       
-    item.setAttribute("data-aos-duration", "1000"); 
-    item.setAttribute("data-aos-delay", index * 200); 
-    item.innerHTML = `<img src="${d.img}">`;
-    gallery.appendChild(item);
-});
+if (gallery) {
+    desainList.forEach((d, index) => {
+        const item = document.createElement("div");
+        item.className = "gallery-item";
+        item.setAttribute("data-aos", "fade-up");       
+        item.setAttribute("data-aos-duration", "1000"); 
+        item.setAttribute("data-aos-delay", index * 200); 
+        item.innerHTML = `<img src="${d.img}">`;
+        gallery.appendChild(item);
+    });
+}
