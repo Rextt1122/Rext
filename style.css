@@ -137,6 +137,17 @@ section {
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 
+.dark .pill-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  
+  /* TRIK MATAHARI PUTIH: Paksa Matahari jadi Putih (Bukan Kuning) */
+  color: transparent;
+  text-shadow: 0 0 0 white;
+  
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
 .dark .pill-btn:hover {
   background: rgba(255, 255, 255, 0.2);
   transform: rotate(-15deg) scale(1.1);
