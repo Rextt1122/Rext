@@ -220,9 +220,9 @@ section {
 
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(230px, auto));
   gap: 26px;
-  margin-top: 30px;
+  justify-content: center;
 }
 
 .gallery-item {
@@ -231,16 +231,16 @@ section {
   overflow: hidden;
   box-shadow: var(--shadow);
   padding: 0;
-  width: 100%;
+  width: fit-content;
   height: auto;
-  display: flex;
+  margin: auto;
 }
 
 .gallery-item img {
   width: 100%;
   height: auto;
-  object-fit: contain;
   display: block;
+  object-fit: contain;
 }
 
 .footer {
