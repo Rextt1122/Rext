@@ -4,36 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rext</title>
-
+    
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=9999">
-
+    
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
     <nav class="header-pill">
         <div class="pill-inner">
-
             <div class="pill-logo">Rext</div>
-
             <ul class="pill-nav">
                 <li><a href="#about">About</a></li>
                 <li><a href="#desain">My Desain</a></li>
-                <li><a href="#footer-area">Socials</a></li>
+                <li><a href="#footer-area">Socials</a></li> 
             </ul>
-
             <button id="themeToggle" class="pill-btn">🌙</button>
-
-            <button class="hamburger" id="hamburgerBtn">☰</button>
         </div>
     </nav>
-
-    <div class="mobile-nav" id="mobileNav">
-        <a href="#about">About</a>
-        <a href="#desain">My Desain</a>
-        <a href="#footer-area">Socials</a>
-    </div>
 
     <section class="hero" id="about">
         <h1>Rext <span>Sergeyevna</span></h1>
@@ -41,16 +30,16 @@
 
         <div class="social-icons">
             <a href="https://www.facebook.com/yan.226312/" target="_blank" class="icon">
-                <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png">
+                <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="fb">
             </a>
             <a href="https://www.instagram.com/fabiyaan_/" target="_blank" class="icon">
-                <img src="https://cdn-icons-png.flaticon.com/512/733/733558.png">
+                <img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="ig">
             </a>
             <a href="https://www.youtube.com/@rextt.8782" target="_blank" class="icon">
-                <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png">
+                <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="yt">
             </a>
             <a href="https://github.com/Rextt1122" target="_blank" class="icon">
-                <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png">
+                <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="github">
             </a>
             <a href="https://discord.com/users/1278267292781903883" target="_blank" class="icon">
                 <img src="https://cdn-icons-png.flaticon.com/512/2111/2111370.png">
@@ -70,13 +59,13 @@
 
             <div class="social-icons footer-social">
                 <a href="https://www.facebook.com/yan.226312/" target="_blank" class="icon fb">
-                    <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png">
+                    <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="fb">
                 </a>
                 <a href="https://www.instagram.com/fabiyaan_/" target="_blank" class="icon ig">
-                    <img src="https://cdn-icons-png.flaticon.com/512/733/733558.png">
+                    <img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="ig">
                 </a>
                 <a href="https://github.com/Rextt1122" target="_blank" class="icon gh">
-                    <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png">
+                    <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="github">
                 </a>
             </div>
         </div>
@@ -87,8 +76,12 @@
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
     <script>
-      AOS.init({ once: false, duration: 800 });
+      AOS.init({
+        once: false,
+        duration: 800,
+      });
     </script>
 
     <script src="script.js"></script>
