@@ -27,8 +27,7 @@ const desainList = [
   { img: "img/Miyabi.png" },
   { img: "img/Waguri.png" },
   { img: "img/Dream Journey.png" },
-  { img: "img/Tenka.png" },
- 
+  { img: "img/Tenka.png" }
 ];
 
 function loadDesain() {
@@ -36,11 +35,12 @@ function loadDesain() {
 
     if (!gallery) return;
 
-    gallery.innerHTML = desainList.map(d => `
-        <div class="gallery-item">
+    gallery.innerHTML = desainList.map((d, i) => `
+        <div class="gallery-item" data-aos="fade-up" data-aos-delay="${i * 120}">
             <img src="${d.img}" alt="">
         </div>
     `).join("");
 }
 
 loadDesain();
+AOS.refresh();
