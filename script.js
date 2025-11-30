@@ -23,23 +23,24 @@ toggleBtn.addEventListener("click", () => {
 const menuToggle = document.querySelector('.menu-toggle');
 const headerPill = document.querySelector('.header-pill');
 
-// Cek apakah elemen menuToggle ada sebelum menambahkan event listener
 if(menuToggle) {
     menuToggle.addEventListener('click', () => {
+        // Toggle class 'active' pada nav (header-pill)
         headerPill.classList.toggle('active');
     });
 }
 
 
-// Tutup menu saat link di dalam menu diklik (agar lebih ramah HP)
+// Tutup menu saat link di dalam menu diklik 
 document.querySelectorAll('.pill-nav a').forEach(link => {
     link.addEventListener('click', () => {
+        // Hapus class 'active' setelah mengklik link
         headerPill.classList.remove('active');
     });
 });
 
 
-// --- Fungsi Galeri Desain ---
+// --- Fungsi Galeri Desain (AOS) ---
 const desainList = [
   { img: "img/Waguri.png"},
   { img: "img/Dream Journey.png"},
