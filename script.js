@@ -2,7 +2,6 @@ const toggleBtn = document.getElementById("themeToggle");
 const menuToggle = document.querySelector('.menu-toggle');
 const headerPill = document.querySelector('.header-pill');
 
-// Blok IF harus memiliki kurung kurawal yang benar
 if (localStorage.getItem("theme") === "dark") {
     document.body.classList.add("dark");
     toggleBtn.textContent = "☀️";	
@@ -20,21 +19,18 @@ toggleBtn.addEventListener("click", () => {
     }
 });
 
-// Fungsionalitas Hamburger Menu
 if(menuToggle) {
     menuToggle.addEventListener('click', () => {
         headerPill.classList.toggle('active');
     });
 }
 
-// Tutup menu saat link diklik
 document.querySelectorAll('.pill-nav a').forEach(link => {
     link.addEventListener('click', () => {
         headerPill.classList.remove('active');
     });
 });
 
-// Kode Galeri (AOS)
 const desainList = [
   { img: "img/Waguri.png"},
   { img: "img/Dream Journey.png"},
