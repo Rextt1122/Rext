@@ -29,6 +29,7 @@ const desainList = [
   { img: "img/Dream Journey.png" },
   { img: "img/Tenka.png" },
   { img: "img/Jane.png" },
+  { img: "img/Cartethiya.png" },
 ];
 
 function loadDesain() {
