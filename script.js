@@ -28,7 +28,7 @@ const desainList = [
   { img: "img/Waguri.png" },
   { img: "img/Dream Journey.png" },
   { img: "img/Tenka.png" },
-  { img: "img/Jane.png" },
+  { img: "img/Jane Doe.png" },
   { img: "img/Cartethiya.png" },
 ];
 
