@@ -233,12 +233,12 @@ section {
   padding: 0;
   width: 100%;
   height: auto;
+  display: flex;
 }
 
 .gallery-item img {
   width: 100%;
   height: auto;
-  max-height: 520px;
   object-fit: contain;
   display: block;
 }
