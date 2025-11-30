@@ -1,37 +1,45 @@
-const toggleBtn = document.getElementById("themeToggle");
+// Theme Toggle
+document.addEventListener("DOMContentLoaded", () => {
+    const toggleBtn = document.getElementById("themeToggle");
 
-if (localStorage.getItem("theme") === "dark") {
-    document.body.classList.add("dark");
-    toggleBtn.textContent = "☀️"; 
-}
+    if (!toggleBtn) return;
 
-toggleBtn.addEventListener("click", () => {
-    document.body.classList.toggle("dark");
-
-    if (document.body.classList.contains("dark")) {
-        toggleBtn.textContent = ☀️"; 
-        localStorage.setItem("theme", "dark");
+    if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark");
+        toggleBtn.textContent = "☀️";
     } else {
         toggleBtn.textContent = "🌙";
-        localStorage.setItem("theme", "light");
     }
+
+    toggleBtn.addEventListener("click", () => {
+        document.body.classList.toggle("dark");
+
+        if (document.body.classList.contains("dark")) {
+            toggleBtn.textContent = "☀️";
+            localStorage.setItem("theme", "dark");
+        } else {
+            toggleBtn.textContent = "🌙";
+            localStorage.setItem("theme", "light");
+        }
+    });
 });
 
+// DESAIN LIST
 const desainList = [
-  { img: "img/Waguri.png"},
-  { img: "img/Dream Journey.png"},
-  { img: "img/Tenka.png"},
-  { img: "img/Miyabi.png"},
+    { img: "img/Waguri.png" },
+    { img: "img/Dream Journey.png" }
 ];
 
-const gallery = document.getElementById("desain-gallery");
+function loadDesain() {
+    const gallery = document.getElementById("desain-gallery");
 
-desainList.forEach((d, index) => {
-    const item = document.createElement("div");
-    item.className = "gallery-item";
-    item.setAttribute("data-aos", "fade-up");       
-    item.setAttribute("data-aos-duration", "1000"); 
-    item.setAttribute("data-aos-delay", index * 200); 
-    item.innerHTML = `<img src="${d.img}">`;
-    gallery.appendChild(item);
-});
+    if (!gallery) return;
+
+    gallery.innerHTML = desainList.map(d => `
+        <div class="gallery-item">
+            <img src="${d.img}" alt="">
+        </div>
+    `).join("");
+}
+
+loadDesain();
