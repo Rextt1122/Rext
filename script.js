@@ -25,7 +25,6 @@ const headerPill = document.querySelector('.header-pill');
 
 if(menuToggle) {
     menuToggle.addEventListener('click', () => {
-        // Toggle class 'active' pada nav (header-pill)
         headerPill.classList.toggle('active');
     });
 }
@@ -34,7 +33,6 @@ if(menuToggle) {
 // Tutup menu saat link di dalam menu diklik 
 document.querySelectorAll('.pill-nav a').forEach(link => {
     link.addEventListener('click', () => {
-        // Hapus class 'active' setelah mengklik link
         headerPill.classList.remove('active');
     });
 });
