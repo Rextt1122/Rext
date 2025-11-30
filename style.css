@@ -121,14 +121,14 @@ section {
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
-  
+  
   /* MODE TERANG: Tombol Putih */
   background: #ffffff;
-  
+  
   /* TRIK BULAN HITAM: Paksa Bulan jadi Hitam (Bukan Kuning) */
   color: transparent;
   text-shadow: 0 0 0 #333333;
-  
+  
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
@@ -140,11 +140,11 @@ section {
 .dark .pill-btn {
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.2);
-  
+  
   /* TRIK MATAHARI PUTIH: Paksa Matahari jadi Putih (Bukan Kuning) */
   color: transparent;
   text-shadow: 0 0 0 white;
-  
+  
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 }
 
@@ -342,9 +342,15 @@ section {
   margin: 0;
 }
 
+/* INI ADALAH MEDIA QUERY YANG MENYEBABKAN MASALAH */
+@media (max-width: 900px) {
+  .pill-inner { padding: 0 20px; }
+  .hero { padding: 40px 18px; }
+}
 
-/* --- MOBILE STYLES (Hamburger Menu) --- */
 @media (max-width: 768px) {
+    /* MENGGANTIKAN ATURAN LAMA YANG MENYEMBUNYIKAN MENU */
+    
     /* Tampilkan tombol toggle di HP */
     .menu-toggle { 
         display: flex; 
