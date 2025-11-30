@@ -317,3 +317,43 @@ section {
   .pill-nav { display: none; }
   body { padding-top: 100px; }
 }
+.menu-btn {
+    display: none;
+    font-size: 26px;
+    background: var(--card);
+    border: none;
+    padding: 10px 14px;
+    border-radius: 12px;
+    cursor: pointer;
+    z-index: 99;
+    box-shadow: var(--shadow);
+}
+
+.mobile-nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background: var(--card);
+    padding: 18px 24px;
+    border-radius: 14px;
+    list-style: none;
+    gap: 15px;
+    box-shadow: var(--shadow);
+}
+
+.mobile-nav a {
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.show-nav {
+    display: flex;
+}
+
+@media (max-width: 768px) {
+    .pill-nav { display: none; }
+    .menu-btn { display: block; }
+}
