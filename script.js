@@ -12,7 +12,7 @@ toggleBtn.addEventListener("click", () => {
         toggleBtn.textContent = "☀︎"; 
         localStorage.setItem("theme", "dark");
     } else {
-        toggleBtn.textContent = "☾ ";
+        toggleBtn.textContent = "🌙";
         localStorage.setItem("theme", "light");
     }
 });
