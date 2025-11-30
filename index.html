@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rext</title>
-
+    
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -14,22 +15,13 @@
     <nav class="header-pill">
         <div class="pill-inner">
             <div class="pill-logo">Rext</div>
-
             <ul class="pill-nav">
                 <li><a href="#about">About</a></li>
                 <li><a href="#desain">My Desain</a></li>
-                <li><a href="#footer-area">Socials</a></li>
+                <li><a href="#footer-area">Socials</a></li> 
             </ul>
-
             <button id="themeToggle" class="pill-btn">🌙</button>
-            <button class="menu-btn" id="menuBtn">☰</button>
         </div>
-
-        <ul class="mobile-nav" id="mobileNav">
-            <li><a href="#about">About</a></li>
-            <li><a href="#desain">My Desain</a></li>
-            <li><a href="#footer-area">Socials</a></li>
-        </ul>
     </nav>
 
     <section class="hero" id="about">
@@ -37,19 +29,19 @@
         <p>Hello, my name is Fabian, majoring in Information Technology at Jember State Polytechnic. I like anime design, reading, and coding.</p>
 
         <div class="social-icons">
-            <a href="https://www.facebook.com/yan.226312/" class="icon" target="_blank">
-                <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png">
+            <a href="https://www.facebook.com/yan.226312/" target="_blank" class="icon">
+                <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="fb">
             </a>
-            <a href="https://www.instagram.com/fabiyaan_/" class="icon" target="_blank">
-                <img src="https://cdn-icons-png.flaticon.com/512/733/733558.png">
+            <a href="https://www.instagram.com/fabiyaan_/" target="_blank" class="icon">
+                <img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="ig">
             </a>
-            <a href="https://www.youtube.com/@rextt.8782" class="icon" target="_blank">
-                <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png">
+            <a href="https://www.youtube.com/@rextt.8782" target="_blank" class="icon">
+                <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="yt">
             </a>
-            <a href="https://github.com/Rextt1122" class="icon" target="_blank">
-                <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png">
+            <a href="https://github.com/Rextt1122" target="_blank" class="icon">
+                <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="github">
             </a>
-            <a href="https://discord.com/users/1278267292781903883" class="icon" target="_blank">
+            <a href="https://discord.com/users/1278267292781903883" target="_blank" class="icon">
                 <img src="https://cdn-icons-png.flaticon.com/512/2111/2111370.png">
             </a>
         </div>
@@ -65,26 +57,32 @@
             <h3>Rext</h3>
             <p>Computer Engineering Student • Designer • Coder</p>
 
-            <div class="footer-social">
-                <a href="https://www.facebook.com/yan.226312/" class="icon fb" target="_blank">
-                    <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png">
+            <div class="social-icons footer-social">
+                <a href="https://www.facebook.com/yan.226312/" target="_blank" class="icon fb">
+                    <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="fb">
                 </a>
-                <a href="https://www.instagram.com/fabiyaan_/" class="icon ig" target="_blank">
-                    <img src="https://cdn-icons-png.flaticon.com/512/733/733558.png">
+                <a href="https://www.instagram.com/fabiyaan_/" target="_blank" class="icon ig">
+                    <img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="ig">
                 </a>
-                <a href="https://github.com/Rextt1122" class="icon gh" target="_blank">
-                    <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png">
+                <a href="https://github.com/Rextt1122" target="_blank" class="icon gh">
+                    <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="github">
                 </a>
             </div>
         </div>
 
         <div class="footer-bottom">
-            <p>© 2025 Fabian Hendriyansah. All rights reserved.</p>
+            <p>&copy; 2025 Fabian Hendriyansah. All rights reserved.</p>
         </div>
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>AOS.init({ once: false, duration: 800 });</script>
+    
+    <script>
+      AOS.init({
+        once: false,
+        duration: 800,
+      });
+    </script>
 
     <script src="script.js"></script>
 </body>
