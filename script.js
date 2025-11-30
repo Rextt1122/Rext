@@ -25,10 +25,11 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 const desainList = [
+  { img: "img/Miyabi.png" }
   { img: "img/Waguri.png" },
   { img: "img/Dream Journey.png" },
   { img: "img/Tenka.png" },
-  { img: "img/Miyabi.png" }
+ 
 ];
 
 function loadDesain() {
