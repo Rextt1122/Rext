@@ -86,5 +86,21 @@
     </script>
 
     <script src="script.js"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const items = document.querySelectorAll(".gallery-item");
+
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("appear");
+          }
+        });
+      }, { threshold: 0.2 });
+
+      items.forEach(item => observer.observe(item));
+    });
+    </script>
+
 </body>
 </html>
