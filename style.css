@@ -315,12 +315,11 @@ section {
 
 .gallery-item {
   opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.6s ease;
+  transform: translateY(20px);
+  transition: opacity .6s ease, transform .6s ease;
 }
 
 .gallery-item.appear {
   opacity: 1;
   transform: translateY(0);
 }
-
