@@ -225,6 +225,10 @@ section {
   justify-content: center;
 }
 
+/* ——————————————————————————————
+   ANIMASI SUDAH FIX – SEMUA SAMA
+—————————————————————————————— */
+
 .gallery-item {
   background: var(--card);
   border-radius: 16px;
@@ -234,6 +238,15 @@ section {
   width: fit-content;
   height: auto;
   margin: auto;
+
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity .6s ease, transform .6s ease;
+}
+
+.gallery-item.appear {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .gallery-item img {
@@ -311,15 +324,4 @@ section {
 @media (max-width: 768px) {
   .pill-nav { display: none; }
   body { padding-top: 100px; }
-}
-
-.gallery-item {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity .6s ease, transform .6s ease;
-}
-
-.gallery-item.appear {
-  opacity: 1;
-  transform: translateY(0);
 }
