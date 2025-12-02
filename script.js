@@ -45,6 +45,7 @@ function loadDesain() {
 
     startAppearAnimation();
 }
+
 loadDesain();
 
 function startAppearAnimation() {
@@ -52,13 +53,11 @@ function startAppearAnimation() {
 
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
-
             if (entry.isIntersecting) {
                 entry.target.classList.add("appear");
             } else {
-                entry.target.classList.remove("appear"); 
+                entry.target.classList.remove("appear");
             }
-
         });
     }, { threshold: 0.2 });
 
