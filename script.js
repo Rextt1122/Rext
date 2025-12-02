@@ -23,6 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
+
 const desainList = [
   { img: "img/Miyabi.png" },
   { img: "img/Waguri.png" },
@@ -38,14 +39,25 @@ function loadDesain() {
     if (!gallery) return;
 
     gallery.innerHTML = desainList.map((d, i) => `
-        <div class="gallery-item" data-aos="fade-up" data-aos-delay="${i * 120}">
+        <div class="gallery-item">
             <img src="${d.img}" alt="">
         </div>
     `).join("");
+
+    startAppearAnimation();
 }
 
 loadDesain();
-AOS.refresh();
-document.addEventListener("scroll", () => {
-    AOS.refresh();
-});
+function startAppearAnimation() {
+    const items = document.querySelectorAll(".gallery-item");
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("appear");
+            }
+        });
+    }, { threshold: 0.25 });
+
+    items.forEach(item => observer.observe(item));
+}
