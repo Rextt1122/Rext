@@ -23,7 +23,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-
 const desainList = [
   { img: "img/Miyabi.png" },
   { img: "img/Waguri.png" },
@@ -38,7 +37,7 @@ function loadDesain() {
 
     if (!gallery) return;
 
-    gallery.innerHTML = desainList.map((d, i) => `
+    gallery.innerHTML = desainList.map((d) => `
         <div class="gallery-item">
             <img src="${d.img}" alt="">
         </div>
@@ -46,18 +45,22 @@ function loadDesain() {
 
     startAppearAnimation();
 }
-
 loadDesain();
+
 function startAppearAnimation() {
     const items = document.querySelectorAll(".gallery-item");
 
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
+
             if (entry.isIntersecting) {
                 entry.target.classList.add("appear");
+            } else {
+                entry.target.classList.remove("appear"); 
             }
+
         });
-    }, { threshold: 0.25 });
+    }, { threshold: 0.2 });
 
     items.forEach(item => observer.observe(item));
 }
