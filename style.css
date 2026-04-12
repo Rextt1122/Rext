@@ -287,7 +287,6 @@ section {
   object-fit: contain;
 }
 
-/* SOCIALS SECTION */
 .socials-section {
   text-align: center;
   margin-top: 100px;
@@ -340,7 +339,6 @@ section {
 .social-card.dc:hover { background: #5865f2; color: #fff; }
 .social-card:hover span { opacity: 1; }
 
-/* FOOTER */
 .footer {
   margin-top: 40px;
   border-top: 1px solid rgba(128,128,128,0.1);
@@ -382,7 +380,6 @@ section {
   body { padding-top: 100px; }
 }
 
-/* LIGHTBOX */
 .gallery-item {
   cursor: pointer;
 }
@@ -579,7 +576,6 @@ section {
   margin: 0;
 }
 
-/* BACK TO TOP BUTTON */
 .back-to-top {
   position: fixed;
   bottom: 28px;
@@ -621,4 +617,50 @@ section {
   stroke-width: 2.5;
   stroke-linecap: round;
   stroke-linejoin: round;
+}
+
+* {
+  cursor: none !important;
+}
+
+.cursor-dot {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  pointer-events: none;
+  z-index: 99999;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s ease, background 0.2s ease, width 0.2s ease, height 0.2s ease;
+}
+
+.cursor-ring {
+  position: fixed;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1.5px solid var(--accent);
+  pointer-events: none;
+  z-index: 99998;
+  transform: translate(-50%, -50%);
+  transition: transform 0.12s ease, width 0.2s ease, height 0.2s ease, opacity 0.2s ease;
+  opacity: 0.6;
+}
+
+.cursor-dot.hover {
+  width: 12px;
+  height: 12px;
+  background: #a29bfe;
+}
+
+.cursor-ring.hover {
+  width: 48px;
+  height: 48px;
+  opacity: 0.3;
+}
+
+@media (max-width: 768px) {
+  * { cursor: auto !important; }
+  .cursor-dot, .cursor-ring { display: none; }
 }
