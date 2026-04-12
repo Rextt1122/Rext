@@ -30,8 +30,8 @@ desainList.forEach((d, index) => {
     const item = document.createElement("div");
     item.className = "gallery-item";
     item.setAttribute("data-aos", "fade-up");
-    item.setAttribute("data-aos-duration", "1000");
-    item.setAttribute("data-aos-delay", index * 100);
+    item.setAttribute("data-aos-duration", "500");
+    item.setAttribute("data-aos-delay", index * 50);
     item.innerHTML = `<img src="${d.img}" alt="design">`;
     item.addEventListener("click", () => openLightbox(d.img));
     gallery.appendChild(item);
