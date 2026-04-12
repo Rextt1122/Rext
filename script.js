@@ -29,9 +29,43 @@ const gallery = document.getElementById("desain-gallery");
 desainList.forEach((d, index) => {
     const item = document.createElement("div");
     item.className = "gallery-item";
-    item.setAttribute("data-aos", "fade-up");       
-    item.setAttribute("data-aos-duration", "1000"); 
-    item.setAttribute("data-aos-delay", index * 200); 
-    item.innerHTML = `<img src="${d.img}">`;
+    item.setAttribute("data-aos", "fade-up");
+    item.setAttribute("data-aos-duration", "1000");
+    item.setAttribute("data-aos-delay", index * 100);
+    item.innerHTML = `<img src="${d.img}" alt="design">`;
+    item.addEventListener("click", () => openLightbox(d.img));
     gallery.appendChild(item);
+});
+
+// Lightbox
+const lightbox = document.createElement("div");
+lightbox.className = "lightbox";
+lightbox.innerHTML = `
+  <div class="lightbox-overlay"></div>
+  <div class="lightbox-content">
+    <button class="lightbox-close">&times;</button>
+    <img class="lightbox-img" src="" alt="preview">
+  </div>
+`;
+document.body.appendChild(lightbox);
+
+const lightboxImg = lightbox.querySelector(".lightbox-img");
+const lightboxOverlay = lightbox.querySelector(".lightbox-overlay");
+const lightboxClose = lightbox.querySelector(".lightbox-close");
+
+function openLightbox(src) {
+    lightboxImg.src = src;
+    lightbox.classList.add("active");
+    document.body.style.overflow = "hidden";
+}
+
+function closeLightbox() {
+    lightbox.classList.remove("active");
+    document.body.style.overflow = "";
+}
+
+lightboxOverlay.addEventListener("click", closeLightbox);
+lightboxClose.addEventListener("click", closeLightbox);
+document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeLightbox();
 });
