@@ -53,6 +53,7 @@ body {
   max-width: 1150px;
   margin: 60px auto 40px;
   padding: 0 24px;
+  text-align: center;
 }
 
 section {
@@ -464,13 +465,13 @@ section {
 
 /* SOCIALS SECTION */
 .socials-section {
-  text-align: left;
+  text-align: center;
 }
 
 .socials-grid {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: center;
   gap: 24px;
   margin-top: 30px;
 }
