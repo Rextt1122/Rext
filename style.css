@@ -339,7 +339,6 @@ section {
 .social-card.dc:hover { background: #5865f2; color: #fff; }
 .social-card:hover span { opacity: 1; }
 
-/* FOOTER */
 .footer {
   margin-top: 40px;
   border-top: 1px solid rgba(128,128,128,0.1);
@@ -618,7 +617,6 @@ section {
   stroke-linejoin: round;
 }
 
-/* CUSTOM CURSOR */
 * {
   cursor: none !important;
 }
