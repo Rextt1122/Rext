@@ -265,6 +265,7 @@ section {
 .dc:hover { background: #5865f2; color: #fff; }
 
 .gallery-grid {
+  padding-bottom: 60px;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 26px;
