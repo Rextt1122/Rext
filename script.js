@@ -37,7 +37,6 @@ desainList.forEach((d, index) => {
     gallery.appendChild(item);
 });
 
-// Lightbox
 const lightbox = document.createElement("div");
 lightbox.className = "lightbox";
 lightbox.innerHTML = `
