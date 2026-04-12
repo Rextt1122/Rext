@@ -369,16 +369,20 @@ section {
 }
 
 .lightbox {
-  display: none;
+  display: flex;
   position: fixed;
   inset: 0;
   z-index: 99999;
   align-items: center;
   justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
 }
 
 .lightbox.active {
-  display: flex;
+  opacity: 1;
+  pointer-events: all;
 }
 
 .lightbox-overlay {
@@ -393,12 +397,12 @@ section {
   z-index: 1;
   max-width: 90vw;
   max-height: 90vh;
-  animation: lightboxIn 0.25s ease;
+  transform: scale(0.92);
+  transition: transform 0.3s ease;
 }
 
-@keyframes lightboxIn {
-  from { opacity: 0; transform: scale(0.92); }
-  to   { opacity: 1; transform: scale(1); }
+.lightbox.active .lightbox-content {
+  transform: scale(1);
 }
 
 .lightbox-img {
