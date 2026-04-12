@@ -339,6 +339,7 @@ section {
 .social-card.dc:hover { background: #5865f2; color: #fff; }
 .social-card:hover span { opacity: 1; }
 
+/* FOOTER */
 .footer {
   margin-top: 40px;
   border-top: 1px solid rgba(128,128,128,0.1);
@@ -462,7 +463,6 @@ section {
   background: #a29bfe;
 }
 
-/* SOCIALS SECTION */
 .socials-section {
   text-align: center;
   margin-top: 100px;
@@ -522,11 +522,10 @@ section {
 
 .social-card.fb:hover .social-card-icon { background: #1877f2; box-shadow: 0 12px 30px rgba(24,119,242,0.35); }
 .social-card.ig:hover .social-card-icon { background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af); box-shadow: 0 12px 30px rgba(221,42,123,0.35); }
-.social-card.yt:hover .social-card-icon { background: #ff0000; box-shadow: 0 12px 30px rgba(255,0,0,0.35); }
+.social-card.gm:hover .social-card-icon { background: #EA4335; box-shadow: 0 12px 30px rgba(234,67,53,0.35); }
 .social-card.gh:hover .social-card-icon { background: #24292f; box-shadow: 0 12px 30px rgba(36,41,47,0.35); }
 .social-card.dc:hover .social-card-icon { background: #5865f2; box-shadow: 0 12px 30px rgba(88,101,242,0.35); }
 
-/* FOOTER MINIMALIS */
 .footer {
   margin-top: 20px;
   padding: 24px 20px 16px;
@@ -619,6 +618,7 @@ section {
   stroke-linejoin: round;
 }
 
+/* CUSTOM CURSOR */
 * {
   cursor: none !important;
 }
