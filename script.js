@@ -70,7 +70,6 @@ document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") closeLightbox();
 });
 
-// Back to top
 const backToTop = document.getElementById("backToTop");
 
 window.addEventListener("scroll", () => {
@@ -83,4 +82,38 @@ window.addEventListener("scroll", () => {
 
 backToTop.addEventListener("click", () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+const cursorDot = document.getElementById("cursorDot");
+const cursorRing = document.getElementById("cursorRing");
+
+let mouseX = 0, mouseY = 0;
+let ringX = 0, ringY = 0;
+
+window.addEventListener("mousemove", (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    cursorDot.style.left = mouseX + "px";
+    cursorDot.style.top = mouseY + "px";
+});
+
+function animateRing() {
+    ringX += (mouseX - ringX) * 0.18;
+    ringY += (mouseY - ringY) * 0.18;
+    cursorRing.style.left = ringX + "px";
+    cursorRing.style.top = ringY + "px";
+    requestAnimationFrame(animateRing);
+}
+animateRing();
+
+const hoverTargets = document.querySelectorAll("a, button, .gallery-item");
+hoverTargets.forEach(el => {
+    el.addEventListener("mouseenter", () => {
+        cursorDot.classList.add("hover");
+        cursorRing.classList.add("hover");
+    });
+    el.addEventListener("mouseleave", () => {
+        cursorDot.classList.remove("hover");
+        cursorRing.classList.remove("hover");
+    });
 });
