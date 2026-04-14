@@ -1,123 +1,546 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Fabian Hendriyansah - Designer & Developer portfolio">
-    <title>Rext</title>
-    
-    <link rel="icon" type="image/png" href="img/favicon.png">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rext — Portfolio</title>
+  <meta name="description"
+    content="Personal portfolio of Fabian Hendriyansah — IT Student, Frontend Developer & Graphic Designer.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #111;
+      --card: #ffffff;
+      --shadow: 0 8px 25px rgba(0, 0, 0, 0.10);
+      --accent: #6c5ce7;
+      --accent-light: #a29bfe;
+    }
+
+    .dark {
+      --bg: #0f0f0f;
+      --text: #f4f4f4;
+      --card: #151515;
+      --shadow: 0 10px 30px rgba(255, 255, 255, 0.03);
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Poppins", system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .hero {
+      position: relative;
+      width: 100%;
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 120px 24px 80px;
+      overflow: hidden;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--accent);
+      background: rgba(108, 92, 231, 0.1);
+      border: 1px solid rgba(108, 92, 231, 0.2);
+      border-radius: 999px;
+      padding: 5px 14px;
+      margin-bottom: 24px;
+      opacity: 0;
+      transform: translateY(12px);
+      animation: slideUp 0.6s 0.1s ease forwards;
+    }
+
+    .hero-badge-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--accent);
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      50% {
+        opacity: 0.5;
+        transform: scale(0.8);
+      }
+    }
+
+    .hero h1 {
+      font-size: clamp(40px, 6.5vw, 76px);
+      font-weight: 800;
+      line-height: 1.05;
+      margin: 0 0 6px;
+      letter-spacing: -1.5px;
+      opacity: 0;
+      transform: translateY(16px);
+      animation: slideUp 0.7s 0.2s ease forwards;
+    }
+
+    .hero h1 .name-accent {
+      background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-roles {
+      font-size: clamp(15px, 2vw, 20px);
+      font-weight: 500;
+      color: var(--accent-light);
+      margin: 0 0 20px;
+      min-height: 1.6em;
+      opacity: 0;
+      transform: translateY(12px);
+      animation: slideUp 0.7s 0.3s ease forwards;
+    }
+
+    .typing-cursor {
+      display: inline-block;
+      width: 2px;
+      height: 1em;
+      background: var(--accent);
+      margin-left: 2px;
+      vertical-align: middle;
+      animation: blink 0.9s step-end infinite;
+    }
+
+    @keyframes blink {
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0;
+      }
+    }
+
+    .hero p {
+      font-size: clamp(14px, 1.6vw, 16px);
+      line-height: 1.75;
+      opacity: 0;
+      color: var(--text);
+      max-width: 560px;
+      margin: 0 0 36px;
+      transform: translateY(12px);
+      animation: slideUp 0.7s 0.4s ease forwards;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      justify-content: center;
+      opacity: 0;
+      transform: translateY(12px);
+      animation: slideUp 0.7s 0.5s ease forwards;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 28px;
+      font-family: inherit;
+      font-size: 14px;
+      font-weight: 600;
+      color: #fff;
+      background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+      border: none;
+      border-radius: 999px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 6px 24px rgba(108, 92, 231, 0.35);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 32px rgba(108, 92, 231, 0.5);
+    }
+
+    .btn-primary:active {
+      transform: translateY(0);
+    }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 28px;
+      font-family: inherit;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+      background: transparent;
+      border: 1.5px solid rgba(108, 92, 231, 0.35);
+      border-radius: 999px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+    }
+
+    .btn-outline:hover {
+      transform: translateY(-3px);
+      border-color: var(--accent);
+      background: rgba(108, 92, 231, 0.07);
+    }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      animation: fadeIn 0.5s 0.4s ease forwards;
+      opacity: 0;
+    }
+
+    .scroll-line {
+      width: 2px;
+      height: 36px;
+      background: linear-gradient(to bottom, var(--accent), transparent);
+      animation: scrollDrop 2s 0.4s ease-in-out infinite;
+    }
+
+    @keyframes scrollDrop {
+      0% {
+        transform: scaleY(0);
+        transform-origin: top;
+        opacity: 0;
+      }
+
+      40% {
+        transform: scaleY(1);
+        transform-origin: top;
+        opacity: 1;
+      }
+
+      60% {
+        transform: scaleY(1);
+        transform-origin: bottom;
+        opacity: 1;
+      }
+
+      100% {
+        transform: scaleY(0);
+        transform-origin: bottom;
+        opacity: 0;
+      }
+    }
+
+    @keyframes slideUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 0.5;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero {
+        padding: 100px 20px 80px;
+      }
+
+      .hero-ctas {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .btn-primary,
+      .btn-outline {
+        width: 100%;
+        max-width: 280px;
+        justify-content: center;
+      }
+    }
+
+    .demo-nav {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 30px;
+      height: 64px;
+      width: min(94%, 1150px);
+      background: linear-gradient(180deg, #eef8ff, #f6fbff);
+      border-radius: 999px;
+      box-shadow: 0 22px 50px rgba(15, 23, 42, 0.06);
+      border: 1px solid rgba(0, 0, 0, 0.03);
+      z-index: 999;
+      transition: background 0.3s, box-shadow 0.3s;
+    }
+
+    .dark .demo-nav {
+      background: linear-gradient(180deg, #2a3138, #23272b);
+      border-color: rgba(255, 255, 255, 0.04);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.55);
+    }
+
+    .demo-logo {
+      font-weight: 700;
+      font-size: 20px;
+      color: var(--text);
+    }
+
+    .demo-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .demo-links a {
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 500;
+      color: rgba(12, 14, 20, 0.75);
+      transition: color 0.2s;
+    }
+
+    .dark .demo-links a {
+      color: rgba(248, 248, 248, 0.85);
+    }
+
+    .demo-links a:hover {
+      color: var(--accent);
+    }
+
+    .demo-toggle {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: #fff;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s;
+    }
+
+    .dark .demo-toggle {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .demo-toggle svg {
+      width: 20px;
+      height: 20px;
+      stroke: #333;
+      fill: none;
+      stroke-width: 2;
+    }
+
+    .dark .demo-toggle svg {
+      stroke: #fff;
+    }
+
+    @media (max-width: 768px) {
+      .demo-links {
+        display: none;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-    <header class="header-pill">
-        <nav class="pill-inner">
-            <div class="pill-logo">Rext</div>
-            <ul class="pill-nav">
-                <li><a href="#about">About</a></li>
-                <li><a href="#desain">My Work</a></li>
-                <li><a href="#socials">Socials</a></li> 
-            </ul>
-            <button id="themeToggle" class="pill-btn" aria-label="Toggle dark mode">
-                <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                </svg>
-                <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <circle cx="12" cy="12" r="5"></circle>
-                    <line x1="12" y1="1" x2="12" y2="3"></line>
-                    <line x1="12" y1="21" x2="12" y2="23"></line>
-                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                    <line x1="1" y1="12" x2="3" y2="12"></line>
-                    <line x1="21" y1="12" x2="23" y2="12"></line>
-                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                </svg>
-            </button>
-        </nav>
-    </header>
+  <div class="cursor-dot"></div>
+  <div class="cursor-ring"></div>
 
-    <main>
-
-    <section class="hero" id="about">
-        <h1>Fabian <span>Hendriyansah</span></h1>
-        <p>Hi, I'm Fabian — or just call me Biyan An IT student who loves anime, design, reading, and coding. I Always open to new ideas and collaborations :)</p>
-    </section>
-
-    <section class="section" id="desain">
-        <h2>My Work</h2>
-        <div id="desain-gallery" class="gallery-grid"></div>
-    </section>
-
-    <section class="section socials-section" id="socials">
-        <h2>Socials</h2>
-        <div class="socials-grid">
-            <a href="https://www.facebook.com/yan.226312/" target="_blank" rel="noopener noreferrer" class="social-card fb" data-aos="fade-up" data-aos-duration="500" data-aos-delay="0">
-                <div class="social-card-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="22" height="22"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-                </div>
-                <span>Facebook</span>
-            </a>
-            <a href="https://www.instagram.com/fabiyaan_/" target="_blank" rel="noopener noreferrer" class="social-card ig" data-aos="fade-up" data-aos-duration="500" data-aos-delay="50">
-                <div class="social-card-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="white" stroke="none"/></svg>
-                </div>
-                <span>Instagram</span>
-            </a>
-            <a href="https://mail.google.com/mail/?view=cm&to=fabianhendriyansah@gmail.com" target="_blank" rel="noopener noreferrer" class="social-card gm" data-aos="fade-up" data-aos-duration="500" data-aos-delay="100">
-                <div class="social-card-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                </div>
-                <span>Gmail</span>
-            </a>
-            <a href="https://github.com/Rextt1122" target="_blank" rel="noopener noreferrer" class="social-card gh" data-aos="fade-up" data-aos-duration="500" data-aos-delay="150">
-                <div class="social-card-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="22" height="22"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.49.5.09.66-.22.66-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.1-1.47-1.1-1.47-.9-.62.07-.6.07-.6 1 .07 1.52 1.02 1.52 1.02.89 1.52 2.33 1.08 2.9.83.09-.65.35-1.08.63-1.33-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.98 1.02-2.68-.1-.25-.44-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.56 9.56 0 0 1 12 6.8c.85 0 1.7.11 2.5.33 1.9-1.29 2.74-1.02 2.74-1.02.54 1.37.2 2.39.1 2.64.63.7 1.02 1.59 1.02 2.68 0 3.84-2.34 4.69-4.57 4.94.36.31.68.92.68 1.85v2.74c0 .27.16.58.67.48A10.01 10.01 0 0 0 22 12c0-5.52-4.48-10-10-10z"/></svg>
-                </div>
-                <span>GitHub</span>
-            </a>
-            <a href="https://discord.com/users/1278267292781903883" target="_blank" rel="noopener noreferrer" class="social-card dc" data-aos="fade-up" data-aos-duration="500" data-aos-delay="200">
-                <div class="social-card-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 71 55" fill="white" width="22" height="22"><path d="M60.1 4.9A58.6 58.6 0 0 0 45.5.4a.2.2 0 0 0-.2.1 40.8 40.8 0 0 0-1.8 3.7 54.1 54.1 0 0 0-16.2 0 37.4 37.4 0 0 0-1.8-3.7.2.2 0 0 0-.2-.1A58.4 58.4 0 0 0 10.7 4.9a.2.2 0 0 0-.1.1C1.5 18.3-.9 31.3.3 44.1c0 .1.1.1.1.2a58.8 58.8 0 0 0 17.7 8.9.2.2 0 0 0 .2-.1 42 42 0 0 0 3.6-5.9.2.2 0 0 0-.1-.3 38.7 38.7 0 0 1-5.5-2.6.2.2 0 0 1 0-.4l1.1-.8a.2.2 0 0 1 .2 0c11.5 5.3 24 5.3 35.4 0a.2.2 0 0 1 .2 0l1.1.8a.2.2 0 0 1 0 .4 36 36 0 0 1-5.5 2.6.2.2 0 0 0-.1.3 47 47 0 0 0 3.6 5.9c.1.1.2.1.3.1a58.6 58.6 0 0 0 17.7-8.9c.1 0 .1-.1.1-.2 1.5-15-2.5-28-10.4-39.5a.2.2 0 0 0-.1-.1zM23.7 36.2c-3.5 0-6.4-3.2-6.4-7.1s2.8-7.1 6.4-7.1c3.6 0 6.5 3.2 6.4 7.1 0 3.9-2.8 7.1-6.4 7.1zm23.6 0c-3.5 0-6.4-3.2-6.4-7.1s2.8-7.1 6.4-7.1c3.6 0 6.5 3.2 6.4 7.1 0 3.9-2.8 7.1-6.4 7.1z"/></svg>
-                </div>
-                <span>Discord</span>
-            </a>
-        </div>
-    </section>
-
-    <footer class="footer" id="footer-area">
-        <div class="footer-content">
-            <h3>Rext</h3>
-            <p>Computer Engineering Student • Designer • Coder</p>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 Fabian Hendriyansah. All rights reserved.</p>
-        </div>
-    </footer>
-
-    </main>
-
-    <div class="cursor-dot" id="cursorDot"></div>
-    <div class="cursor-ring" id="cursorRing"></div>
-
-    <button class="back-to-top" id="backToTop" aria-label="Back to top">
-      <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"></polyline></svg>
+  <header class="demo-nav">
+    <div class="demo-logo">Rext</div>
+    <ul class="demo-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#desain">My Work</a></li>
+      <li><a href="#socials">Socials</a></li>
+    </ul>
+    <button id="demoToggle" class="demo-toggle" aria-label="Toggle dark mode">
+      <svg id="demoIcon" viewBox="0 0 24 24">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+      </svg>
     </button>
+  </header>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
-    
-    <script defer>
-      document.addEventListener('DOMContentLoaded', function() {
-        AOS.init({
-          once: false,
-          duration: 800,
-        });
-      });
-    </script>
+  <section class="hero" id="about">
 
-    <script src="script.js" defer></script>
+    <div class="hero-content">
+
+      <div class="hero-badge">
+        <span class="hero-badge-dot"></span>
+        Open for Projects
+      </div>
+
+      <h1>Fabian <span class="name-accent">Hendriyansah</span></h1>
+
+      <div class="hero-roles">
+        <span id="typingText"></span><span class="typing-cursor"></span>
+      </div>
+
+      <p>Hi, I'm Fabian — or just call me Biyan. An IT student who loves anime,
+        design, reading, and coding. I always open to new ideas and collaborations&nbsp;:)</p>
+
+      <div class="hero-ctas">
+        <a href="#desain" class="btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <rect x="3" y="3" width="7" height="7" rx="1" />
+            <rect x="14" y="3" width="7" height="7" rx="1" />
+            <rect x="14" y="14" width="7" height="7" rx="1" />
+            <rect x="3" y="14" width="7" height="7" rx="1" />
+          </svg>
+          See My Work
+        </a>
+        <a href="#socials" class="btn-outline">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+          </svg>
+          Get in Touch
+        </a>
+      </div>
+
+    </div>
+
+    <div class="hero-scroll">
+      <div class="scroll-line"></div>
+      scroll
+    </div>
+
+  </section>
+
+  <section class="section" id="desain">
+    <h2><span>My Work</span></h2>
+    <div id="desain-gallery" class="gallery-grid"></div>
+  </section>
+
+  <section class="section socials-section" id="socials">
+    <h2><span>Contact & Links</span></h2>
+    <div class="socials-grid">
+      <a href="https://www.facebook.com/yan.226312/" target="_blank" class="social-card fb">
+        <div class="social-card-icon">
+          <div class="icon-bg">
+            <img src="https://cdn.simpleicons.org/facebook/white" alt="Facebook" width="28" height="28">
+          </div>
+        </div>
+        <span>Facebook</span>
+      </a>
+      <a href="https://www.instagram.com/fabiyaan_/" target="_blank" class="social-card ig">
+        <div class="social-card-icon">
+          <div class="icon-bg">
+            <img src="https://cdn.simpleicons.org/instagram/white" alt="Instagram" width="28" height="28">
+          </div>
+        </div>
+        <span>Instagram</span>
+      </a>
+      <a href="mailto:fabianhendriyansahbusiness@gmail.com" class="social-card gm">
+        <div class="social-card-icon">
+          <div class="icon-bg">
+            <img src="https://cdn.simpleicons.org/gmail/white" alt="Gmail" width="28" height="28">
+          </div>
+        </div>
+        <span>Gmail</span>
+      </a>
+      <a href="https://github.com/Rextt1122" target="_blank" class="social-card gh">
+        <div class="social-card-icon">
+          <div class="icon-bg">
+            <img src="https://cdn.simpleicons.org/github/white" alt="GitHub" width="28" height="28">
+          </div>
+        </div>
+        <span>GitHub</span>
+      </a>
+      <a href="https://discordapp.com/users/1278267292781903883" target="_blank" class="social-card dc">
+        <div class="social-card-icon">
+          <div class="icon-bg">
+            <img src="https://cdn.simpleicons.org/discord/white" alt="Discord" width="28" height="28">
+          </div>
+        </div>
+        <span>Discord</span>
+      </a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <h3>Rext</h3>
+      <p>IT Student · Frontend Developer · Graphic Designer</p>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Fabian Hendriyansah</p>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg viewBox="0 0 24 24">
+      <polyline points="18 15 12 9 6 15" />
+    </svg>
+  </button>
+
+  <script src="script.js"></script>
+
 </body>
+
 </html>
