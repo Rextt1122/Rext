@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rext</title>
-   <link rel="icon" type="image/png" href="img/favicon.png">
+  <title>Rext Portfolio</title>
+  <link rel="icon" type="image/png" href="img/favicon.png">
   <meta name="description"
     content="Personal portfolio of Fabian Hendriyansah — IT Student, Frontend Developer & Graphic Designer.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,27 +13,27 @@
   <link rel="stylesheet" href="style.css">
   <style>
     :root {
-      --bg: #ffffff;
-      --text: #111;
+      --bg: linear-gradient(135deg, #f8f7ff 0%, #ede9ff 100%);
+      --text: #1a1a2e;
       --card: #ffffff;
-      --shadow: 0 8px 25px rgba(0, 0, 0, 0.10);
-      --accent: #6c5ce7;
-      --accent-light: #a29bfe;
+      --shadow: 0 8px 25px rgba(80, 60, 180, 0.08);
+      --accent: #8b5fbf;
+      --accent-light: #b497d6;
     }
-
+  
     .dark {
-      --bg: #0f0f0f;
-      --text: #f4f4f4;
-      --card: #151515;
-      --shadow: 0 10px 30px rgba(255, 255, 255, 0.03);
+      --bg: linear-gradient(135deg, #0f0a1f 0%, #1a0f3c 100%);
+      --text: #e8e4f0;
+      --card: #1a1a3e;
+      --shadow: 0 10px 30px rgba(139, 95, 191, 0.15);
     }
-
+ 
     *,
     *::before,
     *::after {
       box-sizing: border-box;
     }
-
+    
     html {
       scroll-behavior: smooth;
     }
@@ -41,7 +41,7 @@
     body {
       margin: 0;
       padding: 0;
-      background: var(--bg);
+      background-image: var(--bg);
       color: var(--text);
       font-family: "Poppins", system-ui, sans-serif;
       -webkit-font-smoothing: antialiased;
@@ -326,26 +326,28 @@
       padding: 0 30px;
       height: 64px;
       width: min(94%, 1150px);
-      background: linear-gradient(180deg, #eef8ff, #f6fbff);
+      background: rgba(248, 247, 255, 0.6);
+      backdrop-filter: blur(12px);
       border-radius: 999px;
-      box-shadow: 0 22px 50px rgba(15, 23, 42, 0.06);
-      border: 1px solid rgba(0, 0, 0, 0.03);
+      box-shadow: 0 8px 32px rgba(139, 95, 191, 0.1);
+      border: 1px solid rgba(139, 95, 191, 0.2);
       z-index: 999;
-      transition: background 0.3s, box-shadow 0.3s;
+      transition: background 0.3s, box-shadow 0.3s, border-color 0.3s;
     }
 
     .dark .demo-nav {
-      background: linear-gradient(180deg, #2a3138, #23272b);
-      border-color: rgba(255, 255, 255, 0.04);
-      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.55);
+      background: rgba(30, 20, 50, 0.6);
+      backdrop-filter: blur(12px);
+      border-color: rgba(139, 95, 191, 0.3);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
     }
-
+ 
     .demo-logo {
       font-weight: 700;
       font-size: 20px;
       color: var(--text);
     }
-
+ 
     .demo-links {
       display: flex;
       gap: 32px;
@@ -356,8 +358,8 @@
 
     .demo-links a {
       text-decoration: none;
-      font-size: 15px;
-      font-weight: 500;
+      font-size: 16px;
+      font-weight: 800;
       color: rgba(12, 14, 20, 0.75);
       transition: color 0.2s;
     }
