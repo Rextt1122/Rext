@@ -1,17 +1,17 @@
 :root {
-  --bg: #ffffff;
-  --text: #111;
+  --bg: linear-gradient(135deg, #f8f7ff 0%, #ede9ff 100%);
+  --text: #1a1a2e;
   --card: #ffffff;
-  --shadow: 0 8px 25px rgba(0, 0, 0, 0.10);
-  --accent: #6c5ce7;
-  --accent-light: #a29bfe;
+  --shadow: 0 8px 25px rgba(80, 60, 180, 0.08);
+  --accent: #8b5fbf;
+  --accent-light: #b497d6;
 }
 
 .dark {
-  --bg: #0f0f0f;
-  --text: #f4f4f4;
-  --card: #151515;
-  --shadow: 0 10px 30px rgba(255, 255, 255, 0.03);
+  --bg: linear-gradient(135deg, #0f0a1f 0%, #1a0f3c 100%);
+  --text: #e8e4f0;
+  --card: #1a1a3e;
+  --shadow: 0 10px 30px rgba(139, 95, 191, 0.15);
 }
 
 * {
@@ -38,7 +38,7 @@ html,
 body {
   margin: 0;
   padding: 0;
-  background: var(--bg);
+  background-image: var(--bg);
   color: var(--text);
   font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
   -webkit-font-smoothing: antialiased;
@@ -50,6 +50,9 @@ body {
 body {
   padding-top: 120px;
 }
+
+
+
 .section {
   max-width: 1150px;
   margin: 60px auto 40px;
@@ -491,8 +494,8 @@ section {
   width: 72px;
   height: 72px;
   border-radius: 20px;
-  background: #f1f3f4;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.09);
+  background: transparent;
+  box-shadow: none;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -501,8 +504,8 @@ section {
 }
 
 .dark .social-card-icon {
-  background: #2a2a2a;
-  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.40);
+  background: transparent;
+  box-shadow: none;
 }
 
 .icon-bg {
@@ -552,23 +555,23 @@ section {
 }
 
 .social-card.fb:hover .social-card-icon {
-  box-shadow: 0 12px 30px rgba(24, 119, 242, 0.45);
+  box-shadow: none;
 }
 
 .social-card.ig:hover .social-card-icon {
-  box-shadow: 0 12px 30px rgba(221, 42, 123, 0.45);
+  box-shadow: none;
 }
 
 .social-card.gm:hover .social-card-icon {
-  box-shadow: 0 12px 30px rgba(234, 67, 53, 0.45);
+  box-shadow: none;
 }
 
 .social-card.gh:hover .social-card-icon {
-  box-shadow: 0 12px 30px rgba(36, 41, 47, 0.45);
+  box-shadow: none;
 }
 
 .social-card.dc:hover .social-card-icon {
-  box-shadow: 0 12px 30px rgba(88, 101, 242, 0.45);
+  box-shadow: none;
 }
 
 .footer {
@@ -664,44 +667,37 @@ section {
 }
 
 * {
-  cursor: none !important;
+  cursor: auto !important;
+}
+
+a, button, [role='button'], .social-card, .gallery-item, .btn-primary, .btn-outline {
+  cursor: pointer !important;
+  user-select: none;
+}
+
+p, span, h1, h2, h3, h4, h5, h6, li {
+  user-select: text;
+}
+
+::selection {
+  background: rgba(139, 95, 191, 0.3);
+  color: inherit;
 }
 
 .cursor-dot {
-  position: fixed;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--accent);
-  pointer-events: none;
-  z-index: 99999;
-  transform: translate(-50%, -50%);
-  transition: transform 0.1s ease, background 0.2s ease, width 0.2s ease, height 0.2s ease;
+  display: none !important;
 }
 
 .cursor-ring {
-  position: fixed;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  border: 1.5px solid var(--accent);
-  pointer-events: none;
-  z-index: 99998;
-  transform: translate(-50%, -50%);
-  transition: transform 0.12s ease, width 0.2s ease, height 0.2s ease, opacity 0.2s ease;
-  opacity: 0.6;
+  display: none !important;
 }
 
 .cursor-dot.hover {
-  width: 12px;
-  height: 12px;
-  background: #a29bfe;
+  display: none !important;
 }
 
 .cursor-ring.hover {
-  width: 48px;
-  height: 48px;
-  opacity: 0.3;
+  display: none !important;
 }
 
 @media (max-width: 768px) {
@@ -712,5 +708,22 @@ section {
   .cursor-dot,
   .cursor-ring {
     display: none;
+  }
+
+  .social-card-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+  }
+
+  .icon-bg {
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+  }
+
+  .social-card-icon img {
+    width: 16px;
+    height: 16px;
   }
 }
