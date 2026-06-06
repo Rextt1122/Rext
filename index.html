@@ -20,20 +20,20 @@
       --accent: #8b5fbf;
       --accent-light: #b497d6;
     }
-  
+
     .dark {
       --bg: linear-gradient(135deg, #0f0a1f 0%, #1a0f3c 100%);
       --text: #e8e4f0;
       --card: #1a1a3e;
       --shadow: 0 10px 30px rgba(139, 95, 191, 0.15);
     }
- 
+
     *,
     *::before,
     *::after {
       box-sizing: border-box;
     }
-    
+
     html {
       scroll-behavior: smooth;
     }
@@ -341,13 +341,13 @@
       border-color: rgba(139, 95, 191, 0.3);
       box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
     }
- 
+
     .demo-logo {
       font-weight: 700;
       font-size: 20px;
       color: var(--text);
     }
- 
+
     .demo-links {
       display: flex;
       gap: 32px;
@@ -421,6 +421,7 @@
     <ul class="demo-links">
       <li><a href="#about">About</a></li>
       <li><a href="#desain">My Work</a></li>
+      <li><a href="#web-projects">Web Projects</a></li>
       <li><a href="#socials">Socials</a></li>
     </ul>
     <button id="demoToggle" class="demo-toggle" aria-label="Toggle dark mode">
@@ -478,6 +479,133 @@
   <section class="section" id="desain">
     <h2><span>My Work</span></h2>
     <div id="desain-gallery" class="gallery-grid"></div>
+  </section>
+
+  <section class="section" id="web-projects">
+    <h2><span>Web Projects</span></h2>
+    <div class="web-projects-grid">
+      <!-- Card 1: Weather App -->
+      <div class="project-card">
+        <div class="project-card-cover project-cover-weather">
+          <svg class="project-card-cover-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path
+              d="M12 2v2M4.93 4.93l1.41 1.41M20 12h2M17.66 17.66l1.41 1.41M12 20v2M6.34 17.66l-1.41 1.41M2 12h2M6.34 6.34L4.93 4.93"
+              stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8z" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </div>
+        <div class="project-card-content">
+          <div class="project-tags">
+            <span class="project-tag">JavaScript</span>
+            <span class="project-tag">API Integration</span>
+            <span class="project-tag">CSS3</span>
+          </div>
+          <h3 class="project-title">Weather App</h3>
+          <p class="project-description">A real-time weather checking application integrating external weather APIs,
+            complete with custom search and rich visualizations.</p>
+          <div class="project-links">
+            <a href="https://github.com/Rextt1122/Weather" target="_blank" class="project-link"
+              aria-label="View source code on GitHub">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                </path>
+              </svg>
+              GitHub
+            </a>
+            <a href="#" class="project-link demo" aria-label="View live demo">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                <polyline points="15 3 21 3 21 9"></polyline>
+                <line x1="10" y1="14" x2="21" y2="3"></line>
+              </svg>
+              Live Demo
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2: Fullstack Dashboard -->
+      <div class="project-card">
+        <div class="project-card-cover project-cover-dashboard">
+          <svg class="project-card-cover-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="3" y="3" width="18" height="18" rx="2" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M9 3v18M3 9h18M9 15h12" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </div>
+        <div class="project-card-content">
+          <div class="project-tags">
+            <span class="project-tag">HTML5</span>
+            <span class="project-tag">CSS Grid</span>
+            <span class="project-tag">Node.js</span>
+          </div>
+          <h3 class="project-title">Fullstack Dashboard Demo</h3>
+          <p class="project-description">A fully responsive dashboard application showcasing statistics, user
+            management, interactive charts, and system monitoring tools.</p>
+          <div class="project-links">
+            <a href="https://github.com/Rextt1122/fullstack-dashboard-demo" target="_blank" class="project-link"
+              aria-label="View source code on GitHub">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                </path>
+              </svg>
+              GitHub
+            </a>
+            <a href="#" class="project-link demo" aria-label="View live demo">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                <polyline points="15 3 21 3 21 9"></polyline>
+                <line x1="10" y1="14" x2="21" y2="3"></line>
+              </svg>
+              Live Demo
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3: Claude API Demo -->
+      <div class="project-card">
+        <div class="project-card-cover project-cover-claude">
+          <svg class="project-card-cover-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path
+              d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"
+              stroke-linecap="round" stroke-linejoin="round" />
+            <polyline points="3.27 6.96 12 12.01 20.73 6.96" stroke-linecap="round" stroke-linejoin="round" />
+            <line x1="12" y1="22.08" x2="12" y2="12" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </div>
+        <div class="project-card-content">
+          <div class="project-tags">
+            <span class="project-tag">Node.js</span>
+            <span class="project-tag">Claude API</span>
+            <span class="project-tag">TailwindCSS</span>
+          </div>
+          <h3 class="project-title">Claude API Demo</h3>
+          <p class="project-description">An integration showcase demonstrating asynchronous streaming responses, prompt
+            handling, and chat interactions with Claude's model API.</p>
+          <div class="project-links">
+            <a href="https://github.com/Rextt1122/claude-api-demo" target="_blank" class="project-link"
+              aria-label="View source code on GitHub">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                </path>
+              </svg>
+              GitHub
+            </a>
+            <a href="#" class="project-link demo" aria-label="View live demo">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                <polyline points="15 3 21 3 21 9"></polyline>
+                <line x1="10" y1="14" x2="21" y2="3"></line>
+              </svg>
+              Live Demo
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
   <section class="section socials-section" id="socials">

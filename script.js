@@ -65,13 +65,13 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   const desainList = [
-    { img: "img/Waguri.png" },
-    { img: "img/Dream Journey.png" },
-    { img: "img/Tenka.png" },
-    { img: "img/Miyabi.png" },
-    { img: "img/Cartethiya.png" },
-    { img: "img/Jane Doe.png" },
-    { img: "img/YoRHa No.2 Type B.png" },
+    "Waguri",
+    "Dream Journey",
+    "Tenka",
+    "Miyabi",
+    "Cartethiya",
+    "Jane Doe",
+    "YoRHa No.2 Type B",
   ];
 
   const lightbox = document.createElement("div");
@@ -108,11 +108,12 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   if (gallery) {
-    desainList.forEach((d, index) => {
+    desainList.forEach((name, index) => {
+      const imgPath = `img/${name}.webp`;
       const item = document.createElement("div");
       item.className = "gallery-item";
-      item.innerHTML = `<img src="${d.img}" alt="design ${index + 1}">`;
-      item.addEventListener("click", () => openLightbox(d.img));
+      item.innerHTML = `<img src="${imgPath}" alt="${name}">`;
+      item.addEventListener("click", () => openLightbox(imgPath));
       gallery.appendChild(item);
     });
 
@@ -133,6 +134,28 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }, { threshold: 0.05 });
     galleryObserver.observe(gallery);
+  }
+
+  // Web Projects animation observer
+  const webProjectsGrid = document.querySelector(".web-projects-grid");
+  const projectCards = document.querySelectorAll(".project-card");
+  if (webProjectsGrid && projectCards.length) {
+    const projectsObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          projectCards.forEach((card, i) => {
+            card.style.transitionDelay = `${i * 120}ms`;
+            card.classList.add("visible");
+          });
+        } else {
+          projectCards.forEach((card) => {
+            card.style.transitionDelay = "0ms";
+            card.classList.remove("visible");
+          });
+        }
+      });
+    }, { threshold: 0.10 });
+    projectsObserver.observe(webProjectsGrid);
   }
 
   const socialCards = document.querySelectorAll(".social-card");

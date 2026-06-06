@@ -310,6 +310,196 @@ section {
   object-fit: contain;
 }
 
+/* Web Projects Section */
+.web-projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 32px;
+  margin-top: 40px;
+  padding-bottom: 40px;
+}
+
+.project-card {
+  background: var(--card);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(139, 95, 191, 0.05);
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
+              transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.3s ease, 
+              border-color 0.3s ease;
+}
+
+.dark .project-card {
+  border-color: rgba(139, 95, 191, 0.15);
+}
+
+.project-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(139, 95, 191, 0.12);
+  border-color: var(--accent-light);
+}
+
+.dark .project-card:hover {
+  box-shadow: 0 20px 45px rgba(139, 95, 191, 0.25);
+  border-color: var(--accent);
+}
+
+.project-card-cover {
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Beautiful Premium Gradient Backgrounds for Card Covers */
+.project-cover-weather {
+  background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);
+  color: #2b5c8f;
+}
+
+.project-cover-dashboard {
+  background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%);
+  color: #ffffff;
+}
+
+.project-cover-claude {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  color: #ffffff;
+}
+
+/* Add a subtle overlay texture / glassmorphism to card cover */
+.project-card-cover::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.15) 0%, transparent 50%);
+  z-index: 1;
+}
+
+.project-card-cover-icon {
+  width: 64px;
+  height: 64px;
+  z-index: 2;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.1));
+}
+
+.project-card:hover .project-card-cover-icon {
+  transform: scale(1.12) rotate(5deg);
+}
+
+.project-card-content {
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  text-align: left;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.project-tag {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(139, 95, 191, 0.08);
+  color: var(--accent);
+  transition: background 0.3s, color 0.3s;
+}
+
+.dark .project-tag {
+  background: rgba(176, 148, 218, 0.15);
+  color: var(--accent-light);
+}
+
+.project-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 12px 0;
+  color: var(--text);
+  line-height: 1.3;
+}
+
+.project-description {
+  font-size: 13.5px;
+  line-height: 1.6;
+  opacity: 0.8;
+  margin: 0 0 24px 0;
+  color: var(--text);
+  flex-grow: 1;
+}
+
+.project-links {
+  display: flex;
+  gap: 16px;
+  border-top: 1px solid rgba(128, 128, 128, 0.08);
+  padding-top: 20px;
+  margin-top: auto;
+}
+
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  text-decoration: none;
+  opacity: 0.75;
+  transition: opacity 0.2s, color 0.2s, transform 0.2s;
+}
+
+.project-link svg {
+  transition: transform 0.2s ease;
+}
+
+.project-link:hover {
+  opacity: 1;
+  color: var(--accent);
+}
+
+.project-link:hover svg {
+  transform: translateY(-1px);
+}
+
+.project-link.demo {
+  color: var(--accent);
+  opacity: 0.9;
+}
+
+.dark .project-link.demo {
+  color: var(--accent-light);
+}
+
+.project-link.demo:hover {
+  opacity: 1;
+  color: #6c5ce7;
+  transform: translateX(2px);
+}
+
+.dark .project-link.demo:hover {
+  color: #a29bfe;
+}
+
 .socials-section {
   text-align: center;
   margin-top: 100px;
