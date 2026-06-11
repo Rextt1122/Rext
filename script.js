@@ -107,8 +107,32 @@ document.addEventListener("DOMContentLoaded", () => {
     if (e.key === "Escape") closeLightbox();
   });
 
+  // Reusable Intersection Observer for Staggered Entrance Animations
+  function observeStaggeredEntrance(triggerElement, itemElements, delayMs, threshold = 0.1) {
+    if (!triggerElement || !itemElements.length) return;
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          itemElements.forEach((item, i) => {
+            item.style.transitionDelay = `${i * delayMs}ms`;
+            item.classList.add("visible");
+          });
+        } else {
+          itemElements.forEach((item) => {
+            item.style.transitionDelay = "0ms";
+            item.classList.remove("visible");
+          });
+        }
+      });
+    }, { threshold });
+
+    observer.observe(triggerElement);
+  }
+
   if (gallery) {
-    desainList.forEach((name, index) => {
+    // Generate gallery items
+    desainList.forEach((name) => {
       const imgPath = `img/${name}.webp`;
       const item = document.createElement("div");
       item.className = "gallery-item";
@@ -117,66 +141,21 @@ document.addEventListener("DOMContentLoaded", () => {
       gallery.appendChild(item);
     });
 
-    const galleryObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        const items = gallery.querySelectorAll(".gallery-item");
-        if (entry.isIntersecting) {
-          items.forEach((item, i) => {
-            item.style.transitionDelay = `${i * 80}ms`;
-            item.classList.add("visible");
-          });
-        } else {
-          items.forEach((item) => {
-            item.style.transitionDelay = "0ms";
-            item.classList.remove("visible");
-          });
-        }
-      });
-    }, { threshold: 0.05 });
-    galleryObserver.observe(gallery);
+    // Observe gallery items
+    observeStaggeredEntrance(gallery, gallery.querySelectorAll(".gallery-item"), 80, 0.05);
   }
 
-  // Web Projects animation observer
+  // Observe Web Projects
   const webProjectsGrid = document.querySelector(".web-projects-grid");
-  const projectCards = document.querySelectorAll(".project-card");
-  if (webProjectsGrid && projectCards.length) {
-    const projectsObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          projectCards.forEach((card, i) => {
-            card.style.transitionDelay = `${i * 120}ms`;
-            card.classList.add("visible");
-          });
-        } else {
-          projectCards.forEach((card) => {
-            card.style.transitionDelay = "0ms";
-            card.classList.remove("visible");
-          });
-        }
-      });
-    }, { threshold: 0.10 });
-    projectsObserver.observe(webProjectsGrid);
+  if (webProjectsGrid) {
+    observeStaggeredEntrance(webProjectsGrid, document.querySelectorAll(".project-card"), 120, 0.10);
   }
 
+  // Observe Social Cards
+  const socialGrid = document.querySelector(".socials-grid");
   const socialCards = document.querySelectorAll(".social-card");
-  if (socialCards.length) {
-    const socialGrid = document.querySelector(".socials-grid");
-    const socialObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          socialCards.forEach((card, i) => {
-            card.style.transitionDelay = `${i * 100}ms`;
-            card.classList.add("visible");
-          });
-        } else {
-          socialCards.forEach((card) => {
-            card.style.transitionDelay = "0ms";
-            card.classList.remove("visible");
-          });
-        }
-      });
-    }, { threshold: 0.15 });
-    socialObserver.observe(socialGrid || socialCards[0]);
+  if (socialGrid && socialCards.length) {
+    observeStaggeredEntrance(socialGrid, socialCards, 100, 0.15);
   }
 
   if (backToTop) {
