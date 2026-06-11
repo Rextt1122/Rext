@@ -801,7 +801,19 @@ section {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  border-top: 1px solid rgba(128, 128, 128, 0.1);
+  position: relative;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(94%, 1150px);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent-light), var(--accent), var(--accent-light), transparent);
+  opacity: 0.3;
 }
 
 .footer-content {
