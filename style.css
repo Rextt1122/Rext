@@ -1,17 +1,17 @@
 :root {
-  --bg: linear-gradient(135deg, #f8f7ff 0%, #ede9ff 100%);
-  --text: #1a1a2e;
+  --bg: linear-gradient(135deg, #f0f4ff 0%, #dbeafe 100%);
+  --text: #0f172a;
   --card: #ffffff;
-  --shadow: 0 8px 25px rgba(80, 60, 180, 0.08);
-  --accent: #8b5fbf;
-  --accent-light: #b497d6;
+  --shadow: 0 8px 25px rgba(37, 99, 235, 0.06);
+  --accent: #2563eb;
+  --accent-light: #60a5fa;
 }
 
 .dark {
-  --bg: linear-gradient(135deg, #0f0a1f 0%, #1a0f3c 100%);
-  --text: #e8e4f0;
-  --card: #1a1a3e;
-  --shadow: 0 10px 30px rgba(139, 95, 191, 0.15);
+  --bg: linear-gradient(135deg, #030712 0%, #0b1528 100%);
+  --text: #f1f5f9;
+  --card: #0f172a;
+  --shadow: 0 10px 30px rgba(14, 165, 233, 0.12);
 }
 
 * {
@@ -231,7 +231,7 @@ section {
 }
 
 .hero h1 span {
-  background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+  background: linear-gradient(135deg, #06b6d4, #3b82f6);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
@@ -327,7 +327,7 @@ section {
   box-shadow: var(--shadow);
   display: flex;
   flex-direction: column;
-  border: 1px solid rgba(139, 95, 191, 0.05);
+  border: 1px solid rgba(14, 165, 233, 0.05);
   opacity: 0;
   transform: translateY(40px);
   max-width: 380px;
@@ -340,7 +340,7 @@ section {
 }
 
 .dark .project-card {
-  border-color: rgba(139, 95, 191, 0.15);
+  border-color: rgba(14, 165, 233, 0.15);
 }
 
 .project-card.visible {
@@ -350,12 +350,12 @@ section {
 
 .project-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(139, 95, 191, 0.12);
+  box-shadow: 0 20px 40px rgba(14, 165, 233, 0.12);
   border-color: var(--accent-light);
 }
 
 .dark .project-card:hover {
-  box-shadow: 0 20px 45px rgba(139, 95, 191, 0.25);
+  box-shadow: 0 20px 45px rgba(14, 165, 233, 0.25);
   border-color: var(--accent);
 }
 
@@ -375,7 +375,7 @@ section {
 }
 
 .project-cover-dashboard {
-  background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%);
+  background: linear-gradient(135deg, #0ea5e9 0%, #2563eb 100%);
   color: #ffffff;
 }
 
@@ -451,13 +451,13 @@ section {
   font-weight: 600;
   padding: 4px 10px;
   border-radius: 999px;
-  background: rgba(139, 95, 191, 0.08);
+  background: rgba(14, 165, 233, 0.08);
   color: var(--accent);
   transition: background 0.3s, color 0.3s;
 }
 
 .dark .project-tag {
-  background: rgba(176, 148, 218, 0.15);
+  background: rgba(96, 165, 250, 0.15);
   color: var(--accent-light);
 }
 
@@ -522,12 +522,12 @@ section {
 
 .project-link.demo:hover {
   opacity: 1;
-  color: #6c5ce7;
+  color: #0ea5e9;
   transform: translateX(2px);
 }
 
 .dark .project-link.demo:hover {
-  color: #a29bfe;
+  color: #60a5fa;
 }
 
 .socials-section {
@@ -554,7 +554,7 @@ section {
   font-size: 20px;
   font-weight: 800;
   margin: 0 auto 6px;
-  background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+  background: linear-gradient(135deg, #06b6d4, #3b82f6);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -673,7 +673,7 @@ section {
 
 .lightbox-close:hover {
   transform: scale(1.15);
-  background: #a29bfe;
+  background: #60a5fa;
 }
 
 .socials-section {
@@ -816,7 +816,7 @@ section {
   font-size: 20px;
   font-weight: 800;
   margin: 0 0 4px 0;
-  background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+  background: linear-gradient(135deg, #06b6d4, #3b82f6);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -857,7 +857,7 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 20px rgba(108, 92, 231, 0.4);
+  box-shadow: 0 4px 20px rgba(37, 99, 235, 0.4);
   opacity: 0;
   pointer-events: none;
   transform: translateY(12px);
@@ -873,7 +873,7 @@ section {
 
 .back-to-top:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(108, 92, 231, 0.5);
+  box-shadow: 0 8px 25px rgba(37, 99, 235, 0.5);
 }
 
 .back-to-top svg {
@@ -900,7 +900,7 @@ p, span, h1, h2, h3, h4, h5, h6, li {
 }
 
 ::selection {
-  background: rgba(139, 95, 191, 0.3);
+  background: rgba(14, 165, 233, 0.3);
   color: inherit;
 }
 
