@@ -47,9 +47,7 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-body {
-  padding-top: 120px;
-}
+
 
 /* Background Glow Orbs */
 .bg-glow {
@@ -842,22 +840,8 @@ section {
 
 
 @media (max-width: 900px) {
-  .pill-inner {
-    padding: 0 20px;
-  }
-
   .hero {
     padding: 40px 18px;
-  }
-}
-
-@media (max-width: 768px) {
-  .pill-nav {
-    display: none;
-  }
-
-  body {
-    padding-top: 100px;
   }
 }
 
