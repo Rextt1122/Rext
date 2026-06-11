@@ -51,6 +51,57 @@ body {
   padding-top: 120px;
 }
 
+/* Background Glow Orbs */
+.bg-glow {
+  position: fixed;
+  width: 45vw;
+  height: 45vw;
+  min-width: 350px;
+  min-height: 350px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(140px);
+  opacity: 0.12;
+  transition: opacity 0.3s ease;
+}
+
+.dark .bg-glow {
+  opacity: 0.18;
+}
+
+.bg-glow-1 {
+  top: -15%;
+  right: -15%;
+  background: radial-gradient(circle, var(--accent-light) 0%, transparent 70%);
+  animation: floatOrb1 25s infinite alternate ease-in-out;
+}
+
+.bg-glow-2 {
+  bottom: -15%;
+  left: -15%;
+  background: radial-gradient(circle, var(--accent) 0%, transparent 70%);
+  animation: floatOrb2 30s infinite alternate ease-in-out;
+}
+
+@keyframes floatOrb1 {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    transform: translate(-8%, 10%) scale(1.1);
+  }
+}
+
+@keyframes floatOrb2 {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    transform: translate(10%, -8%) scale(0.9);
+  }
+}
+
 
 
 .section {
@@ -77,6 +128,8 @@ body {
 
 section {
   scroll-margin-top: 140px;
+  position: relative;
+  z-index: 1;
 }
 
 .header-pill {
@@ -802,6 +855,7 @@ section {
   align-items: center;
   text-align: center;
   position: relative;
+  z-index: 1;
 }
 
 .footer::before {
