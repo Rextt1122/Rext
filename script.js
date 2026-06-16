@@ -107,7 +107,6 @@ document.addEventListener("DOMContentLoaded", () => {
     if (e.key === "Escape") closeLightbox();
   });
 
-  // Reusable Intersection Observer for Staggered Entrance Animations
   function observeStaggeredEntrance(triggerElement, itemElements, delayMs, threshold = 0.1) {
     if (!triggerElement || !itemElements.length) return;
 
@@ -118,11 +117,8 @@ document.addEventListener("DOMContentLoaded", () => {
             item.style.transitionDelay = `${i * delayMs}ms`;
             item.classList.add("visible");
           });
-        } else {
-          itemElements.forEach((item) => {
-            item.style.transitionDelay = "0ms";
-            item.classList.remove("visible");
-          });
+          // Stop observing once animated in to improve scroll performance on desktop & mobile
+          observer.unobserve(triggerElement);
         }
       });
     }, { threshold });
@@ -131,12 +127,11 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   if (gallery) {
-    // Generate gallery items
     desainList.forEach((name) => {
       const imgPath = `img/${name}.webp`;
       const item = document.createElement("div");
       item.className = "gallery-item";
-      item.innerHTML = `<img src="${imgPath}" alt="${name}">`;
+      item.innerHTML = `<img src="${imgPath}" alt="${name}" loading="lazy" decoding="async">`;
       item.addEventListener("click", () => openLightbox(imgPath));
       gallery.appendChild(item);
     });
