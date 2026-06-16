@@ -59,9 +59,10 @@ body {
   border-radius: 50%;
   pointer-events: none;
   z-index: 0;
-  filter: blur(140px);
+  /* Removed filter: blur(140px) to fix extreme lag on mobile */
   opacity: 0.12;
   transition: opacity 0.3s ease;
+  will-change: transform;
 }
 
 .dark .bg-glow {
@@ -71,14 +72,14 @@ body {
 .bg-glow-1 {
   top: -15%;
   right: -15%;
-  background: radial-gradient(circle, var(--accent-light) 0%, transparent 70%);
+  background: radial-gradient(circle, var(--accent-light) 0%, transparent 60%);
   animation: floatOrb1 25s infinite alternate ease-in-out;
 }
 
 .bg-glow-2 {
   bottom: -15%;
   left: -15%;
-  background: radial-gradient(circle, var(--accent) 0%, transparent 70%);
+  background: radial-gradient(circle, var(--accent) 0%, transparent 60%);
   animation: floatOrb2 30s infinite alternate ease-in-out;
 }
 
