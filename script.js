@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const isDark = localStorage.getItem("theme") === "dark";
     document.body.classList.toggle("dark", isDark);
     if (demoIcon) demoIcon.innerHTML = isDark ? sunPath : moonPath;
+    if (demoToggle) demoToggle.setAttribute("aria-pressed", isDark ? "true" : "false");
   }
 
   if (demoToggle) {
@@ -20,6 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const isDark = document.body.classList.contains("dark");
       localStorage.setItem("theme", isDark ? "dark" : "light");
       if (demoIcon) demoIcon.innerHTML = isDark ? sunPath : moonPath;
+      demoToggle.setAttribute("aria-pressed", isDark ? "true" : "false");
     });
   }
 

@@ -1,90 +1,79 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rext Portfolio</title>
-    <link rel="icon" type="image/png" href="img/favicon.png" />
-    <meta
-      name="description"
-      content="Personal portfolio of Fabian Hendriyansah — IT Student, Frontend Developer & Graphic Designer."
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;800&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="style.css" />
-  </head>
 
-  <body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rext — Frontend Developer & Graphic Designer</title>
+  <link rel="icon" type="image/png" href="img/favicon.png" />
+  <meta name="description"
+    content="Fabian Hendriyansah (Rext) — IT Student, Frontend Developer & Graphic Designer. Building clean web experiences and stunning visual designs. Open for collaborations." />
+  <meta name="theme-color" content="#2563eb" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
 
-    <div class="bg-glow bg-glow-1"></div>
-    <div class="bg-glow bg-glow-2"></div>
+<body>
 
-    <div class="cursor-dot"></div>
-    <div class="cursor-ring"></div>
+  <!-- Skip to content for keyboard accessibility -->
+  <a href="#about" class="skip-to-content">Skip to main content</a>
 
-    <header class="demo-nav">
-      <div class="demo-logo">Rext</div>
+  <div class="bg-glow bg-glow-1"></div>
+  <div class="bg-glow bg-glow-2"></div>
+
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+
+  <header class="demo-nav" role="banner">
+    <div class="demo-logo" aria-label="Rext — Home">Rext</div>
+    <nav aria-label="Main navigation">
       <ul class="demo-links">
         <li><a href="#about">About</a></li>
         <li><a href="#desain">My Work</a></li>
         <li><a href="#web-projects">Web Projects</a></li>
         <li><a href="#socials">Socials</a></li>
       </ul>
-      <button id="demoToggle" class="demo-toggle" aria-label="Toggle dark mode">
-        <svg id="demoIcon" viewBox="0 0 24 24">
-          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-        </svg>
-      </button>
-    </header>
+    </nav>
+    <button id="demoToggle" class="demo-toggle" aria-label="Toggle dark mode" aria-pressed="false">
+      <svg id="demoIcon" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+      </svg>
+    </button>
+  </header>
 
-    <section class="hero" id="about">
+  <main id="main-content">
+    <section class="hero" id="about" aria-label="Introduction">
       <div class="hero-content">
-        <div class="hero-badge">
-          <span class="hero-badge-dot"></span>
+        <div class="hero-badge" aria-label="Availability status">
+          <span class="hero-badge-dot" aria-hidden="true"></span>
           Open for Projects
         </div>
 
         <h1>Fabian <span class="name-accent">Hendriyansah</span></h1>
 
-        <div class="hero-roles">
-          <span id="typingText"></span><span class="typing-cursor"></span>
+        <div class="hero-roles" aria-live="polite" aria-label="Current role">
+          <span id="typingText"></span><span class="typing-cursor" aria-hidden="true"></span>
         </div>
 
-        <p>
-          Hi, I'm Fabian — or just call me Biyan. An IT student who loves anime,
-          design, reading, and coding. I always open to new ideas and
-          collaborations&nbsp;:)
+        <p class="hero-desc">
+          I craft <strong>clean, fast web experiences</strong> and <strong>stunning visual designs</strong> — combining
+          frontend development with graphic design skills to build things that look great and work well.
         </p>
 
         <div class="hero-ctas">
-          <a href="#web-projects" class="btn-primary">
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
+          <a href="#web-projects" class="btn-primary" id="cta-projects">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <polyline points="16 18 22 12 16 6"></polyline>
               <polyline points="8 6 2 12 8 18"></polyline>
             </svg>
-            Web Projects
+            View Web Projects
           </a>
-          <a href="#desain" class="btn-outline">
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2.5"
-            >
+          <a href="#desain" class="btn-outline" id="cta-design">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              aria-hidden="true">
               <rect x="3" y="3" width="7" height="7" rx="1" />
               <rect x="14" y="3" width="7" height="7" rx="1" />
               <rect x="14" y="14" width="7" height="7" rx="1" />
@@ -92,55 +81,43 @@
             </svg>
             Design Work
           </a>
-          <a href="#socials" class="btn-outline">
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2.5"
-            >
-              <path
-                d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
-              />
+          <a href="#socials" class="btn-outline" id="cta-contact">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              aria-hidden="true">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
             </svg>
             Get in Touch
           </a>
         </div>
+
+
       </div>
 
-      <div class="hero-scroll">
+      <div class="hero-scroll" aria-hidden="true">
         <div class="scroll-line"></div>
         scroll
       </div>
     </section>
 
-    <section class="section" id="desain">
-      <h2><span>My Work</span></h2>
-      <div id="desain-gallery" class="gallery-grid"></div>
+    <section class="section" id="desain" aria-labelledby="desain-heading">
+      <h2 id="desain-heading"><span>My Work</span></h2>
+      <p class="section-desc">Graphic design projects — click any image to preview</p>
+      <div id="desain-gallery" class="gallery-grid" role="list" aria-label="Design portfolio gallery"></div>
     </section>
 
-    <section class="section" id="web-projects">
-      <h2><span>Web Projects</span></h2>
+    <section class="section" id="web-projects" aria-labelledby="web-heading">
+      <h2 id="web-heading"><span>Web Projects</span></h2>
+      <p class="section-desc">Frontend projects built with real APIs and modern web tech</p>
       <div class="web-projects-grid">
         <!-- Card 1: Weather App -->
         <div class="project-card">
           <div class="project-card-cover project-cover-weather">
             <div class="project-icon-badge">
-              <svg
-                class="project-card-cover-icon"
-                viewBox="-2 -2 28 28"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
+              <svg class="project-card-cover-icon" viewBox="-2 -2 28 28" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="12" cy="12" r="4" />
                 <path
-                  d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"
-                />
+                  d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
               </svg>
             </div>
           </div>
@@ -156,43 +133,19 @@
               weather APIs, complete with custom search and rich visualizations.
             </p>
             <div class="project-links">
-              <a
-                href="https://github.com/Rextt1122/Weather"
-                target="_blank"
-                class="project-link"
-                aria-label="View source code on GitHub"
-              >
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                >
+              <a href="https://github.com/Rextt1122/Weather" target="_blank" class="project-link"
+                aria-label="View source code on GitHub">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <path
-                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
-                  ></path>
+                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                  </path>
                 </svg>
                 GitHub
               </a>
-              <a
-                href="https://rextt1122.github.io/Weather/"
-                target="_blank"
-                class="project-link demo"
-                aria-label="View live demo"
-              >
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                >
-                  <path
-                    d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
-                  ></path>
+              <a href="https://rextt1122.github.io/Weather/" target="_blank" class="project-link demo"
+                aria-label="View live demo">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
                   <polyline points="15 3 21 3 21 9"></polyline>
                   <line x1="10" y1="14" x2="21" y2="3"></line>
                 </svg>
@@ -204,112 +157,72 @@
       </div>
     </section>
 
-    <section class="section socials-section" id="socials">
-      <h2><span>Contact & Links</span></h2>
-      <div class="socials-grid">
-        <a
-          href="https://www.facebook.com/yan.226312/"
-          target="_blank"
-          class="social-card fb"
-        >
-          <div class="social-card-icon">
-            <div class="icon-bg">
-              <img
-                src="https://cdn.simpleicons.org/facebook/white"
-                alt="Facebook"
-                width="28"
-                height="28"
-              />
-            </div>
+  </main>
+  <section class="section socials-section" id="socials" aria-labelledby="socials-heading">
+    <h2 id="socials-heading"><span>Contact & Links</span></h2>
+    <p class="section-desc">Let's connect — find me on these platforms</p>
+    <div class="socials-grid">
+      <a href="https://www.facebook.com/yan.226312/" target="_blank" class="social-card fb">
+        <div class="social-card-icon">
+          <div class="icon-bg">
+            <img src="https://cdn.simpleicons.org/facebook/white" alt="Facebook" width="28" height="28" />
           </div>
-          <span>Facebook</span>
-        </a>
-        <a
-          href="https://www.instagram.com/fabiyaan_/"
-          target="_blank"
-          class="social-card ig"
-        >
-          <div class="social-card-icon">
-            <div class="icon-bg">
-              <img
-                src="https://cdn.simpleicons.org/instagram/white"
-                alt="Instagram"
-                width="28"
-                height="28"
-              />
-            </div>
+        </div>
+        <span>Facebook</span>
+      </a>
+      <a href="https://www.instagram.com/fabiyaan_/" target="_blank" class="social-card ig">
+        <div class="social-card-icon">
+          <div class="icon-bg">
+            <img src="https://cdn.simpleicons.org/instagram/white" alt="Instagram" width="28" height="28" />
           </div>
-          <span>Instagram</span>
-        </a>
-        <a
-          href="mailto:fabianhendriyansahbusiness@gmail.com"
-          class="social-card gm"
-        >
-          <div class="social-card-icon">
-            <div class="icon-bg">
-              <img
-                src="https://cdn.simpleicons.org/gmail/white"
-                alt="Gmail"
-                width="28"
-                height="28"
-              />
-            </div>
+        </div>
+        <span>Instagram</span>
+      </a>
+      <a href="mailto:fabianhendriyansahbusiness@gmail.com" class="social-card gm">
+        <div class="social-card-icon">
+          <div class="icon-bg">
+            <img src="https://cdn.simpleicons.org/gmail/white" alt="Gmail" width="28" height="28" />
           </div>
-          <span>Gmail</span>
-        </a>
-        <a
-          href="https://github.com/Rextt1122"
-          target="_blank"
-          class="social-card gh"
-        >
-          <div class="social-card-icon">
-            <div class="icon-bg">
-              <img
-                src="https://cdn.simpleicons.org/github/white"
-                alt="GitHub"
-                width="28"
-                height="28"
-              />
-            </div>
+        </div>
+        <span>Gmail</span>
+      </a>
+      <a href="https://github.com/Rextt1122" target="_blank" class="social-card gh">
+        <div class="social-card-icon">
+          <div class="icon-bg">
+            <img src="https://cdn.simpleicons.org/github/white" alt="GitHub" width="28" height="28" />
           </div>
-          <span>GitHub</span>
-        </a>
-        <a
-          href="https://discordapp.com/users/1278267292781903883"
-          target="_blank"
-          class="social-card dc"
-        >
-          <div class="social-card-icon">
-            <div class="icon-bg">
-              <img
-                src="https://cdn.simpleicons.org/discord/white"
-                alt="Discord"
-                width="28"
-                height="28"
-              />
-            </div>
+        </div>
+        <span>GitHub</span>
+      </a>
+      <a href="https://discordapp.com/users/1278267292781903883" target="_blank" class="social-card dc">
+        <div class="social-card-icon">
+          <div class="icon-bg">
+            <img src="https://cdn.simpleicons.org/discord/white" alt="Discord" width="28" height="28" />
           </div>
-          <span>Discord</span>
-        </a>
-      </div>
-    </section>
+        </div>
+        <span>Discord</span>
+      </a>
+    </div>
+  </section>
 
-    <footer class="footer">
-      <div class="footer-content">
-        <h3>Rext</h3>
-        <p>IT Student · Frontend Developer · Graphic Designer</p>
-      </div>
-      <div class="footer-bottom">
-        <p>© 2025 Fabian Hendriyansah</p>
-      </div>
-    </footer>
+  <footer class="footer" role="contentinfo">
+    <div class="footer-content">
+      <h3>Rext</h3>
+      <p>IT Student · Frontend Developer · Graphic Designer</p>
+      <p class="footer-tagline">Building things that look great and work well.</p>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Fabian Hendriyansah · Made with love</p>
+    </div>
+  </footer>
 
-    <button class="back-to-top" id="backToTop" aria-label="Back to top">
-      <svg viewBox="0 0 24 24">
-        <polyline points="18 15 12 9 6 15" />
-      </svg>
-    </button>
+  <button class="back-to-top" id="backToTop" aria-label="Scroll back to top">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <polyline points="18 15 12 9 6 15" />
+    </svg>
+  </button>
 
-    <script src="script.js"></script>
-  </body>
+  <script src="script.js"></script>
+</body>
+
 </html>
