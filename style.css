@@ -79,10 +79,8 @@ body {
 /* Background Glow Orbs */
 .bg-glow {
   position: fixed;
-  width: 45vw;
-  height: 45vw;
-  min-width: 350px;
-  min-height: 350px;
+  width: 60vw;
+  height: 60vw;
   border-radius: 50%;
   pointer-events: none;
   z-index: 0;
@@ -167,9 +165,15 @@ body {
 }
 
 section {
-  scroll-margin-top: 140px;
+  scroll-margin-top: 100px;
   position: relative;
   z-index: 1;
+}
+
+@media (max-width: 768px) {
+  section {
+    scroll-margin-top: 80px;
+  }
 }
 
 /* Global focus-visible styles — keyboard accessibility */
@@ -218,14 +222,14 @@ button:focus-visible,
 /* Header Navigation Pill */
 .demo-nav {
   position: fixed;
-  top: 20px;
+  top: 12px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 30px;
-  height: 64px;
+  padding: 0 20px;
+  height: 56px;
   width: min(94%, 1150px);
   background: rgba(240, 244, 255, 0.6);
   backdrop-filter: blur(12px);
@@ -234,6 +238,14 @@ button:focus-visible,
   border: 1px solid rgba(14, 165, 233, 0.2);
   z-index: 999;
   transition: background 0.3s, box-shadow 0.3s, border-color 0.3s;
+}
+
+@media (min-width: 769px) {
+  .demo-nav {
+    top: 20px;
+    padding: 0 30px;
+    height: 64px;
+  }
 }
 
 .dark .demo-nav {
@@ -308,6 +320,10 @@ button:focus-visible,
   .demo-links {
     display: none;
   }
+
+  .demo-logo {
+    font-size: 18px;
+  }
 }
 
 /* Hero Section */
@@ -320,9 +336,15 @@ button:focus-visible,
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 120px 24px 80px;
+  padding: 100px 20px 80px;
   margin: 0 auto;
   overflow: hidden;
+}
+
+@media (min-width: 769px) {
+  .hero {
+    padding: 120px 24px 80px;
+  }
 }
 
 .hero-content {
@@ -360,15 +382,23 @@ button:focus-visible,
 }
 
 .hero h1 {
-  font-size: clamp(48px, 7vw, 80px);
+  font-size: clamp(36px, 10vw, 80px);
   font-weight: 800;
-  line-height: 1.05;
+  line-height: 1.1;
   margin: 0 0 8px;
-  letter-spacing: -2px;
+  letter-spacing: -1px;
   max-width: 960px;
+  width: 100%;
   opacity: 0;
   transform: translateY(16px);
   animation: slideUp 0.8s 0.2s ease forwards;
+}
+
+@media (min-width: 480px) {
+  .hero h1 {
+    font-size: clamp(42px, 8vw, 80px);
+    letter-spacing: -2px;
+  }
 }
 
 .hero h1 .name-accent {
@@ -380,7 +410,7 @@ button:focus-visible,
 }
 
 .hero-roles {
-  font-size: clamp(15px, 2vw, 20px);
+  font-size: clamp(14px, 4vw, 20px);
   font-weight: 600;
   /* Dark enough for WCAG AA on white background: #1e40af = 7.5:1 contrast */
   color: #1e40af;
@@ -407,10 +437,11 @@ button:focus-visible,
 
 .hero p,
 .hero .hero-desc {
-  font-size: clamp(14px, 1.6vw, 16px);
+  font-size: clamp(13px, 3.5vw, 16px);
   line-height: 1.8;
   color: var(--text-secondary);
   max-width: 580px;
+  width: 100%;
   margin: 0 0 36px;
   opacity: 0;
   transform: translateY(16px);
@@ -437,9 +468,9 @@ button:focus-visible,
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 14px 32px;
+  padding: 12px 24px;
   font-family: inherit;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 700;
   color: #fff;
   background: linear-gradient(135deg, #0ea5e9, #2563eb);
@@ -450,6 +481,14 @@ button:focus-visible,
   transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
   box-shadow: 0 8px 28px rgba(14, 165, 233, 0.45);
   letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+
+@media (min-width: 480px) {
+  .btn-primary {
+    padding: 14px 32px;
+    font-size: 15px;
+  }
 }
 
 .btn-primary:hover {
@@ -467,9 +506,9 @@ button:focus-visible,
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 13px 28px;
+  padding: 11px 22px;
   font-family: inherit;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 600;
   color: var(--text);
   background: transparent;
@@ -477,7 +516,15 @@ button:focus-visible,
   border-radius: 999px;
   cursor: pointer;
   text-decoration: none;
+  white-space: nowrap;
   transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+@media (min-width: 480px) {
+  .btn-outline {
+    padding: 13px 28px;
+    font-size: 15px;
+  }
 }
 
 .btn-outline:hover {
@@ -629,18 +676,19 @@ button:focus-visible,
 
 @media (max-width: 600px) {
   .hero {
-    padding: 100px 20px 80px;
+    padding: 90px 16px 70px;
   }
 
   .hero-ctas {
     flex-direction: column;
     align-items: center;
+    gap: 10px;
   }
 
   .btn-primary,
   .btn-outline {
     width: 100%;
-    max-width: 300px;
+    max-width: 280px;
     justify-content: center;
   }
 
@@ -654,6 +702,34 @@ button:focus-visible,
 
   .hero-stat-divider {
     display: none;
+  }
+}
+
+/* Extra-small screens (< 380px) — very small Android phones */
+@media (max-width: 380px) {
+  .hero {
+    padding: 80px 14px 60px;
+  }
+
+  .hero h1 {
+    font-size: clamp(30px, 9vw, 40px);
+    letter-spacing: -0.5px;
+  }
+
+  .hero-badge {
+    font-size: 11px;
+    padding: 4px 10px;
+  }
+
+  .btn-primary,
+  .btn-outline {
+    max-width: 100%;
+    font-size: 13px;
+  }
+
+  .section {
+    padding: 0 14px;
+    margin: 60px auto 30px;
   }
 }
 
@@ -1012,7 +1088,12 @@ button:focus-visible,
 
 @media (max-width: 900px) {
   .hero {
-    padding: 40px 18px;
+    padding: 90px 20px 70px;
+  }
+
+  .section {
+    margin: 60px auto 30px;
+    padding: 0 20px;
   }
 }
 
