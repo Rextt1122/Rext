@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const moonPath = `<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>`;
 
   function syncTheme() {
-    // Default ke dark mode saat pertama kunjungi (jika belum ada preferensi)
+    // seed localStorage on first load — default: dark; subsequent visits read stored value
     const stored = localStorage.getItem("theme");
     if (!stored) {
       localStorage.setItem("theme", "dark");
@@ -124,7 +124,7 @@ document.addEventListener("DOMContentLoaded", () => {
             item.style.transitionDelay = `${i * delayMs}ms`;
             item.classList.add("visible");
           });
-          // Stop observing once animated in to improve scroll performance on desktop & mobile
+          // unobserve after first intersection — avoids redundant callback overhead on scroll
           observer.unobserve(triggerElement);
         }
       });
@@ -143,17 +143,17 @@ document.addEventListener("DOMContentLoaded", () => {
       gallery.appendChild(item);
     });
 
-    // Observe gallery items
+    // staggered IntersectionObserver — threshold 0.05 triggers early to hide initial paint flash
     observeStaggeredEntrance(gallery, gallery.querySelectorAll(".gallery-item"), 80, 0.05);
   }
 
-  // Observe Web Projects
+  // .project-card — threshold 0.10; 120ms stagger between cards
   const webProjectsGrid = document.querySelector(".web-projects-grid");
   if (webProjectsGrid) {
     observeStaggeredEntrance(webProjectsGrid, document.querySelectorAll(".project-card"), 120, 0.10);
   }
 
-  // Observe Social Cards
+  // .social-card — threshold 0.15; 100ms stagger
   const socialGrid = document.querySelector(".socials-grid");
   const socialCards = document.querySelectorAll(".social-card");
   if (socialGrid && socialCards.length) {
@@ -169,7 +169,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Smooth scroll untuk semua anchor link dengan kompensasi navbar
+  // anchor scroll — manual scrollTo overrides native behavior to compensate fixed nav height
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", (e) => {
       const targetId = anchor.getAttribute("href");

@@ -25,7 +25,7 @@
 
 html {
   scroll-behavior: smooth;
-  /* Kompensasi navbar fixed agar section tidak tertutup saat di-scroll */
+  /* offset fixed nav (56–64px) + 16px breathing room */
   scroll-padding-top: 80px;
 }
 
@@ -35,7 +35,7 @@ html {
   }
 }
 
-/* Skip to content — keyboard accessibility */
+/* .skip-to-content — off-screen by default; revealed on :focus via top transition */
 .skip-to-content {
   position: fixed;
   top: -100%;
@@ -79,14 +79,14 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
-  /* Momentum scrolling di iOS */
+  /* -webkit-overflow-scrolling: touch — enables inertia/momentum scroll on iOS Safari */
   -webkit-overflow-scrolling: touch;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 
 
-/* Background Glow Orbs */
+/* bg-glow — fixed radial orbs; pointer-events:none keeps them non-interactive */
 .bg-glow {
   position: fixed;
   width: 60vw;
@@ -94,7 +94,7 @@ body {
   border-radius: 50%;
   pointer-events: none;
   z-index: 0;
-  /* Removed filter: blur(140px) to fix extreme lag on mobile */
+  /* filter:blur removed — GPU overdraw causes severe frame drops on low-end mobile */
   opacity: 0.12;
   transition: opacity 0.3s ease;
   will-change: transform;
@@ -162,7 +162,7 @@ body {
   color: var(--text);
 }
 
-/* Section subtitle/description */
+/* .section-desc — muted subtitle; lower opacity on .dark to account for hue contrast loss */
 .section-desc {
   font-size: clamp(13px, 1.5vw, 15px);
   color: var(--text-secondary);
@@ -188,7 +188,7 @@ section {
   }
 }
 
-/* Global focus-visible styles — keyboard accessibility */
+/* :focus-visible — keyboard-only focus ring; suppressed for pointer interactions via UA heuristic */
 a:focus-visible,
 button:focus-visible,
 [role='button']:focus-visible {
@@ -231,7 +231,7 @@ button:focus-visible,
   outline: none;
 }
 
-/* Header Navigation Pill */
+/* .demo-nav — fixed pill nav; backdrop-filter glassmorphism; z-999 below lightbox (99999) */
 .demo-nav {
   position: fixed;
   top: 12px;
@@ -353,7 +353,7 @@ button:focus-visible,
   }
 }
 
-/* Hero Section */
+/* .hero — 100svh full-viewport section; svh avoids mobile browser toolbar offset vs vh */
 .hero {
   position: relative;
   width: 100%;
@@ -439,7 +439,7 @@ button:focus-visible,
 .hero-roles {
   font-size: clamp(14px, 4vw, 20px);
   font-weight: 600;
-  /* Dark enough for WCAG AA on white background: #1e40af = 7.5:1 contrast */
+  /* #1e40af — WCAG AA compliant on white (7.5:1 contrast ratio) */
   color: #1e40af;
   margin: 0 0 20px;
   min-height: 1.6em;
@@ -748,7 +748,7 @@ button:focus-visible,
   }
 }
 
-/* Extra-small screens (< 380px) — very small Android phones */
+/* bp: 380px — targets low-res budget Android (Galaxy A-series, Redmi); base clamp floor too high at this width */
 @media (max-width: 380px) {
   .hero {
     padding: 80px 14px 60px;
@@ -824,7 +824,7 @@ button:focus-visible,
   object-fit: contain;
 }
 
-/* Web Projects Section */
+/* .web-projects-grid — flex wrap centered; cards have max-width 330px acting as implicit column count */
 .web-projects-grid {
   display: flex;
   flex-wrap: wrap;
@@ -927,7 +927,7 @@ button:focus-visible,
   overflow: hidden;
 }
 
-/* Beautiful Premium Gradient Backgrounds for Card Covers */
+/* .project-cover-* — 135deg gradient covers; text color set per variant for icon stroke contrast */
 .project-cover-weather {
   background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);
   color: #2b5c8f;
@@ -943,7 +943,7 @@ button:focus-visible,
   color: #ffffff;
 }
 
-/* Add a subtle overlay texture / glassmorphism to card cover */
+/* ::before overlay — radial highlight at 80% 20% simulates top-right light source on cover */
 .project-card-cover::before {
   content: '';
   position: absolute;
