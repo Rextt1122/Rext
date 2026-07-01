@@ -112,6 +112,7 @@ body {
   0% {
     transform: translate(0, 0) scale(1);
   }
+
   100% {
     transform: translate(-8%, 10%) scale(1.1);
   }
@@ -121,6 +122,7 @@ body {
   0% {
     transform: translate(0, 0) scale(1);
   }
+
   100% {
     transform: translate(10%, -8%) scale(0.9);
   }
@@ -619,10 +621,13 @@ button:focus-visible,
 
 /* Animations */
 @keyframes pulse {
-  0%, 100% {
+
+  0%,
+  100% {
     opacity: 1;
     transform: scale(1);
   }
+
   50% {
     opacity: 0.5;
     transform: scale(0.8);
@@ -630,9 +635,12 @@ button:focus-visible,
 }
 
 @keyframes blink {
-  0%, 100% {
+
+  0%,
+  100% {
     opacity: 1;
   }
+
   50% {
     opacity: 0;
   }
@@ -644,16 +652,19 @@ button:focus-visible,
     transform-origin: top;
     opacity: 0;
   }
+
   40% {
     transform: scaleY(1);
     transform-origin: top;
     opacity: 1;
   }
+
   60% {
     transform: scaleY(1);
     transform-origin: bottom;
     opacity: 1;
   }
+
   100% {
     transform: scaleY(0);
     transform-origin: bottom;
@@ -801,10 +812,10 @@ button:focus-visible,
   max-width: 330px;
   margin: 0 auto;
   width: 100%;
-  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
-              transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
-              box-shadow 0.3s ease, 
-              border-color 0.3s ease;
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
 }
 
 .dark .project-card {
@@ -864,7 +875,7 @@ button:focus-visible,
   .project-links {
     padding-top: 12px;
   }
-  
+
   .project-tag {
     font-size: 10px;
     padding: 3px 8px;
@@ -918,10 +929,10 @@ button:focus-visible,
   justify-content: center;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
   z-index: 2;
-  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), 
-              background 0.3s, 
-              border-color 0.3s, 
-              box-shadow 0.3s;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+    background 0.3s,
+    border-color 0.3s,
+    box-shadow 0.3s;
 }
 
 .project-card:hover .project-icon-badge {
@@ -1186,10 +1197,25 @@ button:focus-visible,
 
 .socials-grid {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: center;
+  align-items: flex-start;
   gap: 24px;
   margin-top: 30px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 16px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .socials-grid {
+    max-width: 100%;
+    width: 100%;
+    gap: clamp(6px, 2.5vw, 16px);
+    padding: 0 12px;
+  }
 }
 
 .social-card {
@@ -1270,6 +1296,8 @@ button:focus-visible,
   font-size: 12px;
   font-weight: 500;
   opacity: 0.75;
+  text-align: center;
+  white-space: nowrap;
   transition: opacity 0.25s ease;
 }
 
@@ -1413,12 +1441,26 @@ button:focus-visible,
   cursor: auto !important;
 }
 
-a, button, [role='button'], .social-card, .gallery-item, .btn-primary, .btn-outline {
+a,
+button,
+[role='button'],
+.social-card,
+.gallery-item,
+.btn-primary,
+.btn-outline {
   cursor: pointer !important;
   user-select: none;
 }
 
-p, span, h1, h2, h3, h4, h5, h6, li {
+p,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+li {
   user-select: text;
 }
 
@@ -1453,20 +1495,49 @@ p, span, h1, h2, h3, h4, h5, h6, li {
     display: none;
   }
 
+  .socials-grid {
+    max-width: 100%;
+    width: 100%;
+    padding: 0 12px;
+    gap: clamp(6px, 2.5vw, 16px);
+  }
+
+  .social-card {
+    flex: 1;
+    min-width: 0;
+    gap: 6px;
+  }
+
   .social-card-icon {
-    width: 52px;
-    height: 52px;
-    border-radius: 14px;
+    width: clamp(40px, 11vw, 60px);
+    height: clamp(40px, 11vw, 60px);
+    border-radius: clamp(10px, 2.5vw, 16px);
   }
 
   .icon-bg {
-    width: 34px;
-    height: 34px;
-    border-radius: 8px;
+    width: clamp(30px, 9vw, 44px);
+    height: clamp(30px, 9vw, 44px);
+    border-radius: clamp(7px, 2vw, 10px);
   }
 
   .social-card-icon img {
-    width: 16px;
-    height: 16px;
+    width: clamp(14px, 4.5vw, 24px);
+    height: clamp(14px, 4.5vw, 24px);
+  }
+
+  .social-card span {
+    font-size: clamp(9px, 2.2vw, 12px);
+  }
+}
+
+/* Very small phones — make sure 5 icons still fit in one row */
+@media (max-width: 380px) {
+  .socials-grid {
+    padding: 0 8px;
+    gap: 4px;
+  }
+
+  .social-card span {
+    font-size: 8px;
   }
 }
