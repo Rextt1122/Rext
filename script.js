@@ -163,11 +163,26 @@ document.addEventListener("DOMContentLoaded", () => {
   if (backToTop) {
     window.addEventListener("scroll", () => {
       backToTop.classList.toggle("visible", window.scrollY > 300);
-    });
+    }, { passive: true });
     backToTop.addEventListener("click", () => {
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
   }
+
+  // Smooth scroll untuk semua anchor link dengan kompensasi navbar
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", (e) => {
+      const targetId = anchor.getAttribute("href");
+      if (!targetId || targetId === "#") return;
+      const target = document.querySelector(targetId);
+      if (!target) return;
+      e.preventDefault();
+      const navHeight = document.querySelector(".demo-nav")?.offsetHeight ?? 70;
+      const offset = navHeight + 16;
+      const top = target.getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({ top, behavior: "smooth" });
+    });
+  });
 
   const dot = document.querySelector(".cursor-dot");
   const ring = document.querySelector(".cursor-ring");
