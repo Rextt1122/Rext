@@ -9,7 +9,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const moonPath = `<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>`;
 
   function syncTheme() {
-    const isDark = localStorage.getItem("theme") === "dark";
+    // Default ke dark mode saat pertama kunjungi (jika belum ada preferensi)
+    const stored = localStorage.getItem("theme");
+    if (!stored) {
+      localStorage.setItem("theme", "dark");
+    }
+    const isDark = localStorage.getItem("theme") !== "light";
     document.body.classList.toggle("dark", isDark);
     if (demoIcon) demoIcon.innerHTML = isDark ? sunPath : moonPath;
     if (demoToggle) demoToggle.setAttribute("aria-pressed", isDark ? "true" : "false");
