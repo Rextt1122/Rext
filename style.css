@@ -164,12 +164,14 @@ body {
 
 /* .section-desc — muted subtitle; lower opacity on .dark to account for hue contrast loss */
 .section-desc {
-  font-size: clamp(13px, 1.5vw, 15px);
+  font-size: clamp(14px, 1.5vw, 16px);
+  font-weight: 400;
+  letter-spacing: 0.5px;
   color: var(--text-secondary);
-  opacity: 0.75;
+  opacity: 0.8;
   margin: 0 auto 32px;
-  max-width: 480px;
-  line-height: 1.6;
+  max-width: 520px;
+  line-height: 1.7;
 }
 
 .dark .section-desc {
@@ -437,8 +439,9 @@ button:focus-visible,
 }
 
 .hero-roles {
-  font-size: clamp(14px, 4vw, 20px);
-  font-weight: 600;
+  font-size: clamp(15px, 4vw, 22px);
+  font-weight: 500;
+  letter-spacing: 0.5px;
   /* #1e40af — WCAG AA compliant on white (7.5:1 contrast ratio) */
   color: #1e40af;
   margin: 0 0 20px;
@@ -464,8 +467,9 @@ button:focus-visible,
 
 .hero p,
 .hero .hero-desc {
-  font-size: clamp(13px, 3.5vw, 16px);
-  line-height: 1.8;
+  font-size: clamp(14px, 3.5vw, 17px);
+  line-height: 1.85;
+  letter-spacing: 0.4px;
   color: var(--text-secondary);
   max-width: 580px;
   width: 100%;
