@@ -805,25 +805,29 @@ button:focus-visible,
 
 @media (max-width: 900px) {
   .gallery-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    grid-template-columns: repeat(2, 1fr);
   }
-  
-  .gallery-item {
-    width: calc(33.333% - 17.333px); /* 3 columns on tablets */
+
+  .gallery-item:nth-child(odd):last-child {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: calc(50% - 13px); /* Match column width with 26px gap */
   }
 }
 
 @media (max-width: 600px) {
   .gallery-grid {
-    gap: 12px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
     margin-top: 20px;
   }
 
   .gallery-item {
-    width: calc(50% - 6px); /* 2 columns on mobile */
     border-radius: 12px;
+  }
+
+  .gallery-item:nth-child(odd):last-child {
+    width: calc(50% - 8px); /* Match column width with 16px gap */
   }
 }
 
