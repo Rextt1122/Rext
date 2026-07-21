@@ -911,6 +911,7 @@ button:focus-visible,
 @media (max-width: 600px) {
   .project-card {
     max-width: 290px;
+    zoom: 0.9;
   }
 
   .project-card-cover {
