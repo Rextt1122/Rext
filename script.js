@@ -33,7 +33,6 @@ document.addEventListener("DOMContentLoaded", () => {
   syncTheme();
 
   const roles = [
-    "IT Student",
     "Frontend Developer",
     "Graphic Designer",
     "Open to Collaborations",
