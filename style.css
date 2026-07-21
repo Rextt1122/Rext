@@ -84,7 +84,55 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+/* Preloader */
+.preloader {
+  position: fixed;
+  inset: 0;
+  background: var(--bg);
+  z-index: 999999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.8s cubic-bezier(0.8, 0, 0.2, 1), visibility 0.8s;
+}
 
+.preloader.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.loader-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.loader-bar {
+  width: 60px;
+  height: 3px;
+  background: rgba(14, 165, 233, 0.2);
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+
+.loader-bar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40%;
+  height: 100%;
+  background: var(--accent);
+  border-radius: 4px;
+  animation: loadingBar 1s infinite ease-in-out;
+}
+
+@keyframes loadingBar {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(300%); }
+}
 
 /* bg-glow — fixed radial orbs; pointer-events:none keeps them non-interactive */
 .bg-glow {

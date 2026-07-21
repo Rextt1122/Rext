@@ -1,4 +1,14 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // Preloader
+  const preloader = document.getElementById("preloader");
+  if (preloader) {
+    window.addEventListener("load", () => {
+      setTimeout(() => {
+        preloader.classList.add("hidden");
+      }, 400); // 400ms delay for smooth experience
+    });
+  }
+
   const demoToggle = document.getElementById("demoToggle");
   const typingEl = document.getElementById("typingText");
   const gallery = document.getElementById("desain-gallery");
