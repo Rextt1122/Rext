@@ -36,6 +36,7 @@ html, body {
   font-family: var(--font-sans);
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 .boot-overlay {
@@ -129,7 +130,7 @@ a {
 }
 
 .header-left h1 {
-  font-size: clamp(3rem, 6vw, 7rem);
+  font-size: clamp(2rem, 8vw, 7rem);
   line-height: 1;
   letter-spacing: -0.04em;
   font-weight: 800;
@@ -138,6 +139,7 @@ a {
   z-index: 2;
   border-left: clamp(4px, 1vw, 8px) solid var(--accent-green);
   padding-left: clamp(12px, 2vw, 24px);
+  word-break: break-word;
 }
 
 
@@ -235,7 +237,7 @@ a {
 .bio {
   padding: 40px;
   font-family: var(--font-mono);
-  font-size: clamp(1rem, 1.1vw, 1.2rem);
+  font-size: clamp(0.9rem, 3.5vw, 1.2rem);
   color: var(--text-primary);
   line-height: 1.6;
 }
@@ -310,6 +312,8 @@ a {
 
 .meta-value {
   text-align: right;
+  word-break: break-word;
+  max-width: 60%;
 }
 
 .header-links {
