@@ -915,7 +915,7 @@ button:focus-visible,
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 32px;
+  gap: 24px;
   margin-top: 40px;
   padding-bottom: 40px;
 }
@@ -930,8 +930,7 @@ button:focus-visible,
   border: 1px solid rgba(14, 165, 233, 0.05);
   opacity: 0;
   transform: translateY(40px);
-  max-width: 330px;
-  margin: 0 auto;
+  max-width: 320px;
   width: 100%;
   will-change: transform, opacity;
   transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
@@ -961,9 +960,30 @@ button:focus-visible,
 }
 
 @media (max-width: 600px) {
+  .web-projects-grid {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow-x: auto;
+    overflow-y: hidden;
+    gap: 16px;
+    padding-bottom: 24px;
+    margin-left: -24px;
+    margin-right: -24px;
+    padding-left: 24px;
+    padding-right: 24px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .web-projects-grid::-webkit-scrollbar {
+    display: none;
+  }
+
   .project-card {
-    max-width: 290px;
-    zoom: 0.9;
+    flex: 0 0 85%;
+    max-width: 280px;
+    scroll-snap-align: center;
   }
 
   .project-card-cover {
@@ -1006,7 +1026,7 @@ button:focus-visible,
 }
 
 .project-card-cover {
-  height: 140px;
+  height: 160px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1018,6 +1038,11 @@ button:focus-visible,
 .project-cover-weather {
   background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);
   color: #2b5c8f;
+}
+
+.project-cover-sign-language {
+  background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%);
+  color: #3b3b98;
 }
 
 .project-cover-dashboard {
@@ -1040,9 +1065,9 @@ button:focus-visible,
 }
 
 .project-icon-badge {
-  width: 60px;
-  height: 60px;
-  border-radius: 16px;
+  width: 54px;
+  height: 54px;
+  border-radius: 14px;
   background: rgba(255, 255, 255, 0.12);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
@@ -1066,8 +1091,8 @@ button:focus-visible,
 }
 
 .project-card-cover-icon {
-  width: 28px;
-  height: 28px;
+  width: 24px;
+  height: 24px;
   z-index: 2;
   transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
   overflow: visible;
@@ -1078,7 +1103,7 @@ button:focus-visible,
 }
 
 .project-card-content {
-  padding: 20px;
+  padding: 14px 16px;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -1089,7 +1114,7 @@ button:focus-visible,
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
 
 .project-tag {
@@ -1108,7 +1133,7 @@ button:focus-visible,
 }
 
 .project-title {
-  font-size: 18px;
+  font-size: 15.5px;
   font-weight: 700;
   margin: 0 0 8px 0;
   color: var(--text);
@@ -1116,10 +1141,10 @@ button:focus-visible,
 }
 
 .project-description {
-  font-size: 12.5px;
-  line-height: 1.6;
+  font-size: 11.5px;
+  line-height: 1.5;
   opacity: 0.8;
-  margin: 0 0 18px 0;
+  margin: 0 0 14px 0;
   color: var(--text);
   flex-grow: 1;
 }
