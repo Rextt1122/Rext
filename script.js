@@ -137,4 +137,35 @@ document.addEventListener("DOMContentLoaded", () => {
 
     setTimeout(typeSys, 2400); // Wait for boot sequence to finish
   }
+
+  // Custom Cursor Logic
+  const cursorDot = document.querySelector('.custom-cursor-dot');
+  const cursorBox = document.querySelector('.custom-cursor-box');
+  
+  if (cursorDot && cursorBox && matchMedia('(pointer: fine)').matches) {
+    let mouseX = window.innerWidth / 2;
+    let mouseY = window.innerHeight / 2;
+    let boxX = mouseX;
+    let boxY = mouseY;
+    
+    document.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      cursorDot.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) translate(-50%, -50%)`;
+    });
+    
+    function animateCursorBox() {
+      boxX += (mouseX - boxX) * 0.2;
+      boxY += (mouseY - boxY) * 0.2;
+      cursorBox.style.transform = `translate3d(${boxX}px, ${boxY}px, 0) translate(-50%, -50%)`;
+      requestAnimationFrame(animateCursorBox);
+    }
+    animateCursorBox();
+    
+    const hoverElements = document.querySelectorAll('a, button, .gallery-item');
+    hoverElements.forEach(el => {
+      el.addEventListener('mouseenter', () => cursorBox.classList.add('hover-active'));
+      el.addEventListener('mouseleave', () => cursorBox.classList.remove('hover-active'));
+    });
+  }
 });
