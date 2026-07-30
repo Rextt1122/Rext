@@ -37,7 +37,7 @@ html, body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
-  max-width: 100vw;
+  max-width: 100%;
 }
 
 .boot-overlay {
@@ -79,7 +79,7 @@ a {
 
 .grid-container {
   width: 100%;
-  max-width: 100vw;
+  max-width: 100%;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -316,7 +316,7 @@ a {
 
 .meta-value {
   text-align: right;
-  word-break: break-word;
+  word-break: break-all;
   overflow-wrap: break-word;
   max-width: 60%;
   flex-shrink: 1;
