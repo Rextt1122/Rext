@@ -38,6 +38,31 @@ html, body {
   -webkit-font-smoothing: antialiased;
 }
 
+.boot-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: var(--text-primary);
+  color: var(--accent-green);
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  font-weight: 700;
+  transition: transform 0.6s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.boot-overlay.hidden {
+  transform: translateY(-100%);
+}
+
+.boot-overlay-text {
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
 ::selection {
   background-color: var(--accent-color);
   color: #fff;

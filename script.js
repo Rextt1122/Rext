@@ -1,4 +1,39 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // Boot Sequence Overlay
+  const bootOverlay = document.getElementById("boot-overlay");
+  const bootText1 = document.getElementById("boot-text-1");
+  const bootText2 = document.getElementById("boot-text-2");
+
+  if (bootOverlay) {
+    const t1 = "[ INITIALIZING CORE SYSTEM_ ]";
+    const t2 = "ACCESS GRANTED.";
+    let i1 = 0, i2 = 0;
+
+    function typeBoot1() {
+      if (i1 < t1.length) {
+        bootText1.innerHTML = t1.substring(0, i1 + 1);
+        i1++;
+        setTimeout(typeBoot1, 30);
+      } else {
+        setTimeout(typeBoot2, 300);
+      }
+    }
+
+    function typeBoot2() {
+      if (i2 < t2.length) {
+        bootText2.innerHTML = t2.substring(0, i2 + 1);
+        i2++;
+        setTimeout(typeBoot2, 30);
+      } else {
+        setTimeout(() => {
+          bootOverlay.classList.add("hidden");
+        }, 600);
+      }
+    }
+
+    setTimeout(typeBoot1, 200);
+  }
+
   // Smooth scroll for header links
   document.querySelectorAll('.header-links a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -73,12 +108,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const intText = "INT.001";
   const sysElement = document.getElementById("type-sys");
   const intElement = document.getElementById("type-int");
-  
+
   if (sysElement && intElement) {
     let sysIndex = 0;
     let intIndex = 0;
     const typeDelay = 40; // fast typing
-    
+
     function typeInt() {
       if (intIndex < intText.length) {
         intElement.innerHTML = intText.substring(0, intIndex + 1) + '<span class="cursor-blink">_</span>';
@@ -88,18 +123,18 @@ document.addEventListener("DOMContentLoaded", () => {
         intElement.innerHTML = intText + '<span class="cursor-blink">_</span>';
       }
     }
-    
+
     function typeSys() {
       if (sysIndex < sysText.length) {
         sysElement.innerHTML = sysText.substring(0, sysIndex + 1) + '<span class="cursor-blink">_</span>';
         sysIndex++;
         setTimeout(typeSys, typeDelay);
       } else {
-        sysElement.innerHTML = sysText; 
+        sysElement.innerHTML = sysText;
         setTimeout(typeInt, typeDelay * 5); // pause before second line
       }
     }
-    
-    setTimeout(typeSys, 400); // initial boot delay
+
+    setTimeout(typeSys, 2400); // Wait for boot sequence to finish
   }
 });
