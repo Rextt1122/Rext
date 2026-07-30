@@ -1,3 +1,7 @@
+// Always scroll to top on reload
+history.scrollRestoration = 'manual';
+window.scrollTo(0, 0);
+
 document.addEventListener("DOMContentLoaded", () => {
   // Boot Sequence Overlay
   const bootOverlay = document.getElementById("boot-overlay");
