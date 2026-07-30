@@ -133,8 +133,11 @@ document.addEventListener("DOMContentLoaded", () => {
             item.style.transitionDelay = `${i * delayMs}ms`;
             item.classList.add("visible");
           });
-          // unobserve after first intersection — avoids redundant callback overhead on scroll
-          observer.unobserve(triggerElement);
+        } else {
+          itemElements.forEach((item) => {
+            item.style.transitionDelay = "0ms";
+            item.classList.remove("visible");
+          });
         }
       });
     }, { threshold });
@@ -152,21 +155,21 @@ document.addEventListener("DOMContentLoaded", () => {
       gallery.appendChild(item);
     });
 
-    // staggered IntersectionObserver — threshold 0.05 triggers early to hide initial paint flash
-    observeStaggeredEntrance(gallery, gallery.querySelectorAll(".gallery-item"), 80, 0.05);
+    // staggered IntersectionObserver
+    observeStaggeredEntrance(gallery, gallery.querySelectorAll(".gallery-item"), 100, 0.10);
   }
 
-  // .project-card — threshold 0.10; 120ms stagger between cards
+  // .project-card
   const webProjectsGrid = document.querySelector(".web-projects-grid");
   if (webProjectsGrid) {
-    observeStaggeredEntrance(webProjectsGrid, document.querySelectorAll(".project-card"), 120, 0.10);
+    observeStaggeredEntrance(webProjectsGrid, document.querySelectorAll(".project-card"), 100, 0.10);
   }
 
-  // .social-card — threshold 0.15; 100ms stagger
+  // .social-card
   const socialGrid = document.querySelector(".socials-grid");
   const socialCards = document.querySelectorAll(".social-card");
   if (socialGrid && socialCards.length) {
-    observeStaggeredEntrance(socialGrid, socialCards, 100, 0.15);
+    observeStaggeredEntrance(socialGrid, socialCards, 100, 0.10);
   }
 
   if (backToTop) {
