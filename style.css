@@ -464,7 +464,7 @@ a {
 
 @media (min-width: 768px) {
   .gallery-grid {
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(6, 1fr);
   }
 }
 
@@ -478,7 +478,7 @@ a {
   padding: 16px;
   cursor: pointer;
   background-color: transparent;
-  transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease, padding 0.2s ease;
 }
 
 
@@ -487,10 +487,13 @@ a {
 }
 
 @media (min-width: 768px) {
+  .gallery-item {
+    padding: 32px;
+  }
   .gallery-item:nth-child(2n) {
     border-right: 1px solid var(--border-color);
   }
-  .gallery-item:nth-child(5n) {
+  .gallery-item:nth-child(6n) {
     border-right: none;
   }
 }
