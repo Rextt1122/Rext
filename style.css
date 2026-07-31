@@ -250,6 +250,12 @@ a {
     padding: 60px;
     font-size: 1.2rem;
   }
+  .bio::before {
+    width: calc(100% + 120px);
+    margin-left: -60px;
+    padding-left: 60px;
+    padding-right: 60px;
+  }
 }
 
 .bio::before {
@@ -260,7 +266,10 @@ a {
   margin-bottom: 24px;
   border-bottom: 1px solid var(--border-color);
   padding-bottom: 8px;
-  width: 100%;
+  width: calc(100% + 80px);
+  margin-left: -40px;
+  padding-left: 40px;
+  padding-right: 40px;
 }
 
 .social-proof {
@@ -672,10 +681,7 @@ a {
 
 .footer-right {
   padding: 16px 2vw;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
+  text-align: center;
 }
 
 @media (min-width: 768px) {
@@ -686,7 +692,7 @@ a {
   }
   .footer-right {
     grid-column: 3 / 4;
-    justify-content: flex-end;
+    text-align: right;
   }
 }
 
@@ -697,6 +703,9 @@ a {
   height: 8px;
   background-color: var(--accent-green);
   animation: blink 1.2s infinite;
+  vertical-align: middle;
+  margin-left: 8px;
+  transform: translateY(-1px);
 }
 
 @keyframes blink {
