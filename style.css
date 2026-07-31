@@ -287,12 +287,12 @@ a {
 
 .bio-meta {
   border-top: 1px solid var(--border-color);
-  padding: 32px 40px;
+  padding: 24px 32px;
   display: flex;
   flex-direction: column;
   gap: 12px;
   font-family: var(--font-mono);
-  font-size: 0.85rem;
+  font-size: 0.75rem;
   color: var(--text-secondary);
 }
 
@@ -306,7 +306,7 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 8px;
+  gap: 16px;
 }
 
 .meta-label {
@@ -316,10 +316,9 @@ a {
 
 .meta-value {
   text-align: right;
-  word-break: break-all;
+  word-break: break-word;
   overflow-wrap: break-word;
-  max-width: 60%;
-  flex-shrink: 1;
+  flex: 1;
 }
 
 .header-links {
