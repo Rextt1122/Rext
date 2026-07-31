@@ -38,7 +38,6 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeout(typeBoot1, 200);
   }
 
-  // Smooth scroll for header links
   document.querySelectorAll('.header-links a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       e.preventDefault();
@@ -105,6 +104,26 @@ document.addEventListener("DOMContentLoaded", () => {
       item.addEventListener("click", () => openLightbox(imgPath));
       gallery.appendChild(item);
     });
+
+    function updateEmptyCells() {
+      gallery.querySelectorAll('.empty-cell').forEach(e => e.remove());
+
+      const cols = window.innerWidth >= 768 ? 6 : 2;
+      const totalItems = desainList.length;
+      const remainder = totalItems % cols;
+
+      if (remainder !== 0) {
+        const emptyCount = cols - remainder;
+        for (let i = 0; i < emptyCount; i++) {
+          const emptyItem = document.createElement("div");
+          emptyItem.className = "gallery-item empty-cell";
+          gallery.appendChild(emptyItem);
+        }
+      }
+    }
+
+    updateEmptyCells();
+    window.addEventListener('resize', updateEmptyCells);
   }
 
   // Typing animation for system ready texts
