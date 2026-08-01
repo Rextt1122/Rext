@@ -160,4 +160,76 @@ document.addEventListener("DOMContentLoaded", () => {
 
     setTimeout(typeSys, 2400); // Wait for boot sequence to finish
   }
+
+  // --- CLI Terminal Easter Egg (Obfuscated) ---
+  const statusIndicator = document.querySelector(".status-indicator");
+  let tInit = false;
+  let tOverlay, tInput, tOutput, tClose;
+
+  function initT() {
+    if (tInit) return;
+    const tHtml = atob("PGRpdiBpZD0idGVybWluYWwtb3ZlcmxheSIgY2xhc3M9ImhpZGRlbiI+PGRpdiBjbGFzcz0idGVybWluYWwtaGVhZGVyIj48c3BhbiBjbGFzcz0idGVybWluYWwtdGl0bGUiPmZhYmlhbkBzeXN0ZW06fjwvc3Bhbj48YnV0dG9uIGlkPSJ0ZXJtaW5hbC1jbG9zZSIgYXJpYS1sYWJlbD0iQ2xvc2UgdGVybWluYWwiPsOXPC9idXR0b24+PC9kaXY+PGRpdiBpZD0idGVybWluYWwtb3V0cHV0Ij48cD5GYWJpYW5PUyAoYykgMjAyNS4gQWxsIHJpZ2h0cyByZXNlcnZlZC48L3A+PHA+VHlwZSA8c3BhbiBzdHlsZT0iY29sb3I6dmFyKC0tYWNjZW50LWNvbG9yKTsiPmhlbHA8L3NwYW4+IGZvciBhIGxpc3Qgb2YgYXZhaWxhYmxlIGNvbW1hbmRzLjwvcD48L2Rpdj48ZGl2IGNsYXNzPSJ0ZXJtaW5hbC1pbnB1dC1saW5lIj48c3BhbiBjbGFzcz0idGVybWluYWwtcHJvbXB0Ij5ndWVzdEBmYWJpYW46fiQ8L3NwYW4+PGlucHV0IHR5cGU9InRleHQiIGlkPSJ0ZXJtaW5hbC1pbnB1dCIgYXV0b2NvbXBsZXRlPSJvZmYiIHNwZWxsY2hlY2s9ImZhbHNlIiBhdXRvZm9jdXM+PC9kaXY+PC9kaXY+");
+    document.body.insertAdjacentHTML('beforeend', tHtml);
+    tOverlay = document.getElementById("terminal-overlay");
+    tInput = document.getElementById("terminal-input");
+    tOutput = document.getElementById("terminal-output");
+    tClose = document.getElementById("terminal-close");
+
+    tClose.addEventListener("click", () => tOverlay.classList.add("hidden"));
+
+    tInput.addEventListener("keydown", function(e) {
+      if (e.key === "Enter") {
+        const cmd = this.value.trim().toLowerCase();
+        this.value = "";
+        if (cmd === "") return;
+        
+        const pLine = (t, c="#fafafa") => {
+          const p = document.createElement("p");
+          p.style.color = c; p.textContent = t;
+          tOutput.appendChild(p);
+          tOutput.scrollTop = tOutput.scrollHeight;
+        };
+
+        pLine(`guest@fabian:~$ ${cmd}`, "var(--accent-color)");
+        
+        // Obfuscated commands evaluation
+        const cmds = {
+          [atob("aGVscA==")]: () => [atob("QXZhaWxhYmxlIGNvbW1hbmRzOg=="), atob("ICB3aG9hbWkgICAtIERpc3BsYXkgaW5mb3JtYXRpb24gYWJvdXQgbWU="), atob("ICBza2lsbHMgICAtIExpc3QgbXkgdGVjaG5pY2FsIHNraWxscw=="), atob("ICBwcm9qZWN0cyAtIFNlZSB3aGF0IEkndmUgYmVlbiB3b3JraW5nIG9u"), atob("ICBjbGVhciAgICAtIENsZWFyIHRlcm1pbmFsIG91dHB1dA=="), atob("ICBleGl0ICAgICAtIENsb3NlIHRoZSB0ZXJtaW5hbA==")],
+          [atob("d2hvYW1p")]: () => [atob("RmFiaWFuIEhlbmRyaXlhbnNhaC4="), atob("Q29tcHV0ZXIgRW5naW5lZXJpbmcgc3R1ZGVudCwgRnJvbnRlbmQgRGV2ZWxvcGVyLCBhbmQgVUkvVVggRGVzaWduZXIu")],
+          [atob("c2tpbGxz")]: () => [atob("UHl0aG9uLCBQSFAsIExhcmF2ZWwsIEphdmFzY3JpcHQsIFRhaWx3aW5kQ1NTLCBGYXN0QVBJLCBEb2NrZXIsIEdpdCwgTXlTUUwsIEZpZ21hLCBBcmR1aW5vLCBGbHV0dGVyLg==")],
+          [atob("cHJvamVjdHM=")]: () => [atob("Q2hlY2sgb3V0IHRoZSBXRUIgUFJPSkVDVFMgc2VjdGlvbiBvbiB0aGlzIHBhZ2Uh"), atob("LSBXZWF0aGVyIEFwcA=="), atob("LSBTaWduIExhbmd1YWdlIFJlY29nbml0aW9u"), atob("LSBJbWFnZSBVcHNjYWxlcg=="), atob("LSBKYW1rb3Q=")],
+          [atob("c3Vkbw==")]: () => [atob("TmljZSB0cnkuIFlvdSBhcmUgbm90IGluIHRoZSBzdWRvZXJzIGZpbGUuIFRoaXMgaW5jaWRlbnQgd2lsbCBiZSByZXBvcnRlZC4=")],
+          [atob("Y2xlYXI=")]: () => { tOutput.innerHTML = ""; return null; },
+          [atob("ZXhpdA==")]: () => { tOverlay.classList.add("hidden"); return null; }
+        };
+
+        if (cmds[cmd]) {
+          const res = cmds[cmd]();
+          if (res) res.forEach(r => pLine(r));
+        } else {
+          pLine(atob("YmFzaDog") + cmd + atob("OiBjb21tYW5kIG5vdCBmb3VuZA=="));
+        }
+      }
+    });
+    tInit = true;
+  }
+
+  function togT() {
+    if (!tInit) initT();
+    if (tOverlay.classList.contains("hidden")) {
+      tOverlay.classList.remove("hidden");
+      setTimeout(() => tInput.focus(), 300);
+    } else {
+      tOverlay.classList.add("hidden");
+      tInput.blur();
+    }
+  }
+
+  if (statusIndicator) statusIndicator.addEventListener("click", togT);
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "`" || e.key === "~" || (e.ctrlKey && e.key === "`")) {
+      e.preventDefault();
+      togT();
+    }
+  });
 });

@@ -925,3 +925,93 @@ a {
     right: 2vw;
   }
 }
+
+/* CLI Terminal Easter Egg */
+#terminal-overlay {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50vh;
+  background-color: rgba(10, 10, 10, 0.95);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid var(--accent-color);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-mono);
+  color: #fafafa;
+  transform: translateY(100%);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 -10px 30px rgba(0,0,0,0.5);
+}
+
+#terminal-overlay:not(.hidden) {
+  transform: translateY(0);
+}
+
+.terminal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 16px;
+  background-color: var(--accent-color);
+  color: #000;
+  font-weight: bold;
+  font-size: 0.85rem;
+}
+
+#terminal-close {
+  background: none;
+  border: none;
+  color: #000;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#terminal-output {
+  flex-grow: 1;
+  padding: 16px;
+  overflow-y: auto;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+#terminal-output p {
+  margin: 0 0 8px 0;
+}
+
+.terminal-input-line {
+  display: flex;
+  padding: 16px;
+  background-color: rgba(0,0,0,0.5);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  align-items: center;
+}
+
+.terminal-prompt {
+  color: var(--accent-color);
+  margin-right: 8px;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+#terminal-input {
+  flex-grow: 1;
+  background: transparent;
+  border: none;
+  color: #fafafa;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  outline: none;
+}
+
+.status-indicator {
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.status-indicator:hover {
+  color: var(--accent-color);
+}
