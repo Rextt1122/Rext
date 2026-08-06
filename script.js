@@ -3,42 +3,7 @@ history.scrollRestoration = 'manual';
 window.scrollTo(0, 0);
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Boot Sequence Overlay
-  const bootOverlay = document.getElementById("boot-overlay");
-  const bootText1 = document.getElementById("boot-text-1");
-  const bootText2 = document.getElementById("boot-text-2");
-
-  if (bootOverlay) {
-    const t1 = "[ INITIALIZING CORE SYSTEM_ ]";
-    const t2 = "ACCESS GRANTED.";
-    let i1 = 0, i2 = 0;
-
-    function typeBoot1() {
-      if (i1 < t1.length) {
-        bootText1.innerHTML = t1.substring(0, i1 + 1);
-        i1++;
-        setTimeout(typeBoot1, 30);
-      } else {
-        setTimeout(typeBoot2, 300);
-      }
-    }
-
-    function typeBoot2() {
-      if (i2 < t2.length) {
-        bootText2.innerHTML = t2.substring(0, i2 + 1);
-        i2++;
-        setTimeout(typeBoot2, 30);
-      } else {
-        setTimeout(() => {
-          bootOverlay.classList.add("hidden");
-        }, 600);
-      }
-    }
-
-    setTimeout(typeBoot1, 200);
-  }
-
-  document.querySelectorAll('.header-links a[href^="#"]').forEach(anchor => {
+  document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       e.preventDefault();
       const target = document.querySelector(this.getAttribute('href'));
@@ -49,6 +14,39 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
+
+  // --- Mobile Menu Toggle ---
+  const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const mobileLinks = document.querySelectorAll(".mobile-link");
+
+  if (mobileMenuBtn && mobileMenu) {
+    mobileMenuBtn.addEventListener("click", () => {
+      const isClosed = mobileMenu.classList.contains("-translate-y-full");
+      if (isClosed) {
+        mobileMenu.classList.remove("-translate-y-full");
+        mobileMenuBtn.innerHTML = '<span class="text-[9px] tracking-widest font-bold">CLOSE ↑</span>';
+      } else {
+        mobileMenu.classList.add("-translate-y-full");
+        mobileMenuBtn.innerHTML = '<span class="text-[9px] tracking-widest font-bold">MENU ↓</span>';
+      }
+    });
+
+    mobileLinks.forEach(link => {
+      link.addEventListener("click", function(e) {
+        e.preventDefault();
+        mobileMenu.classList.add("-translate-y-full");
+        mobileMenuBtn.innerHTML = '<span class="text-[9px] tracking-widest font-bold">MENU ↓</span>';
+        
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          setTimeout(() => {
+            target.scrollIntoView({ behavior: 'smooth' });
+          }, 300); // Wait for menu to slide up before scrolling
+        }
+      });
+    });
+  }
 
   // Populate Design Gallery
   const gallery = document.getElementById("desain-gallery");
@@ -158,7 +156,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
 
-    setTimeout(typeSys, 2400); // Wait for boot sequence to finish
+    setTimeout(typeSys, 500); // Start typing immediately
   }
 
   // --- CLI Terminal Easter Egg (Obfuscated) ---
@@ -177,13 +175,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     tClose.addEventListener("click", () => tOverlay.classList.add("hidden"));
 
-    tInput.addEventListener("keydown", function(e) {
+    tInput.addEventListener("keydown", function (e) {
       if (e.key === "Enter") {
         const cmd = this.value.trim().toLowerCase();
         this.value = "";
         if (cmd === "") return;
-        
-        const pLine = (t, c="#fafafa") => {
+
+        const pLine = (t, c = "#fafafa") => {
           const p = document.createElement("p");
           p.style.color = c; p.textContent = t;
           tOutput.appendChild(p);
@@ -191,7 +189,7 @@ document.addEventListener("DOMContentLoaded", () => {
         };
 
         pLine(`guest@fabian:~$ ${cmd}`, "var(--accent-color)");
-        
+
         // Obfuscated commands evaluation
         const cmds = {
           [atob("aGVscA==")]: () => [atob("QXZhaWxhYmxlIGNvbW1hbmRzOg=="), atob("ICB3aG9hbWkgICAtIERpc3BsYXkgaW5mb3JtYXRpb24gYWJvdXQgbWU="), atob("ICBza2lsbHMgICAtIExpc3QgbXkgdGVjaG5pY2FsIHNraWxscw=="), atob("ICBwcm9qZWN0cyAtIFNlZSB3aGF0IEkndmUgYmVlbiB3b3JraW5nIG9u"), atob("ICBjbGVhciAgICAtIENsZWFyIHRlcm1pbmFsIG91dHB1dA=="), atob("ICBleGl0ICAgICAtIENsb3NlIHRoZSB0ZXJtaW5hbA==")],
