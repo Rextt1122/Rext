@@ -60,24 +60,65 @@ document.addEventListener("DOMContentLoaded", () => {
     "YoRHa No.2 Type B",
   ];
 
+  // ── Lightbox ──────────────────────────────────────────────────
+  let currentIndex = 0;
+
   const lightbox = document.createElement("div");
   lightbox.className = "lightbox";
+  lightbox.setAttribute("role", "dialog");
+  lightbox.setAttribute("aria-modal", "true");
   lightbox.innerHTML = `
-    <div class="lightbox-content">
-      <button class="lightbox-close" aria-label="Close preview">×</button>
-      <img class="lightbox-img" src="" alt="preview">
+    <div class="lightbox-outer">
+      <button class="lightbox-nav" id="lb-prev" aria-label="Previous image">&#8592;</button>
+      <div class="lightbox-content">
+        <div class="lightbox-topbar">
+          <div class="lightbox-label">
+            <span class="lb-prefix">IMG.PREVIEW_</span><span id="lb-name"></span>
+          </div>
+          <div class="lightbox-counter" id="lb-counter">1 / ${desainList.length}</div>
+          <button class="lightbox-close" aria-label="Close preview">&times;</button>
+        </div>
+        <div class="lightbox-img-wrap">
+          <img class="lightbox-img" id="lb-img" src="" alt="preview">
+        </div>
+        <div class="lightbox-bottombar">ESC / CLICK OUTSIDE TO CLOSE &nbsp;&bull;&nbsp; &#8592; &#8594; TO NAVIGATE</div>
+        <div class="lightbox-swipe-hint">&#8592;&nbsp; SWIPE TO NAVIGATE &nbsp;&#8594;</div>
+      </div>
+      <button class="lightbox-nav" id="lb-next" aria-label="Next image">&#8594;</button>
     </div>
   `;
   document.body.appendChild(lightbox);
 
-  const lightboxImg = lightbox.querySelector(".lightbox-img");
-  const lightboxClose = lightbox.querySelector(".lightbox-close");
+  const lbImg     = document.getElementById("lb-img");
+  const lbName    = document.getElementById("lb-name");
+  const lbCounter = document.getElementById("lb-counter");
+  const lbPrev    = document.getElementById("lb-prev");
+  const lbNext    = document.getElementById("lb-next");
+  const lbClose   = lightbox.querySelector(".lightbox-close");
 
-  function openLightbox(src) {
-    if (!lightboxImg) return;
-    lightboxImg.src = src;
+  function updateNav() {
+    lbCounter.textContent = `${currentIndex + 1} / ${desainList.length}`;
+    lbName.textContent    = desainList[currentIndex].toUpperCase();
+    lbPrev.disabled = currentIndex === 0;
+    lbNext.disabled = currentIndex === desainList.length - 1;
+  }
+
+  function showImage(index) {
+    currentIndex = Math.max(0, Math.min(index, desainList.length - 1));
+    lbImg.classList.add("loading");
+    lbImg.src = `img/${desainList[currentIndex]}.webp`;
+    lbImg.alt = desainList[currentIndex];
+    updateNav();
+  }
+
+  lbImg.addEventListener("load",  () => lbImg.classList.remove("loading"));
+  lbImg.addEventListener("error", () => lbImg.classList.remove("loading"));
+
+  function openLightbox(index) {
+    showImage(index);
     lightbox.classList.add("active");
     document.body.style.overflow = "hidden";
+    lbClose.focus();
   }
 
   function closeLightbox() {
@@ -85,21 +126,46 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.style.overflow = "";
   }
 
-  if (lightboxClose) lightboxClose.addEventListener("click", closeLightbox);
+  lbClose.addEventListener("click", closeLightbox);
+  lbPrev.addEventListener("click",  () => showImage(currentIndex - 1));
+  lbNext.addEventListener("click",  () => showImage(currentIndex + 1));
+
+  // Backdrop click
   lightbox.addEventListener("click", (e) => {
     if (e.target === lightbox) closeLightbox();
   });
+
+  // Keyboard navigation (active only when lightbox is open)
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") closeLightbox();
+    if (!lightbox.classList.contains("active")) return;
+    if (e.key === "Escape")      closeLightbox();
+    if (e.key === "ArrowLeft")  { e.preventDefault(); showImage(currentIndex - 1); }
+    if (e.key === "ArrowRight") { e.preventDefault(); showImage(currentIndex + 1); }
   });
 
+  // Touch swipe for mobile
+  let touchStartX = 0;
+  let touchStartY = 0;
+  lightbox.addEventListener("touchstart", (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+    touchStartY = e.changedTouches[0].screenY;
+  }, { passive: true });
+  lightbox.addEventListener("touchend", (e) => {
+    const dx = e.changedTouches[0].screenX - touchStartX;
+    const dy = e.changedTouches[0].screenY - touchStartY;
+    if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 40) {
+      if (dx < 0) showImage(currentIndex + 1); // swipe left → next
+      else        showImage(currentIndex - 1); // swipe right → prev
+    }
+  }, { passive: true });
+
   if (gallery) {
-    desainList.forEach((name) => {
+    desainList.forEach((name, idx) => {
       const imgPath = `img/${name}.webp`;
       const item = document.createElement("div");
       item.className = "gallery-item";
       item.innerHTML = `<img src="${imgPath}" alt="${name}" loading="lazy" decoding="async">`;
-      item.addEventListener("click", () => openLightbox(imgPath));
+      item.addEventListener("click", () => openLightbox(idx));
       gallery.appendChild(item);
     });
 
