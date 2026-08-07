@@ -237,14 +237,14 @@
         <div class="w-full flex flex-col justify-center">
           <div class="w-full grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
             <!-- LEFT: Profile Card -->
-            <div class="lg:col-span-4 flex flex-col gap-5">
+            <div class="lg:col-span-4 flex flex-col gap-4">
 
-              <!-- Profile Visual -->
-              <div class="relative group">
+              <!-- Profile Visual (slightly smaller) -->
+              <div class="relative group w-[92%] mx-auto">
                 <!-- Shadow block -->
                 <div class="absolute inset-0 translate-x-3 translate-y-3 bg-gray-950 rounded-2xl"></div>
                 <div
-                  class="relative bg-gray-950 rounded-2xl border-2 border-gray-950 overflow-hidden w-full aspect-video">
+                  class="relative bg-gray-950 rounded-2xl border-2 border-gray-950 overflow-hidden w-full aspect-[16/10]">
                   <!-- Profile Image -->
                   <img src="img/Subaru.jpg" alt="Profile"
                     class="absolute inset-0 w-full h-full object-cover object-center grayscale-[30%] hover:grayscale-0 transition-all duration-500" />
@@ -253,22 +253,22 @@
                   <div class="absolute inset-0 hatch-bg opacity-30 pointer-events-none mix-blend-overlay"></div>
 
                   <!-- Label overlay -->
-                  <div class="absolute bottom-4 left-0 right-0 flex justify-center pointer-events-none">
+                  <div class="hero-label-overlay absolute bottom-4 left-0 right-0 flex justify-center pointer-events-none">
                     <div
-                      class="bg-[#39FF14] text-gray-950 font-mono text-[10px] font-black uppercase px-3 py-1 border border-gray-950 shadow-[2px_2px_0_0_rgba(0,0,0,1)]">
+                      class="hero-subaru-badge bg-[#39FF14] text-gray-950 font-mono text-[10px] font-black uppercase px-3 py-1 border border-gray-950 shadow-[2px_2px_0_0_rgba(0,0,0,1)]">
                       Subaru
                     </div>
                   </div>
                   <!-- Top right pin -->
                   <div
-                    class="absolute top-3 right-3 bg-[#FF4D8D] text-white font-mono text-[8px] font-black uppercase px-2 py-0.5 border border-gray-950 rotate-2">
+                    class="hero-rext-pin absolute top-3 right-3 bg-[#FF4D8D] text-white font-mono text-[8px] font-black uppercase px-2 py-0.5 border border-gray-950 rotate-2">
                     REXT // ID
                   </div>
                 </div>
 
                 <!-- Floating Code Snippet -->
                 <div
-                  class="absolute bottom-4 -left-2 sm:bottom-auto sm:top-8 sm:-left-3 md:-left-8 z-30 transform scale-[0.7] sm:scale-100 origin-bottom-left sm:origin-top-left -rotate-3 group-hover:rotate-0 transition-transform duration-300 pointer-events-none">
+                  class="absolute bottom-4 left-1 sm:bottom-auto sm:top-8 sm:left-1 md:-left-4 z-30 transform scale-[0.6] sm:scale-100 origin-bottom-left sm:origin-top-left -rotate-3 group-hover:rotate-0 transition-transform duration-300 pointer-events-none hero-floating-snippet">
                   <div
                     class="bg-[#0038FF] border-2 border-gray-950 rounded-xl p-2 pb-2.5 shadow-[4px_4px_0_0_rgba(0,0,0,1)] flex flex-col gap-1.5 w-[160px] sm:w-[180px]">
                     <div class="flex justify-between items-center px-1">
@@ -293,52 +293,25 @@
 
               </div>
 
-              <!-- Mini info cards row -->
-              <div class="grid grid-cols-2 gap-2 sm:gap-3 mb-4 mt-2">
-                <div
-                  class="bg-[#FACC15] border-2 border-gray-950 p-2 sm:p-3 shadow-[3px_3px_0_0_rgba(0,0,0,1)] -rotate-1 hover:rotate-0 transition-transform">
-                  <div class="font-mono text-[7px] sm:text-[8px] font-black uppercase opacity-70 mb-0.5 sm:mb-1">Status
-                  </div>
-                  <div class="font-oswald text-sm sm:text-base font-black uppercase">Active<span
-                      class="blink text-gray-950">
-                      _</span>
-                  </div>
-                </div>
-                <div
-                  class="bg-[#0038FF] text-white border-2 border-gray-950 p-2 sm:p-3 shadow-[3px_3px_0_0_rgba(0,0,0,1)] rotate-1 hover:rotate-0 transition-transform">
-                  <div class="font-mono text-[7px] sm:text-[8px] font-bold uppercase opacity-50 mb-0.5 sm:mb-1">Base
-                  </div>
-                  <div class="font-oswald text-sm sm:text-base font-bold uppercase">Indonesia</div>
-                </div>
-                <div
-                  class="bg-[#FF4D8D] text-white border-2 border-gray-950 p-2 sm:p-3 shadow-[3px_3px_0_0_rgba(0,0,0,1)] rotate-1 hover:rotate-0 transition-transform">
-                  <div class="font-mono text-[7px] sm:text-[8px] font-bold uppercase opacity-50 mb-0.5 sm:mb-1">Role
-                  </div>
-                  <div class="font-oswald text-sm sm:text-base font-bold uppercase">Dev + Design</div>
-                </div>
-                <div
-                  class="bg-white border-2 border-gray-950 p-2 sm:p-3 shadow-[3px_3px_0_0_rgba(0,0,0,1)] -rotate-1 hover:rotate-0 transition-transform hatch-bg">
-                  <div class="font-mono text-[7px] sm:text-[8px] font-bold uppercase opacity-50 mb-0.5 sm:mb-1">Nerd
-                    since</div>
-                  <div class="font-oswald text-sm sm:text-base font-bold uppercase">2020</div>
-                </div>
+              <!-- Status Strip — single horizontal line -->
+              <div id="hero-status-strip"
+                class="flex flex-wrap sm:flex-nowrap items-center justify-center gap-0 border-2 border-gray-950 bg-gray-950 text-white font-mono text-[8px] sm:text-[9px] font-black uppercase tracking-wider overflow-hidden shadow-[3px_3px_0_0_rgba(0,0,0,1)]">
+                <span class="flex items-center gap-1.5 px-2.5 py-1.5 sm:px-3 sm:py-2 shrink-0">
+                  <span class="w-1.5 h-1.5 rounded-full bg-[#39FF14] animate-pulse shrink-0"></span>
+                  ACTIVE
+                </span>
+                <span class="text-[#FACC15] text-[6px] shrink-0">●</span>
+                <span class="px-2.5 py-1.5 sm:px-3 sm:py-2 shrink-0">🇮🇩 INDONESIA</span>
+                <span class="text-[#FF4D8D] text-[6px] shrink-0">●</span>
+                <span class="px-2.5 py-1.5 sm:px-3 sm:py-2 shrink-0">DEV + DESIGN</span>
+                <span class="text-[#39FF14] text-[6px] shrink-0 hidden sm:block">●</span>
+                <span class="px-2.5 py-1.5 sm:px-3 sm:py-2 shrink-0 hidden sm:block">SINCE 2020</span>
               </div>
 
-              <!-- CTA Buttons -->
-              <div class="flex flex-wrap gap-2 pt-1">
-                <a href="#projects"
-                  class="flex-1 text-center bg-gray-950 text-white font-oswald text-xs sm:text-sm font-bold uppercase px-3 py-2 sm:px-5 sm:py-2.5 border-2 border-gray-950 shadow-[4px_4px_0_0_rgba(0,0,0,1)] hover:bg-[#FF5500] hover:shadow-[2px_2px_0_0_rgba(0,0,0,1)] hover:translate-x-0.5 hover:translate-y-0.5 transition-all">
-                  SEE WORKS →
-                </a>
-                <a href="#arsenal"
-                  class="flex-1 text-center bg-transparent text-gray-950 font-oswald text-xs sm:text-sm font-bold uppercase px-3 py-2 sm:px-5 sm:py-2.5 border-2 border-gray-950 hover:bg-gray-100 transition-all">
-                  MY ACTICITY ↓
-                </a>
-              </div>
             </div>
 
             <!-- RIGHT: Main Title + Bio -->
-            <div class="lg:col-span-8 flex flex-col gap-5 lg:gap-6">
+            <div class="lg:col-span-8 flex flex-col gap-4 lg:gap-5">
 
               <!-- Section index label -->
               <div
@@ -348,35 +321,44 @@
               </div>
 
               <!-- Staggered Headline -->
-              <div class="flex flex-col gap-1.5 md:gap-2 relative">
+              <div class="flex flex-col gap-1 md:gap-1.5 relative w-full">
 
-                <!-- Dot Matrix Decoration (Empty Space) -->
+                <!-- Large BG Number Accent (fills dead space) -->
                 <div
-                  class="absolute right-4 top-2 hidden xl:block w-40 h-40 dot-matrix text-gray-400 opacity-60 z-0 pointer-events-none">
+                  class="absolute right-[8%] -top-4 hidden xl:flex items-start justify-end pointer-events-none z-0 select-none">
+                  <span
+                    class="font-oswald font-black text-[11rem] leading-none text-gray-950 opacity-[0.06] tracking-tighter">01</span>
                 </div>
 
-                <h1
-                  class="font-oswald text-[10vw] sm:text-[7.5vw] lg:text-[5.5vw] xl:text-[5rem] font-bold leading-[0.85] tracking-tighter uppercase text-gray-950 relative z-10">
+                <!-- Dot Matrix Decoration (expanded) -->
+                <div
+                  class="absolute right-2 top-0 hidden xl:block w-64 h-52 dot-matrix text-gray-400 opacity-50 z-0 pointer-events-none">
+                </div>
+
+                <h1 class="font-oswald font-bold tracking-tighter uppercase text-gray-950 relative z-10 w-full"
+                  style="font-size: clamp(3rem, 5.5vw, 5rem); line-height: 0.95;">
                   UI/UX, FRONTEND
                 </h1>
-                <div class="flex items-center gap-3 flex-wrap">
+                <div class="flex items-center gap-2 sm:gap-3 flex-wrap">
                   <span
-                    class="font-oswald text-[8vw] sm:text-[7vw] lg:text-[5vw] xl:text-[4.5rem] font-bold uppercase leading-none bg-[#FACC15] text-gray-950 px-3 border-2 border-gray-950 shadow-[4px_4px_0_0_rgba(0,0,0,1)] -rotate-1 inline-block animate-wiggle-yellow">
+                    class="font-oswald font-bold uppercase leading-none bg-[#FACC15] text-gray-950 px-3 border-2 border-gray-950 shadow-[4px_4px_0_0_rgba(0,0,0,1)] -rotate-1 inline-block animate-wiggle-yellow"
+                    style="font-size: clamp(2.5rem, 5vw, 4.5rem);">
                     & GRAPHIC
                   </span>
                   <div
-                    class="diagonal-stripe w-10 h-10 sm:w-12 sm:h-12 border-2 border-gray-950 shadow-[3px_3px_0_0_rgba(0,0,0,1)] shrink-0 animate-spin"
+                    class="diagonal-stripe w-7 h-7 sm:w-10 sm:h-10 md:w-12 md:h-12 border-2 border-gray-950 shadow-[3px_3px_0_0_rgba(0,0,0,1)] shrink-0 animate-spin"
                     style="animation-duration: 12s;">
                   </div>
                 </div>
                 <div class="flex items-center gap-4 flex-wrap">
                   <span
-                    class="font-oswald text-[10vw] sm:text-[8vw] lg:text-[5.5vw] xl:text-[5.5rem] font-bold leading-[0.85] tracking-tighter uppercase text-white bg-[#FF4D8D] px-3 sm:px-4 border-2 border-gray-950 shadow-[4px_4px_0_0_rgba(0,0,0,1)] rotate-1 inline-block animate-float-pink">
+                    class="font-oswald font-bold tracking-tighter uppercase text-white bg-[#FF4D8D] px-3 sm:px-4 border-2 border-gray-950 shadow-[4px_4px_0_0_rgba(0,0,0,1)] rotate-1 inline-block animate-float-pink max-w-full"
+                    style="font-size: clamp(3rem, 5.5vw, 5.5rem); line-height: 0.95;">
                     DESIGNER
                   </span>
                 </div>
                 <!-- Location & Role Badges -->
-                <div class="flex items-center gap-2 sm:gap-3 flex-wrap mt-2 md:mt-4 w-full justify-between">
+                <div class="flex items-center gap-2 sm:gap-3 flex-wrap mt-1 md:mt-2 w-full justify-between">
                   <div class="flex items-center gap-2 sm:gap-3 flex-wrap">
                     <span
                       class="font-mono text-[10px] sm:text-xs font-bold uppercase bg-[#0038FF] text-white px-2 sm:px-3 py-1 border border-gray-950 shadow-[2px_2px_0_0_rgba(0,0,0,1)] hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none cursor-default transition-all">LOC:
@@ -425,8 +407,20 @@
                 </p>
               </div>
 
+              <!-- CTA Buttons -->
+              <div class="flex flex-wrap gap-2 pt-2">
+                <a href="#projects"
+                  class="flex-1 text-center bg-gray-950 text-white font-oswald text-xs sm:text-sm font-bold uppercase px-3 py-2 sm:px-5 sm:py-2.5 border-2 border-gray-950 shadow-[4px_4px_0_0_rgba(0,0,0,1)] hover:bg-[#FF5500] hover:shadow-[2px_2px_0_0_rgba(0,0,0,1)] hover:translate-x-0.5 hover:translate-y-0.5 transition-all">
+                  SEE WORKS →
+                </a>
+                <a href="#arsenal"
+                  class="flex-1 text-center bg-transparent text-gray-950 font-oswald text-xs sm:text-sm font-bold uppercase px-3 py-2 sm:px-5 sm:py-2.5 border-2 border-gray-950 hover:bg-gray-100 transition-all">
+                  MY ACTIVITY ↓
+                </a>
+              </div>
+
               <!-- Social Row -->
-              <div class="flex flex-wrap items-center gap-3 pt-2">
+              <div class="hero-social-row flex flex-wrap items-center gap-3 pt-2">
                 <a href="https://github.com/Rextt1122" target="_blank"
                   class="font-mono text-[10px] sm:text-xs font-black uppercase px-3 py-1.5 sm:px-4 sm:py-2 border-2 border-gray-950 bg-white hover:bg-gray-950 hover:text-white shadow-[2px_2px_0_0_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-0.5 hover:translate-y-0.5 transition-all">
                   ↗ GITHUB
@@ -503,7 +497,7 @@
 
           <!-- Card 1: GLITCH_DASH.EXE (col-span-5) -->
           <div
-            class="lg:col-span-5 relative group bg-gray-950 border-2 border-gray-950 rounded-2xl p-3 sm:p-5 shadow-[6px_6px_0_0_rgba(0,0,0,1)] hover:-translate-x-1 hover:-translate-y-1 hover:shadow-[8px_8px_0_0_rgba(0,0,0,1)] transition-all flex flex-col overflow-hidden">
+            class="glitch-card lg:col-span-5 relative group bg-gray-950 border-2 border-gray-950 rounded-2xl p-3 sm:p-5 shadow-[6px_6px_0_0_rgba(0,0,0,1)] hover:-translate-x-1 hover:-translate-y-1 hover:shadow-[8px_8px_0_0_rgba(0,0,0,1)] transition-all flex flex-col overflow-hidden">
 
             <!-- Scanline overlay -->
             <div class="absolute inset-0 pointer-events-none z-10"

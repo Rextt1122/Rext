@@ -8,7 +8,7 @@
   --text-secondary: #4b5563;
   --accent-color: #39FF14;
   --accent-orange: #FF5500;
-  
+
   --font-sans: 'Space Grotesk', sans-serif;
   --font-mono: 'Space Mono', monospace;
 }
@@ -19,8 +19,16 @@
 }
 
 @keyframes blink {
-  0%, 49% { opacity: 1; }
-  50%, 100% { opacity: 0; }
+
+  0%,
+  49% {
+    opacity: 1;
+  }
+
+  50%,
+  100% {
+    opacity: 0;
+  }
 }
 
 /* Gallery Item Injected by script.js */
@@ -33,15 +41,34 @@
   cursor: pointer;
   background-color: #ffffff;
   border: 3px solid #09090b;
-  box-shadow: 6px 6px 0px 0px rgba(0,0,0,1);
+  box-shadow: 6px 6px 0px 0px rgba(0, 0, 0, 1);
   transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-.gallery-item:nth-child(5n+1) { background-color: #FACC15; transform: rotate(1deg); }
-.gallery-item:nth-child(5n+2) { background-color: #FF4D8D; transform: rotate(-2deg); }
-.gallery-item:nth-child(5n+3) { background-color: #ffffff; transform: rotate(2deg); }
-.gallery-item:nth-child(5n+4) { background-color: #39FF14; transform: rotate(-1deg); }
-.gallery-item:nth-child(5n+5) { background-color: #0038FF; transform: rotate(1.5deg); }
+.gallery-item:nth-child(5n+1) {
+  background-color: #FACC15;
+  transform: rotate(1deg);
+}
+
+.gallery-item:nth-child(5n+2) {
+  background-color: #FF4D8D;
+  transform: rotate(-2deg);
+}
+
+.gallery-item:nth-child(5n+3) {
+  background-color: #ffffff;
+  transform: rotate(2deg);
+}
+
+.gallery-item:nth-child(5n+4) {
+  background-color: #39FF14;
+  transform: rotate(-1deg);
+}
+
+.gallery-item:nth-child(5n+5) {
+  background-color: #0038FF;
+  transform: rotate(1.5deg);
+}
 
 @media (min-width: 768px) {
   .gallery-item {
@@ -52,7 +79,7 @@
 .gallery-item:hover {
   background-color: #ffffff !important;
   transform: translate(-4px, -4px) rotate(0deg) scale(1.02) !important;
-  box-shadow: 10px 10px 0px 0px rgba(0,0,0,1);
+  box-shadow: 10px 10px 0px 0px rgba(0, 0, 0, 1);
   border-color: #09090b;
   z-index: 10;
 }
@@ -178,7 +205,7 @@
   width: 28px;
   height: 28px;
   flex-shrink: 0;
-  box-shadow: 2px 2px 0 rgba(255,255,255,0.4);
+  box-shadow: 2px 2px 0 rgba(255, 255, 255, 0.4);
   transition: transform 0.1s, box-shadow 0.1s, background 0.15s;
   line-height: 1;
 }
@@ -187,7 +214,7 @@
   background: #39FF14;
   color: #09090b;
   transform: translate(1px, 1px);
-  box-shadow: 1px 1px 0 rgba(255,255,255,0.4);
+  box-shadow: 1px 1px 0 rgba(255, 255, 255, 0.4);
 }
 
 /* ── Image area ── */
@@ -370,7 +397,7 @@
   color: #fafafa;
   transform: translateY(100%);
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 -10px 30px rgba(0,0,0,0.5);
+  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.5);
 }
 
 #terminal-overlay:not(.hidden) {
@@ -412,7 +439,7 @@
 .terminal-input-line {
   display: flex;
   padding: 16px;
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0, 0, 0, 0.5);
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   align-items: center;
 }
@@ -436,7 +463,77 @@
 
 .grid-pattern {
   background-size: 32px 32px;
-  background-image: 
+  background-image:
     linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+}
+
+/* ══════════════════════════════════════════
+   HERO + ARSENAL — Mobile overrides (≤480px)
+   Scoped via IDs / classes so other sections
+   stay untouched.
+   ══════════════════════════════════════════ */
+@media (max-width: 480px) {
+
+  /* ── 1. Status strip: readable 2-row wrap ── */
+  #hero-status-strip {
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: 10px;
+    letter-spacing: 0.04em;
+    padding: 3px 2px;
+    gap: 0;
+  }
+
+  #hero-status-strip > span {
+    padding: 4px 7px;
+  }
+
+  /* ── 2. Terminal card labels: bump to 9px ── */
+  .glitch-card .font-mono[class*="text-[6px]"],
+  .glitch-card .font-mono[class*="text-[7px]"] {
+    font-size: 9px !important;
+  }
+
+  /* ── 3. Social links: 42px touch target ── */
+  .hero-social-row a {
+    min-height: 42px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  /* ── 4. Floating code snippet: scale down for shorter photo ── */
+  #hero .hero-floating-snippet {
+    transform: scale(0.5) rotate(-3deg);
+  }
+
+  /* ── 5. DESIGNER badge: overflow safety ── */
+  #hero .animate-float-pink {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* ── 6. Photo overlays: proportional to shorter 16:10 photo ── */
+
+  /* Subaru badge — smaller font + tighter padding */
+  .hero-subaru-badge {
+    font-size: 8px;
+    padding: 2px 8px;
+  }
+
+  /* Subaru label wrapper — closer to bottom edge */
+  .hero-label-overlay {
+    bottom: 10px;
+  }
+
+  /* REXT // ID pin — slightly smaller + tighter position */
+  .hero-rext-pin {
+    font-size: 7px;
+    padding: 1px 5px;
+    top: 8px;
+    right: 8px;
+  }
 }
