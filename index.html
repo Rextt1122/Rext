@@ -150,64 +150,122 @@
 
   <!-- ════ NAVBAR (BRUTALIST TOOLBAR) ════ -->
   <nav
-    class="fixed w-full top-0 z-50 bg-[#FAFAFA] border-b-2 border-gray-950 flex font-mono uppercase font-black text-[10px] sm:text-xs h-12 md:h-14">
+    class="fixed w-full top-0 z-50 bg-[#FAFAFA] border-b-4 border-gray-950 flex items-center justify-between px-4 sm:px-6 md:px-8 h-16 sm:h-20 transition-all">
+
     <!-- Logo Block -->
-    <a href="#hero"
-      class="flex items-center gap-3 px-4 sm:px-6 h-full border-r-2 border-gray-950 hover:bg-[#39FF14] transition-colors group shrink-0">
-      <span
-        class="w-3 h-3 bg-gray-950 border border-gray-950 shadow-[2px_2px_0_0_rgba(255,255,255,1)] group-hover:bg-white group-hover:shadow-[2px_2px_0_0_rgba(0,0,0,1)] transition-all animate-pulse"></span>
-      <span class="font-oswald text-lg sm:text-xl tracking-tighter">REXT</span>
+    <a href="#hero" class="flex items-center gap-3 group shrink-0">
+      <div
+        class="w-4 h-4 bg-[#FF4D8D] border-2 border-gray-950 shadow-[2px_2px_0_0_rgba(0,0,0,1)] group-hover:translate-x-0.5 group-hover:translate-y-0.5 group-hover:shadow-none transition-all">
+      </div>
+      <span class="font-oswald text-2xl sm:text-3xl tracking-tighter text-gray-950 font-black">REXT<span
+          class="text-[#0038FF]">.</span></span>
     </a>
 
-    <!-- Status/Center Block -->
-    <div class="hidden sm:flex items-center h-full flex-1 overflow-hidden px-4">
-      <marquee scrollamount="4" class="tracking-widest text-[9px] sm:text-[10px] text-gray-400 mt-0.5">
-        +++ SYSTEM.ONLINE // UI/UX ENTHUSIAST // WEB DEVELOPMENT // CREATIVE CODING // AVAILABLE FOR HIRE +++
-      </marquee>
-    </div>
+    <!-- Right Side (Desktop Links + Menu Button) -->
+    <div class="flex items-center gap-4 sm:gap-6">
 
-    <!-- Links Block -->
-    <div class="hidden md:flex h-full shrink-0">
-      <a href="#hero"
-        class="flex items-center px-4 lg:px-6 h-full border-l-2 border-gray-950 hover:bg-gray-950 hover:text-white transition-colors">HOME</a>
-      <a href="#arsenal"
-        class="flex items-center px-4 lg:px-6 h-full border-l-2 border-gray-950 hover:bg-[#FACC15] hover:text-gray-950 transition-colors">STATUS</a>
-      <a href="#projects"
-        class="flex items-center px-4 lg:px-6 h-full border-l-2 border-gray-950 hover:bg-[#FF4D8D] hover:text-white transition-colors">WORKS</a>
-      <a href="#gallery"
-        class="flex items-center px-4 lg:px-6 h-full border-l-2 border-gray-950 hover:bg-[#00F2FE] hover:text-gray-950 transition-colors">GALLERY</a>
-    </div>
+      <!-- Desktop Links -->
+      <div class="hidden lg:flex items-center gap-4 font-mono font-black text-xs tracking-widest uppercase">
+        <a href="#hero"
+          class="flex items-center gap-2 px-4 py-2 border-2 border-gray-950 rounded-lg bg-white hover:bg-[#FF4D8D] hover:text-white shadow-[3px_3px_0_0_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[3px] hover:translate-y-[3px] transition-all group">
+          <span class="w-1.5 h-1.5 rounded-full bg-gray-950 group-hover:bg-white transition-colors"></span>
+          HOME
+        </a>
+        <a href="#status-activity"
+          class="flex items-center gap-2 px-4 py-2 border-2 border-gray-950 rounded-lg bg-white hover:bg-[#FACC15] hover:text-gray-950 shadow-[3px_3px_0_0_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[3px] hover:translate-y-[3px] transition-all group">
+          <span class="w-1.5 h-1.5 rounded-full bg-gray-950 transition-colors"></span>
+          STATUS
+        </a>
+        <a href="#projects"
+          class="flex items-center gap-2 px-4 py-2 border-2 border-gray-950 rounded-lg bg-white hover:bg-[#0038FF] hover:text-white shadow-[3px_3px_0_0_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[3px] hover:translate-y-[3px] transition-all group">
+          <span class="w-1.5 h-1.5 rounded-full bg-gray-950 group-hover:bg-white transition-colors"></span>
+          WORKS
+        </a>
+        <a href="#gallery"
+          class="flex items-center gap-2 px-4 py-2 border-2 border-gray-950 rounded-lg bg-white hover:bg-[#00F2FE] hover:text-gray-950 shadow-[3px_3px_0_0_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[3px] hover:translate-y-[3px] transition-all group">
+          <span class="w-1.5 h-1.5 rounded-full bg-gray-950 transition-colors"></span>
+          GALLERY
+        </a>
+      </div>
 
-    <!-- Mobile Menu Button -->
-    <button id="mobile-menu-btn"
-      class="flex md:hidden items-center px-4 h-full border-l-2 border-gray-950 ml-auto bg-gray-950 hover:bg-[#39FF14] hover:text-gray-950 transition-colors text-white shrink-0 cursor-pointer focus:outline-none">
-      <span class="text-[9px] tracking-widest font-bold">MENU ↓</span>
-    </button>
+      <!-- Mobile Menu Button (Yellow Pill) -->
+      <button id="mobile-menu-btn"
+        class="flex md:hidden items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-[#FACC15] border-2 border-gray-950 rounded-full shadow-[3px_3px_0_0_rgba(0,0,0,1)] active:translate-x-1 active:translate-y-1 active:shadow-none transition-all cursor-pointer focus:outline-none">
+        <span class="w-2 h-2 rounded-full bg-[#39FF14] border border-gray-950 animate-pulse shrink-0"></span>
+        <span
+          class="font-mono text-[10px] sm:text-xs font-black uppercase tracking-wider text-gray-950 mt-0.5">MENU</span>
+        <svg class="w-4 h-4 text-gray-950 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+
+    </div>
   </nav>
 
   <!-- ════ MOBILE MENU OVERLAY ════ -->
   <div id="mobile-menu"
-    class="fixed inset-0 z-40 bg-white grid-pattern flex flex-col justify-center items-center gap-6 font-oswald text-4xl sm:text-5xl font-black uppercase transition-transform duration-300 transform -translate-y-full md:hidden">
-    <a href="#hero"
-      class="mobile-link px-6 py-2 border-2 border-transparent hover:border-gray-950 hover:bg-[#39FF14] hover:shadow-[6px_6px_0_0_rgba(0,0,0,1)] hover:-rotate-2 transition-all text-gray-950">HOME</a>
-    <a href="#arsenal"
-      class="mobile-link px-6 py-2 border-2 border-transparent hover:border-gray-950 hover:bg-[#FACC15] hover:shadow-[6px_6px_0_0_rgba(0,0,0,1)] hover:rotate-2 transition-all text-gray-950">STATUS</a>
-    <a href="#projects"
-      class="mobile-link px-6 py-2 border-2 border-transparent hover:border-gray-950 hover:bg-[#FF4D8D] hover:shadow-[6px_6px_0_0_rgba(0,0,0,1)] hover:-rotate-2 transition-all text-gray-950">WORKS</a>
-    <a href="#gallery"
-      class="mobile-link px-6 py-2 border-2 border-transparent hover:border-gray-950 hover:bg-[#0038FF] hover:text-white hover:shadow-[6px_6px_0_0_rgba(0,0,0,1)] hover:rotate-2 transition-all text-gray-950">GALLERY</a>
+    class="fixed inset-0 z-[60] bg-gray-950/80 backdrop-blur-sm flex flex-col justify-center items-center p-6 transition-transform duration-300 transform -translate-y-full md:hidden">
 
-    <!-- Decorative Elements -->
+    <!-- Menu Card -->
     <div
-      class="absolute bottom-12 left-12 w-16 h-16 border-2 border-gray-950 bg-[#FACC15] shadow-[6px_6px_0_0_rgba(0,0,0,1)] animate-spinSlow pointer-events-none">
-    </div>
-    <div
-      class="absolute top-24 right-10 w-12 h-12 border-2 border-gray-950 bg-[#39FF14] rounded-full shadow-[4px_4px_0_0_rgba(0,0,0,1)] animate-float pointer-events-none">
+      class="w-full max-w-sm bg-white border-4 border-gray-950 rounded-2xl shadow-[12px_12px_0_0_rgba(0,0,0,1)] flex flex-col overflow-hidden relative">
+
+      <!-- Header -->
+      <div class="px-5 py-4 flex justify-between items-center border-b-4 border-gray-950 bg-white">
+        <div class="flex items-center gap-3">
+          <div class="w-4 h-4 bg-[#FF4D8D] border-2 border-gray-950 shadow-[2px_2px_0_0_rgba(0,0,0,1)]"></div>
+          <span
+            class="font-oswald text-2xl font-black uppercase tracking-tighter text-gray-950 leading-none">NAVIGATION</span>
+        </div>
+        <button id="mobile-menu-close"
+          onclick="document.getElementById('mobile-menu').classList.add('-translate-y-full');"
+          class="font-mono text-[9px] font-black uppercase bg-[#FF4D8D] text-white px-3 py-1.5 border-2 border-gray-950 shadow-[3px_3px_0_0_rgba(0,0,0,1)] active:translate-x-1 active:translate-y-1 active:shadow-none transition-all cursor-pointer">
+          X CLOSE
+        </button>
+      </div>
+
+      <!-- Links Container -->
+      <div class="p-5 flex flex-col gap-4 bg-[#FAFAFA] grid-pattern">
+
+        <a href="#hero"
+          class="mobile-link group flex justify-between items-center px-5 py-3 bg-white border-4 border-gray-950 rounded-xl shadow-[4px_4px_0_0_rgba(0,0,0,1)] active:translate-x-1 active:translate-y-1 active:shadow-none hover:bg-[#39FF14] transition-all">
+          <span class="font-oswald text-xl font-black uppercase tracking-tighter text-gray-950">HOME</span>
+          <span class="font-mono text-xs font-bold text-gray-500 group-hover:text-gray-950">[01]</span>
+        </a>
+
+        <a href="#status-activity"
+          class="mobile-link group flex justify-between items-center px-5 py-3 bg-white border-4 border-gray-950 rounded-xl shadow-[4px_4px_0_0_rgba(0,0,0,1)] active:translate-x-1 active:translate-y-1 active:shadow-none hover:bg-[#FACC15] transition-all">
+          <span class="font-oswald text-xl font-black uppercase tracking-tighter text-gray-950">STATUS</span>
+          <span class="font-mono text-xs font-bold text-gray-500 group-hover:text-gray-950">[02]</span>
+        </a>
+
+        <a href="#projects"
+          class="mobile-link group flex justify-between items-center px-5 py-3 bg-white border-4 border-gray-950 rounded-xl shadow-[4px_4px_0_0_rgba(0,0,0,1)] active:translate-x-1 active:translate-y-1 active:shadow-none hover:bg-[#0038FF] hover:text-white transition-all">
+          <span
+            class="font-oswald text-xl font-black uppercase tracking-tighter text-gray-950 group-hover:text-white">WORKS</span>
+          <span class="font-mono text-xs font-bold text-gray-500 group-hover:text-white">[03]</span>
+        </a>
+
+        <a href="#gallery"
+          class="mobile-link group flex justify-between items-center px-5 py-3 bg-white border-4 border-gray-950 rounded-xl shadow-[4px_4px_0_0_rgba(0,0,0,1)] active:translate-x-1 active:translate-y-1 active:shadow-none hover:bg-[#00F2FE] transition-all">
+          <span class="font-oswald text-xl font-black uppercase tracking-tighter text-gray-950">GALLERY</span>
+          <span class="font-mono text-xs font-bold text-gray-500 group-hover:text-gray-950">[04]</span>
+        </a>
+      </div>
+
+      <!-- Footer -->
+      <div class="px-5 py-3 flex justify-between items-center border-t-4 border-gray-950 bg-white">
+        <span class="font-mono text-[9px] font-black uppercase tracking-widest text-gray-400">REXT // PORTFOLIO</span>
+        <span
+          class="font-mono text-[9px] font-black uppercase bg-[#FACC15] text-gray-950 px-2 py-0.5 border-2 border-gray-950 shadow-[2px_2px_0_0_rgba(0,0,0,1)]">2026</span>
+      </div>
+
     </div>
   </div>
 
   <!-- ════ HERO ════ -->
-  <section id="hero" class="relative min-h-screen pt-12 flex flex-col bg-[#FAFAFA] overflow-hidden">
+  <section id="hero" class="relative min-h-screen pt-16 flex flex-col bg-[#FAFAFA] overflow-hidden">
 
     <!-- Giant BG text watermark -->
     <div class="absolute inset-0 flex items-center justify-center pointer-events-none z-0 select-none overflow-hidden">
@@ -222,7 +280,7 @@
 
       <!-- Big Box Wrapper -->
       <div
-        class="w-full bg-white grid-pattern border-2 border-gray-950 shadow-[16px_16px_0_0_rgba(0,0,0,0.95)] px-6 py-4 sm:px-10 sm:py-6 lg:px-12 lg:py-8 relative overflow-hidden flex flex-col">
+        class="w-full bg-white grid-pattern border-2 border-gray-950 shadow-none sm:shadow-[16px_16px_0_0_rgba(0,0,0,0.95)] px-6 py-4 sm:px-10 sm:py-6 lg:px-12 lg:py-8 relative overflow-hidden flex flex-col">
 
         <!-- Top index bar -->
         <div
@@ -303,8 +361,8 @@
                 </span>
                 <span class="text-[#FACC15] text-[6px] shrink-0">●</span>
                 <span class="px-2.5 py-1.5 sm:px-3 sm:py-2 shrink-0">🇮🇩 INDONESIA</span>
-                <span class="text-[#FF4D8D] text-[6px] shrink-0">●</span>
-                <span class="px-2.5 py-1.5 sm:px-3 sm:py-2 shrink-0">DEV + DESIGN</span>
+                <span class="text-[#FF4D8D] text-[6px] shrink-0 hidden sm:block">●</span>
+                <span class="px-2.5 py-1.5 sm:px-3 sm:py-2 shrink-0 hidden sm:block">DEV + DESIGN</span>
                 <span class="text-[#39FF14] text-[6px] shrink-0 hidden sm:block">●</span>
                 <span class="px-2.5 py-1.5 sm:px-3 sm:py-2 shrink-0 hidden sm:block">SINCE 2020</span>
               </div>
@@ -414,7 +472,7 @@
                   class="flex-1 text-center bg-[#FF5500] text-white font-oswald text-xs sm:text-sm font-bold uppercase px-3 py-2 sm:px-5 sm:py-2.5 border-2 border-gray-950 shadow-[4px_4px_0_0_rgba(0,0,0,1)] hover:bg-gray-950 hover:shadow-[2px_2px_0_0_rgba(0,0,0,1)] hover:translate-x-0.5 hover:translate-y-0.5 transition-all">
                   SEE WORKS →
                 </a>
-                <a href="#arsenal"
+                <a href="#status-activity"
                   class="flex-1 text-center bg-transparent text-gray-950 font-oswald text-xs sm:text-sm font-bold uppercase px-3 py-2 sm:px-5 sm:py-2.5 border-2 border-gray-950 hover:bg-gray-100 transition-all">
                   MY ACTIVITY ↓
                 </a>
@@ -468,15 +526,15 @@
 
   </section>
 
-  <!-- ════ ARSENAL ════ -->
-  <section id="arsenal"
+  <!-- ════ STATUS.ACTIVITY ════ -->
+  <section id="status-activity"
     class="relative bg-[#FAFAFA] border-t-2 border-gray-950 overflow-hidden flex flex-col pt-12 pb-20 sm:pt-16 sm:pb-28">
 
     <div class="relative z-10 flex-1 w-[96%] max-w-[1800px] mx-auto flex items-center justify-center">
 
       <!-- Big Box Wrapper -->
       <div
-        class="w-full bg-white border-2 border-gray-950 shadow-[16px_16px_0_0_rgba(0,0,0,0.95)] px-5 py-6 sm:px-10 sm:py-8 lg:px-12 lg:py-10 relative overflow-hidden flex flex-col"
+        class="w-full bg-white border-2 border-gray-950 shadow-none sm:shadow-[16px_16px_0_0_rgba(0,0,0,0.95)] px-5 py-6 sm:px-10 sm:py-8 lg:px-12 lg:py-10 relative overflow-hidden flex flex-col"
         style="background-image: linear-gradient(to right, #f3f4f6 1px, transparent 1px), linear-gradient(to bottom, #f3f4f6 1px, transparent 1px); background-size: 32px 32px;">
 
 
@@ -1056,7 +1114,7 @@
 
       <!-- Big Box Wrapper -->
       <div
-        class="w-full bg-white border-2 border-gray-950 shadow-[16px_16px_0_0_rgba(0,0,0,0.95)] px-5 py-6 sm:px-10 sm:py-8 lg:px-12 lg:py-10 relative overflow-hidden flex flex-col"
+        class="w-full bg-white border-2 border-gray-950 shadow-none sm:shadow-[16px_16px_0_0_rgba(0,0,0,0.95)] px-5 py-6 sm:px-10 sm:py-8 lg:px-12 lg:py-10 relative overflow-hidden flex flex-col"
         style="background-image: linear-gradient(to right, #f3f4f6 1px, transparent 1px), linear-gradient(to bottom, #f3f4f6 1px, transparent 1px); background-size: 32px 32px;">
 
         <!-- Section Title -->
@@ -1345,7 +1403,7 @@
 
       <!-- Big Box Wrapper -->
       <div
-        class="w-full bg-white border-2 border-gray-950 shadow-[16px_16px_0_0_rgba(0,0,0,0.95)] px-5 py-6 sm:px-10 sm:py-8 lg:px-12 lg:py-10 relative overflow-hidden flex flex-col"
+        class="w-full bg-white border-2 border-gray-950 shadow-none sm:shadow-[16px_16px_0_0_rgba(0,0,0,0.95)] px-5 py-6 sm:px-10 sm:py-8 lg:px-12 lg:py-10 relative overflow-hidden flex flex-col"
         style="background-image: linear-gradient(to right, #f3f4f6 1px, transparent 1px), linear-gradient(to bottom, #f3f4f6 1px, transparent 1px); background-size: 32px 32px;">
 
         <!-- Section Title -->

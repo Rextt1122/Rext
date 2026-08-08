@@ -25,18 +25,22 @@ document.addEventListener("DOMContentLoaded", () => {
       const isClosed = mobileMenu.classList.contains("-translate-y-full");
       if (isClosed) {
         mobileMenu.classList.remove("-translate-y-full");
-        mobileMenuBtn.innerHTML = '<span class="text-[9px] tracking-widest font-bold">CLOSE ↑</span>';
       } else {
         mobileMenu.classList.add("-translate-y-full");
-        mobileMenuBtn.innerHTML = '<span class="text-[9px] tracking-widest font-bold">MENU ↓</span>';
       }
     });
+
+    const mobileMenuClose = document.getElementById("mobile-menu-close");
+    if (mobileMenuClose) {
+      mobileMenuClose.addEventListener("click", () => {
+        mobileMenu.classList.add("-translate-y-full");
+      });
+    }
 
     mobileLinks.forEach(link => {
       link.addEventListener("click", function(e) {
         e.preventDefault();
         mobileMenu.classList.add("-translate-y-full");
-        mobileMenuBtn.innerHTML = '<span class="text-[9px] tracking-widest font-bold">MENU ↓</span>';
         
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
