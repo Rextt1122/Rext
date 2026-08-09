@@ -300,4 +300,30 @@ document.addEventListener("DOMContentLoaded", () => {
       togT();
     }
   });
+
+  // --- GitHub Repo Dates Sync ---
+  const githubDateSpans = document.querySelectorAll('.github-date');
+  if (githubDateSpans.length > 0) {
+    const fetchRepoDate = async (span) => {
+      const repo = span.getAttribute('data-repo');
+      if (!repo) return;
+      try {
+        const response = await fetch(`https://api.github.com/repos/${repo}`);
+        if (response.ok) {
+          const data = await response.json();
+          const pushedDate = new Date(data.pushed_at || data.updated_at);
+          const yyyy = pushedDate.getFullYear();
+          const mm = String(pushedDate.getMonth() + 1).padStart(2, '0');
+          const dd = String(pushedDate.getDate()).padStart(2, '0');
+          span.textContent = `LAST_PUSH: ${yyyy}-${mm}-${dd}`;
+        } else {
+          span.textContent = `LAST_PUSH: UNKNOWN`;
+        }
+      } catch (error) {
+        span.textContent = `LAST_PUSH: ERROR`;
+      }
+    };
+
+    githubDateSpans.forEach(fetchRepoDate);
+  }
 });
