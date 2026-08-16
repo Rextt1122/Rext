@@ -6,7 +6,7 @@
   --bg-color: #fafafa;
   --text-primary: #111827;
   --text-secondary: #4b5563;
-  --accent-color: #39FF14;
+  --accent-color: #4ADE80;
   --accent-orange: #FF5500;
 
   --font-sans: 'Space Grotesk', sans-serif;
@@ -68,7 +68,7 @@
 }
 
 .gallery-item:nth-child(5n+4) {
-  background-color: #39FF14;
+  background-color: #4ADE80;
   transform: rotate(-1deg);
 }
 
@@ -172,7 +172,7 @@
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  color: #39FF14;
+  color: #4ADE80;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -219,7 +219,7 @@
 }
 
 .lightbox-close:hover {
-  background: #39FF14;
+  background: #4ADE80;
   color: #09090b;
   transform: translate(1px, 1px);
   box-shadow: 1px 1px 0 rgba(255, 255, 255, 0.4);
