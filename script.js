@@ -38,10 +38,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     mobileLinks.forEach(link => {
-      link.addEventListener("click", function(e) {
+      link.addEventListener("click", function (e) {
         e.preventDefault();
         mobileMenu.classList.add("-translate-y-full");
-        
+
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
           setTimeout(() => {
@@ -93,16 +93,16 @@ document.addEventListener("DOMContentLoaded", () => {
   `;
   document.body.appendChild(lightbox);
 
-  const lbImg     = document.getElementById("lb-img");
-  const lbName    = document.getElementById("lb-name");
+  const lbImg = document.getElementById("lb-img");
+  const lbName = document.getElementById("lb-name");
   const lbCounter = document.getElementById("lb-counter");
-  const lbPrev    = document.getElementById("lb-prev");
-  const lbNext    = document.getElementById("lb-next");
-  const lbClose   = lightbox.querySelector(".lightbox-close");
+  const lbPrev = document.getElementById("lb-prev");
+  const lbNext = document.getElementById("lb-next");
+  const lbClose = lightbox.querySelector(".lightbox-close");
 
   function updateNav() {
     lbCounter.textContent = `${currentIndex + 1} / ${desainList.length}`;
-    lbName.textContent    = desainList[currentIndex].toUpperCase();
+    lbName.textContent = desainList[currentIndex].toUpperCase();
     lbPrev.disabled = currentIndex === 0;
     lbNext.disabled = currentIndex === desainList.length - 1;
   }
@@ -115,7 +115,7 @@ document.addEventListener("DOMContentLoaded", () => {
     updateNav();
   }
 
-  lbImg.addEventListener("load",  () => lbImg.classList.remove("loading"));
+  lbImg.addEventListener("load", () => lbImg.classList.remove("loading"));
   lbImg.addEventListener("error", () => lbImg.classList.remove("loading"));
 
   function openLightbox(index) {
@@ -131,8 +131,8 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   lbClose.addEventListener("click", closeLightbox);
-  lbPrev.addEventListener("click",  () => showImage(currentIndex - 1));
-  lbNext.addEventListener("click",  () => showImage(currentIndex + 1));
+  lbPrev.addEventListener("click", () => showImage(currentIndex - 1));
+  lbNext.addEventListener("click", () => showImage(currentIndex + 1));
 
   // Backdrop click
   lightbox.addEventListener("click", (e) => {
@@ -142,8 +142,8 @@ document.addEventListener("DOMContentLoaded", () => {
   // Keyboard navigation (active only when lightbox is open)
   document.addEventListener("keydown", (e) => {
     if (!lightbox.classList.contains("active")) return;
-    if (e.key === "Escape")      closeLightbox();
-    if (e.key === "ArrowLeft")  { e.preventDefault(); showImage(currentIndex - 1); }
+    if (e.key === "Escape") closeLightbox();
+    if (e.key === "ArrowLeft") { e.preventDefault(); showImage(currentIndex - 1); }
     if (e.key === "ArrowRight") { e.preventDefault(); showImage(currentIndex + 1); }
   });
 
@@ -159,7 +159,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const dy = e.changedTouches[0].screenY - touchStartY;
     if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 40) {
       if (dx < 0) showImage(currentIndex + 1); // swipe left → next
-      else        showImage(currentIndex - 1); // swipe right → prev
+      else showImage(currentIndex - 1); // swipe right → prev
     }
   }, { passive: true });
 

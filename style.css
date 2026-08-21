@@ -9,7 +9,8 @@
   --font-mono: 'Space Mono', monospace;
 }
 
-html, body {
+html,
+body {
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -570,6 +571,7 @@ html, body {
   box-shadow: 3px 3px 0 0 rgba(0, 0, 0, 1);
   transition: all 0.2s ease;
 }
+
 .nav-item:hover {
   box-shadow: none;
   transform: translate(3px, 3px);
@@ -591,12 +593,14 @@ html, body {
   box-shadow: 2px 2px 0 0 rgba(0, 0, 0, 1);
   transition: all 0.2s ease;
 }
+
 @media (min-width: 640px) {
   .hero-social-btn {
     font-size: 0.75rem;
     padding: 0.5rem 1rem;
   }
 }
+
 .hero-social-btn:hover {
   box-shadow: none;
   transform: translate(2px, 2px);
@@ -614,6 +618,7 @@ html, body {
   transition: all 0.2s ease;
   box-shadow: 3px 3px 0 0 rgba(0, 0, 0, 1);
 }
+
 @media (min-width: 640px) {
   .project-filter-btn {
     padding: 0.5rem 1rem;
@@ -646,23 +651,64 @@ html, body {
 }
 
 .drop-shadow-brutal {
-  filter: drop-shadow(2px 2px 0px rgba(0,0,0,1));
+  filter: drop-shadow(2px 2px 0px rgba(0, 0, 0, 1));
 }
 
-.anim-dur-3-5 { animation-duration: 3.5s; }
-.anim-dur-4 { animation-duration: 4s; }
-.anim-dur-4-2 { animation-duration: 4.2s; }
-.anim-dur-4-5 { animation-duration: 4.5s; }
-.anim-dur-4-6 { animation-duration: 4.6s; }
-.anim-dur-5 { animation-duration: 5s; }
-.anim-dur-12 { animation-duration: 12s; }
-.anim-dur-15 { animation-duration: 15s; }
-.anim-reverse { animation-direction: reverse; }
-.anim-delay-0-2 { animation-delay: 0.2s; }
-.anim-delay-0-4 { animation-delay: 0.4s; }
-.anim-delay-0-5 { animation-delay: 0.5s; }
-.anim-delay-0-7 { animation-delay: 0.7s; }
-.anim-delay-1 { animation-delay: 1s; }
+.anim-dur-3-5 {
+  animation-duration: 3.5s;
+}
+
+.anim-dur-4 {
+  animation-duration: 4s;
+}
+
+.anim-dur-4-2 {
+  animation-duration: 4.2s;
+}
+
+.anim-dur-4-5 {
+  animation-duration: 4.5s;
+}
+
+.anim-dur-4-6 {
+  animation-duration: 4.6s;
+}
+
+.anim-dur-5 {
+  animation-duration: 5s;
+}
+
+.anim-dur-12 {
+  animation-duration: 12s;
+}
+
+.anim-dur-15 {
+  animation-duration: 15s;
+}
+
+.anim-reverse {
+  animation-direction: reverse;
+}
+
+.anim-delay-0-2 {
+  animation-delay: 0.2s;
+}
+
+.anim-delay-0-4 {
+  animation-delay: 0.4s;
+}
+
+.anim-delay-0-5 {
+  animation-delay: 0.5s;
+}
+
+.anim-delay-0-7 {
+  animation-delay: 0.7s;
+}
+
+.anim-delay-1 {
+  animation-delay: 1s;
+}
 
 .origin-hang-swing {
   transform-origin: 50% -32px;
