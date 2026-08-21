@@ -13,6 +13,12 @@
   --font-mono: 'Space Mono', monospace;
 }
 
+html, body {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
 /* Animations */
 @keyframes hang-swing {
 
@@ -483,21 +489,34 @@
     linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
 }
 
+/* Cross-Browser Status Strip Normalization */
+#hero-status-strip {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  box-sizing: border-box;
+}
+
 /* Mobile Overrides (<=480px) */
 @media (max-width: 480px) {
 
   /* Status strip fit */
   #hero-status-strip {
-    flex-wrap: nowrap;
-    justify-content: center;
-    font-size: 7px;
-    letter-spacing: -0.02em;
-    padding: 3px 2px;
-    gap: 0;
+    width: 100% !important;
+    max-width: 100% !important;
+    flex-wrap: nowrap !important;
+    justify-content: space-between !important;
+    font-size: clamp(6px, 1.9vw, 7.5px) !important;
+    letter-spacing: -0.02em !important;
+    padding: 2px 4px !important;
+    gap: 0 !important;
   }
 
   #hero-status-strip>span {
-    padding: 4px 7px;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 4px 2px !important;
+    box-sizing: border-box !important;
   }
 
   /* Terminal card labels */
