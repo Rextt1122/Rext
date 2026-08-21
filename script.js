@@ -229,14 +229,28 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeout(typeSys, 500); // Start typing immediately
   }
 
-  // --- CLI Terminal Easter Egg (Obfuscated) ---
+  // --- CLI Terminal Easter Egg ---
   const statusIndicator = document.querySelector(".status-indicator");
   let tInit = false;
   let tOverlay, tInput, tOutput, tClose;
 
   function initT() {
     if (tInit) return;
-    const tHtml = atob("PGRpdiBpZD0idGVybWluYWwtb3ZlcmxheSIgY2xhc3M9ImhpZGRlbiI+PGRpdiBjbGFzcz0idGVybWluYWwtaGVhZGVyIj48c3BhbiBjbGFzcz0idGVybWluYWwtdGl0bGUiPmZhYmlhbkBzeXN0ZW06fjwvc3Bhbj48YnV0dG9uIGlkPSJ0ZXJtaW5hbC1jbG9zZSIgYXJpYS1sYWJlbD0iQ2xvc2UgdGVybWluYWwiPlg8L2J1dHRvbj48L2Rpdj48ZGl2IGlkPSJ0ZXJtaW5hbC1vdXRwdXQiPjxwPkZhYmlhbk9TIChjKSAyMDI1LiBBbGwgcmlnaHRzIHJlc2VydmVkLjwvcD48cD5UeXBlIDxzcGFuIHN0eWxlPSJjb2xvcjp2YXIoLS1hY2NlbnQtY29sb3IpOyI+aGVscDwvc3Bhbj4gZm9yIGEgbGlzdCBvZiBhdmFpbGFibGUgY29tbWFuZHMuPC9wPjwvZGl2PjxkaXYgY2xhc3M9InRlcm1pbmFsLWlucHV0LWxpbmUiPjxzcGFuIGNsYXNzPSJ0ZXJtaW5hbC1wcm9tcHQiPmd1ZXN0QGZhYmlhbjp+JDwvc3Bhbj48aW5wdXQgdHlwZT0idGV4dCIgaWQ9InRlcm1pbmFsLWlucHV0IiBhdXRvY29tcGxldGU9Im9mZiIgc3BlbGxjaGVjaz0iZmFsc2UiIGF1dG9mb2N1cz48L2Rpdj48L2Rpdj4=");
+    const tHtml = `
+      <div id="terminal-overlay" class="hidden">
+        <div class="terminal-header">
+          <span class="terminal-title">fabian@system:~</span>
+          <button id="terminal-close" aria-label="Close terminal">X</button>
+        </div>
+        <div id="terminal-output">
+          <p>FabianOS (c) 2026. All rights reserved.</p>
+          <p>Type <span style="color:var(--accent-color);">help</span> for a list of available commands.</p>
+        </div>
+        <div class="terminal-input-line">
+          <span class="terminal-prompt">guest@fabian:~$</span>
+          <input type="text" id="terminal-input" autocomplete="off" spellcheck="false" autofocus>
+        </div>
+      </div>`;
     document.body.insertAdjacentHTML('beforeend', tHtml);
     tOverlay = document.getElementById("terminal-overlay");
     tInput = document.getElementById("terminal-input");
@@ -260,22 +274,44 @@ document.addEventListener("DOMContentLoaded", () => {
 
         pLine(`guest@fabian:~$ ${cmd}`, "var(--accent-color)");
 
-        // Obfuscated commands evaluation
+        // Commands evaluation
         const cmds = {
-          [atob("aGVscA==")]: () => [atob("QXZhaWxhYmxlIGNvbW1hbmRzOg=="), atob("ICB3aG9hbWkgICAtIERpc3BsYXkgaW5mb3JtYXRpb24gYWJvdXQgbWU="), atob("ICBza2lsbHMgICAtIExpc3QgbXkgdGVjaG5pY2FsIHNraWxscw=="), atob("ICBwcm9qZWN0cyAtIFNlZSB3aGF0IEkndmUgYmVlbiB3b3JraW5nIG9u"), atob("ICBjbGVhciAgICAtIENsZWFyIHRlcm1pbmFsIG91dHB1dA=="), atob("ICBleGl0ICAgICAtIENsb3NlIHRoZSB0ZXJtaW5hbA==")],
-          [atob("d2hvYW1p")]: () => [atob("RmFiaWFuIEhlbmRyaXlhbnNhaC4="), atob("Q29tcHV0ZXIgRW5naW5lZXJpbmcgc3R1ZGVudCwgRnJvbnRlbmQgRGV2ZWxvcGVyLCBhbmQgVUkvVVggRGVzaWduZXIu")],
-          [atob("c2tpbGxz")]: () => [atob("UHl0aG9uLCBQSFAsIExhcmF2ZWwsIEphdmFzY3JpcHQsIFRhaWx3aW5kQ1NTLCBGYXN0QVBJLCBEb2NrZXIsIEdpdCwgTXlTUUwsIEZpZ21hLCBBcmR1aW5vLCBGbHV0dGVyLg==")],
-          [atob("cHJvamVjdHM=")]: () => [atob("Q2hlY2sgb3V0IHRoZSBXRUIgUFJPSkVDVFMgc2VjdGlvbiBvbiB0aGlzIHBhZ2Uh"), atob("LSBXZWF0aGVyIEFwcA=="), atob("LSBTaWduIExhbmd1YWdlIFJlY29nbml0aW9u"), atob("LSBJbWFnZSBVcHNjYWxlcg=="), atob("LSBKYW1rb3Q="), atob("LSBTdGlja2Vy"), atob("LSBEYXNoYm9hcmQ=")],
-          [atob("c3Vkbw==")]: () => [atob("TmljZSB0cnkuIFlvdSBhcmUgbm90IGluIHRoZSBzdWRvZXJzIGZpbGUuIFRoaXMgaW5jaWRlbnQgd2lsbCBiZSByZXBvcnRlZC4=")],
-          [atob("Y2xlYXI=")]: () => { tOutput.innerHTML = ""; return null; },
-          [atob("ZXhpdA==")]: () => { tOverlay.classList.add("hidden"); return null; }
+          help: () => [
+            "Available commands:",
+            "  whoami   - Display information about me",
+            "  skills   - List my technical skills",
+            "  projects - See what I've been working on",
+            "  clear    - Clear terminal output",
+            "  exit     - Close the terminal"
+          ],
+          whoami: () => [
+            "Fabian Hendriyansah.",
+            "Computer Engineering student, Frontend Developer, and UI/UX Designer."
+          ],
+          skills: () => [
+            "Python, PHP, Laravel, JavaScript, TailwindCSS, FastAPI, Docker, Git, MySQL, Figma, Arduino, Flutter."
+          ],
+          projects: () => [
+            "Check out the WEB PROJECTS section on this page!",
+            "- Weather App",
+            "- Sign Language Recognition",
+            "- Image Upscaler",
+            "- Jamkot",
+            "- Sticker",
+            "- Dashboard"
+          ],
+          sudo: () => [
+            "Nice try. You are not in the sudoers file. This incident will be reported."
+          ],
+          clear: () => { tOutput.innerHTML = ""; return null; },
+          exit: () => { tOverlay.classList.add("hidden"); return null; }
         };
 
         if (cmds[cmd]) {
           const res = cmds[cmd]();
           if (res) res.forEach(r => pLine(r));
         } else {
-          pLine(atob("YmFzaDog") + cmd + atob("OiBjb21tYW5kIG5vdCBmb3VuZA=="));
+          pLine(`bash: ${cmd}: command not found`);
         }
       }
     });

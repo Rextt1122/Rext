@@ -15,8 +15,15 @@
 
 /* Animations */
 @keyframes hang-swing {
-  0%, 100% { transform: rotate(-5deg); }
-  50% { transform: rotate(3deg); }
+
+  0%,
+  100% {
+    transform: rotate(-5deg);
+  }
+
+  50% {
+    transform: rotate(3deg);
+  }
 }
 
 /* Boot sequence */
@@ -476,14 +483,10 @@
     linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
 }
 
-/* ══════════════════════════════════════════
-   HERO + STATUS.ACTIVITY — Mobile overrides (≤480px)
-   Scoped via IDs / classes so other sections
-   stay untouched.
-   ══════════════════════════════════════════ */
+/* Mobile Overrides (<=480px) */
 @media (max-width: 480px) {
 
-  /* ── 1. Status strip: readable 1-row fit ── */
+  /* Status strip fit */
   #hero-status-strip {
     flex-wrap: nowrap;
     justify-content: center;
@@ -493,55 +496,115 @@
     gap: 0;
   }
 
-  #hero-status-strip > span {
+  #hero-status-strip>span {
     padding: 4px 7px;
   }
 
-  /* ── 2. Terminal card labels: bump to 9px ── */
+  /* Terminal card labels */
   .glitch-card .font-mono[class*="text-[6px]"],
   .glitch-card .font-mono[class*="text-[7px]"] {
     font-size: 9px !important;
   }
 
-  /* ── 3. Social links: 42px touch target ── */
+  /* Social links */
   .hero-social-row a {
-    min-height: 42px;
+    min-height: 32px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 6px;
+    padding-bottom: 6px;
   }
 
-  /* ── 4. Floating code snippet: scale down for shorter photo ── */
+  /* Floating code snippet */
   #hero .hero-floating-snippet {
     transform: scale(0.5) rotate(-3deg);
   }
 
-  /* ── 5. DESIGNER badge: overflow safety ── */
+  /* Designer badge */
   #hero .animate-float-pink {
     max-width: 100%;
     box-sizing: border-box;
   }
 
-  /* ── 6. Photo overlays: proportional to shorter 16:10 photo ── */
-
-  /* Subaru badge — smaller font + tighter padding */
+  /* Photo overlays */
   .hero-subaru-badge {
     font-size: 8px;
     padding: 2px 8px;
   }
 
-  /* Subaru label wrapper — closer to bottom edge */
   .hero-label-overlay {
     bottom: 10px;
   }
 
-  /* REXT // ID pin — slightly smaller + tighter position */
   .hero-rext-pin {
     font-size: 7px;
-    padding: 1px 5px;
+    padding: 1px 6px;
     top: 8px;
     right: 8px;
+  }
+}
+
+/* Utility Classes */
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-width: 2px;
+  border-color: #09090b;
+  border-radius: 0.75rem;
+  background-color: #ffffff;
+  box-shadow: 3px 3px 0 0 rgba(0, 0, 0, 1);
+  transition: all 0.2s ease;
+}
+.nav-item:hover {
+  box-shadow: none;
+  transform: translate(3px, 3px);
+}
+
+.hero-social-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  font-weight: 900;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-width: 2px;
+  border-color: #09090b;
+  border-radius: 0.75rem;
+  background-color: #ffffff;
+  box-shadow: 2px 2px 0 0 rgba(0, 0, 0, 1);
+  transition: all 0.2s ease;
+}
+@media (min-width: 640px) {
+  .hero-social-btn {
+    font-size: 0.75rem;
+    padding: 0.5rem 1rem;
+  }
+}
+.hero-social-btn:hover {
+  box-shadow: none;
+  transform: translate(2px, 2px);
+}
+
+.project-filter-btn {
+  padding: 0.375rem 0.75rem;
+  border-width: 2px;
+  border-color: #09090b;
+  border-radius: 0.75rem;
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  font-weight: 900;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
+  box-shadow: 3px 3px 0 0 rgba(0, 0, 0, 1);
+}
+@media (min-width: 640px) {
+  .project-filter-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
   }
 }

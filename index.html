@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rext - Portofolio</title>
+  <title>Rext | Portofolio</title>
   <link rel="icon" href="data:,">
   <meta name="description"
     content="Fabian Hendriyansah (Rext) — Computer Engineering student, Frontend Dev & Graphic Designer." />
@@ -129,10 +129,10 @@
 
 <body class="relative bg-[#FAFAFA] text-gray-950 overflow-x-hidden">
 
-  <!-- Subtle Dot Grid Background -->
+  <!-- Dot Grid -->
   <div class="fixed inset-0 z-0 pointer-events-none dot-grid opacity-60"></div>
 
-  <!-- Moving Boxes (Decorative) -->
+  <!-- Moving Boxes -->
   <div class="fixed inset-0 z-0 pointer-events-none overflow-hidden">
     <div
       class="absolute top-[20%] left-[10%] w-12 h-12 border-2 border-gray-950 bg-[#4ADE80] shadow-[4px_4px_0_0_rgba(0,0,0,1)] animate-spinSlow">
@@ -148,11 +148,10 @@
       style="animation-delay: 1s; animation-duration: 3.5s;"></div>
   </div>
 
-  <!-- ════ NAVBAR (BRUTALIST TOOLBAR) ════ -->
+  <!-- Navbar -->
   <nav
     class="fixed w-full top-0 z-50 bg-[#FAFAFA] border-b-4 border-gray-950 flex items-center justify-between px-4 sm:px-6 md:px-8 h-16 sm:h-20 transition-all">
 
-    <!-- Logo Block -->
     <a href="#hero" class="flex items-center gap-3 group shrink-0">
       <div
         class="w-4 h-4 bg-[#FF4D8D] border-2 border-gray-950 shadow-[2px_2px_0_0_rgba(0,0,0,1)] group-hover:translate-x-0.5 group-hover:translate-y-0.5 group-hover:shadow-none transition-all">
@@ -161,34 +160,27 @@
           class="text-[#0038FF]">.</span></span>
     </a>
 
-    <!-- Right Side (Desktop Links + Menu Button) -->
     <div class="flex items-center gap-4 sm:gap-6">
 
-      <!-- Desktop Links -->
       <div class="hidden lg:flex items-center gap-4 font-mono font-black text-xs tracking-widest uppercase">
-        <a href="#hero"
-          class="flex items-center gap-2 px-4 py-2 border-2 border-gray-950 rounded-xl bg-white hover:bg-[#FF4D8D] hover:text-white shadow-[3px_3px_0_0_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[3px] hover:translate-y-[3px] transition-all group">
+        <a href="#hero" class="nav-item hover:bg-[#FF4D8D] hover:text-white group">
           <span class="w-1.5 h-1.5 rounded-full bg-gray-950 group-hover:bg-white transition-colors"></span>
           HOME
         </a>
-        <a href="#status-activity"
-          class="flex items-center gap-2 px-4 py-2 border-2 border-gray-950 rounded-xl bg-white hover:bg-[#FACC15] hover:text-gray-950 shadow-[3px_3px_0_0_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[3px] hover:translate-y-[3px] transition-all group">
+        <a href="#status-activity" class="nav-item hover:bg-[#FACC15] hover:text-gray-950 group">
           <span class="w-1.5 h-1.5 rounded-full bg-gray-950 transition-colors"></span>
           STATUS
         </a>
-        <a href="#projects"
-          class="flex items-center gap-2 px-4 py-2 border-2 border-gray-950 rounded-xl bg-white hover:bg-[#0038FF] hover:text-white shadow-[3px_3px_0_0_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[3px] hover:translate-y-[3px] transition-all group">
+        <a href="#projects" class="nav-item hover:bg-[#0038FF] hover:text-white group">
           <span class="w-1.5 h-1.5 rounded-full bg-gray-950 group-hover:bg-white transition-colors"></span>
           WORKS
         </a>
-        <a href="#gallery"
-          class="flex items-center gap-2 px-4 py-2 border-2 border-gray-950 rounded-lg bg-white hover:bg-[#00F2FE] hover:text-gray-950 shadow-[3px_3px_0_0_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[3px] hover:translate-y-[3px] transition-all group">
+        <a href="#gallery" class="nav-item hover:bg-[#00F2FE] hover:text-gray-950 group">
           <span class="w-1.5 h-1.5 rounded-full bg-gray-950 transition-colors"></span>
           GALLERY
         </a>
       </div>
 
-      <!-- Mobile Menu Button (Yellow Pill) -->
       <button id="mobile-menu-btn"
         class="flex md:hidden items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-[#FACC15] border-2 border-gray-950 rounded-full shadow-[3px_3px_0_0_rgba(0,0,0,1)] active:translate-x-1 active:translate-y-1 active:shadow-none transition-all cursor-pointer focus:outline-none">
         <span class="w-2 h-2 rounded-full bg-[#4ADE80] border border-gray-950 animate-pulse shrink-0"></span>
@@ -203,15 +195,13 @@
     </div>
   </nav>
 
-  <!-- ════ MOBILE MENU OVERLAY ════ -->
+  <!-- Mobile Menu -->
   <div id="mobile-menu"
     class="fixed inset-0 z-[60] bg-gray-950/80 backdrop-blur-sm flex flex-col justify-center items-center p-6 transition-transform duration-300 transform -translate-y-full md:hidden">
 
-    <!-- Menu Card -->
     <div
       class="w-full max-w-sm bg-white border-4 border-gray-950 rounded-2xl shadow-[12px_12px_0_0_rgba(0,0,0,1)] flex flex-col overflow-hidden relative">
 
-      <!-- Header -->
       <div class="px-5 py-4 flex justify-between items-center border-b-4 border-gray-950 bg-white">
         <div class="flex items-center gap-3">
           <div class="w-4 h-4 bg-[#FF4D8D] border-2 border-gray-950 shadow-[2px_2px_0_0_rgba(0,0,0,1)]"></div>
@@ -225,7 +215,6 @@
         </button>
       </div>
 
-      <!-- Links Container -->
       <div class="p-5 flex flex-col gap-4 bg-[#FAFAFA] grid-pattern">
 
         <a href="#hero"
@@ -254,7 +243,6 @@
         </a>
       </div>
 
-      <!-- Footer -->
       <div class="px-5 py-3 flex justify-between items-center border-t-4 border-gray-950 bg-white">
         <span class="font-mono text-[9px] font-black uppercase tracking-widest text-gray-400">REXT // PORTFOLIO</span>
         <span
@@ -264,7 +252,7 @@
     </div>
   </div>
 
-  <!-- ════ HERO ════ -->
+  <!-- Hero -->
   <section id="hero" class="relative min-h-screen pt-16 flex flex-col bg-[#FAFAFA] overflow-hidden">
 
     <!-- Giant BG text watermark -->
@@ -282,7 +270,6 @@
       <div
         class="w-full bg-white grid-pattern border-2 border-gray-950 shadow-none sm:shadow-[16px_16px_0_0_rgba(0,0,0,0.95)] px-6 py-4 sm:px-10 sm:py-6 lg:px-12 lg:py-8 relative overflow-hidden flex flex-col">
 
-        <!-- Top index bar -->
         <div
           class="shrink-0 w-full pb-4 mb-6 md:mb-8 border-b-2 border-gray-950 flex justify-between items-center font-mono text-[9px] sm:text-xs uppercase font-black text-gray-950">
           <span
@@ -296,23 +283,17 @@
 
         <div class="w-full flex flex-col justify-center">
           <div class="w-full grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
-            <!-- LEFT: Profile Card -->
             <div class="lg:col-span-4 flex flex-col gap-4">
 
-              <!-- Profile Visual (slightly smaller) -->
               <div class="relative group w-[92%] mx-auto">
-                <!-- Shadow block -->
                 <div class="absolute inset-0 translate-x-3 translate-y-3 bg-gray-950 rounded-2xl"></div>
                 <div
                   class="relative bg-gray-950 rounded-2xl border-2 border-gray-950 overflow-hidden w-full aspect-[16/10]">
-                  <!-- Profile Image -->
                   <img src="img/waguri_banner.webp" alt="Profile"
                     class="absolute inset-0 w-full h-full object-cover object-center grayscale-[30%] hover:grayscale-0 transition-all duration-500" />
 
-                  <!-- Subtle brutalist overlay -->
                   <div class="absolute inset-0 hatch-bg opacity-30 pointer-events-none mix-blend-overlay"></div>
 
-                  <!-- Label overlay -->
                   <div
                     class="hero-label-overlay absolute bottom-4 left-0 right-0 flex justify-center pointer-events-none">
                     <div
@@ -320,30 +301,23 @@
                       Waguri
                     </div>
                   </div>
-                  <!-- Top right pin -->
                   <div
                     class="hero-rext-pin absolute top-3 right-3 bg-[#FF4D8D] text-white font-mono text-[8px] font-black uppercase px-2 py-0.5 border border-gray-950 rounded-md rotate-2">
                     REXT // ID
                   </div>
                 </div>
 
-                <!-- Floating Code Snippet -->
                 <div
                   class="absolute top-8 sm:top-12 left-0 sm:left-1 md:-left-4 z-30 transform scale-[0.5] sm:scale-[0.85] origin-top-left pointer-events-none hero-floating-snippet">
 
-                  <!-- Animation Wrapper -->
                   <div class="animate-[hang-swing_4s_ease-in-out_infinite]" style="transform-origin: 50% -32px;">
-                    <!-- Tali Gantung / String Hook -->
                     <svg
                       class="absolute -top-[40px] left-1/2 -translate-x-1/2 w-[100px] h-[50px] z-[-1] pointer-events-none"
                       viewBox="0 0 100 50">
                       <path d="M 50 8 L 20 50 M 50 8 L 80 50" stroke="#09090b" stroke-width="2.5" fill="none"
                         stroke-linecap="round" />
-                      <!-- Pin Shadow -->
                       <circle cx="52" cy="10" r="5" fill="rgba(0,0,0,1)" />
-                      <!-- Pin Body -->
                       <circle cx="50" cy="8" r="5" fill="#FF4D8D" stroke="#09090b" stroke-width="2" />
-                      <!-- Pin Highlight -->
                       <circle cx="48" cy="6" r="1.5" fill="#ffffff" />
                     </svg>
 
@@ -363,7 +337,6 @@
 }</code></pre>
                       </div>
                     </div>
-                    <!-- Floating Emoji Accent -->
                     <div class="absolute -top-3 -right-2 text-xl sm:text-2xl rotate-12"
                       style="filter: drop-shadow(2px 2px 0px rgba(0,0,0,1));">
                     </div>
@@ -372,9 +345,8 @@
 
               </div>
 
-              <!-- Status Strip — single horizontal line -->
               <div id="hero-status-strip"
-                class="w-[92%] mx-auto flex flex-nowrap items-center justify-center gap-0 border-2 border-gray-950 rounded-xl bg-white text-gray-950 font-mono text-[6px] sm:text-[9px] font-black uppercase tracking-tight sm:tracking-wider overflow-hidden shadow-[3px_3px_0_0_rgba(0,0,0,1)] whitespace-nowrap">
+                class="w-[92%] mx-auto mt-1.5 sm:mt-2 flex flex-nowrap items-center justify-center gap-0 border-2 border-gray-950 rounded-xl bg-white text-gray-950 font-mono text-[6px] sm:text-[9px] font-black uppercase tracking-tight sm:tracking-wider overflow-hidden shadow-[3px_3px_0_0_rgba(0,0,0,1)] whitespace-nowrap">
                 <span class="flex items-center gap-1 sm:gap-1.5 px-1.5 sm:px-3 py-1.5 sm:py-2 shrink-0">
                   <span class="w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full bg-[#4ADE80] animate-pulse shrink-0"></span>
                   ACTIVE
@@ -389,39 +361,34 @@
 
             </div>
 
-            <!-- RIGHT: Main Title + Bio -->
             <div class="lg:col-span-8 flex flex-col gap-4 lg:gap-5">
 
-              <!-- Section index label -->
               <div
                 class="flex items-center gap-3 font-mono text-[10px] font-black uppercase text-gray-400 tracking-widest">
                 <span class="w-8 h-px bg-gray-400 inline-block"></span>
                 <span>01 / INTRO</span>
               </div>
 
-              <!-- Staggered Headline -->
               <div class="flex flex-col gap-1 md:gap-1.5 relative w-full">
 
-                <!-- Large BG Number Accent (fills dead space) -->
                 <div
                   class="absolute right-[8%] -top-4 hidden xl:flex items-start justify-end pointer-events-none z-0 select-none">
                   <span
                     class="font-oswald font-black text-[11rem] leading-none text-gray-950 opacity-[0.06] tracking-tighter">01</span>
                 </div>
 
-                <!-- Dot Matrix Decoration (expanded) -->
                 <div
                   class="absolute right-2 top-0 hidden xl:block w-64 h-52 dot-matrix text-gray-400 opacity-50 z-0 pointer-events-none">
                 </div>
 
                 <h1 class="font-oswald font-bold tracking-tighter uppercase text-gray-950 relative z-10 w-full"
-                  style="font-size: clamp(3rem, 5.5vw, 5rem); line-height: 0.95;">
+                  style="font-size: clamp(2.6rem, 5.5vw, 5rem); line-height: 0.95;">
                   UI/UX, FRONTEND
                 </h1>
                 <div class="flex items-center gap-2 sm:gap-3 flex-wrap">
                   <span
                     class="font-oswald font-bold uppercase leading-none bg-[#FACC15] text-gray-950 px-3 border-2 border-gray-950 shadow-[4px_4px_0_0_rgba(0,0,0,1)] -rotate-1 inline-block animate-wiggle-yellow"
-                    style="font-size: clamp(2.5rem, 5vw, 4.5rem);">
+                    style="font-size: clamp(2.2rem, 5vw, 4.5rem);">
                     & GRAPHIC
                   </span>
                   <div
@@ -432,11 +399,10 @@
                 <div class="flex items-center gap-4 flex-wrap">
                   <span
                     class="font-oswald font-bold tracking-tighter uppercase text-white bg-[#FF4D8D] px-3 sm:px-4 border-2 border-gray-950 shadow-[4px_4px_0_0_rgba(0,0,0,1)] rotate-1 inline-block animate-float-pink max-w-full"
-                    style="font-size: clamp(3rem, 5.5vw, 5.5rem); line-height: 0.95;">
+                    style="font-size: clamp(2.6rem, 5.5vw, 5.5rem); line-height: 0.95;">
                     DESIGNER
                   </span>
                 </div>
-                <!-- Location & Role Badges -->
                 <div class="flex items-center gap-2 sm:gap-3 flex-wrap mt-1 md:mt-2 w-full justify-between">
                   <div class="flex items-center gap-2 sm:gap-3 flex-wrap">
                     <span
@@ -447,7 +413,6 @@
                       JUNIOR DEV</span>
                   </div>
 
-                  <!-- Subtle Barcode Decoration -->
                   <div
                     class="hidden xl:flex items-center gap-2 border border-gray-950 px-2 py-0.5 rounded-md bg-gray-950 text-white shadow-[2px_2px_0_0_rgba(0,0,0,0.5)]">
                     <span
@@ -467,7 +432,6 @@
                 </div>
               </div>
 
-              <!-- Divider with label -->
               <div class="flex items-center gap-4 border-t-2 border-gray-950 pt-4 mt-2">
                 <span
                   class="font-mono text-[9px] font-black uppercase text-gray-400 shrink-0 tracking-widest">ABOUT.ME</span>
@@ -477,7 +441,6 @@
                   Engineering</span>
               </div>
 
-              <!-- Bio Text -->
               <div class="border-l-4 border-[#4ADE80] pl-4">
                 <p class="font-mono text-sm sm:text-base text-gray-800 leading-relaxed">
                   Hello! I'm <strong class="bg-gray-950 text-white px-1.5">Fabian Hendriyansah</strong>, usually called
@@ -486,39 +449,52 @@
                 </p>
               </div>
 
-              <!-- CTA Buttons -->
               <div class="flex flex-wrap gap-2 pt-2">
                 <a href="#projects"
-                  class="flex-1 text-center bg-[#FF5500] text-white font-oswald text-xs sm:text-sm font-bold uppercase px-3 py-2 sm:px-5 sm:py-2.5 border-2 border-gray-950 rounded-xl shadow-[4px_4px_0_0_rgba(0,0,0,1)] hover:bg-gray-950 hover:shadow-[2px_2px_0_0_rgba(0,0,0,1)] hover:translate-x-0.5 hover:translate-y-0.5 transition-all">
+                  class="flex-1 text-center bg-[#FF5500] text-white font-oswald text-[11px] sm:text-sm font-bold uppercase px-2.5 py-1.5 sm:px-5 sm:py-2.5 border-2 border-gray-950 rounded-xl shadow-[3px_3px_0_0_rgba(0,0,0,1)] sm:shadow-[4px_4px_0_0_rgba(0,0,0,1)] hover:bg-gray-950 hover:shadow-[2px_2px_0_0_rgba(0,0,0,1)] hover:translate-x-0.5 hover:translate-y-0.5 transition-all">
                   SEE WORKS →
                 </a>
                 <a href="#status-activity"
-                  class="flex-1 text-center bg-transparent text-gray-950 font-oswald text-xs sm:text-sm font-bold uppercase px-3 py-2 sm:px-5 sm:py-2.5 border-2 border-gray-950 rounded-xl hover:bg-gray-100 transition-all">
+                  class="flex-1 text-center bg-transparent text-gray-950 font-oswald text-[11px] sm:text-sm font-bold uppercase px-2.5 py-1.5 sm:px-5 sm:py-2.5 border-2 border-gray-950 rounded-xl hover:bg-gray-100 transition-all">
                   MY ACTIVITY ↓
                 </a>
               </div>
 
-              <!-- Social Row -->
-              <div class="hero-social-row flex flex-wrap items-center gap-3 pt-2">
+              <div class="hero-social-row flex flex-wrap items-center gap-2 sm:gap-3 pt-2">
                 <a href="https://github.com/Rextt1122" target="_blank"
-                  class="font-mono text-[10px] sm:text-xs font-black uppercase px-3 py-1.5 sm:px-4 sm:py-2 border-2 border-gray-950 rounded-xl bg-white hover:bg-gray-950 hover:text-white shadow-[2px_2px_0_0_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-0.5 hover:translate-y-0.5 transition-all">
-                  ↗ GITHUB
+                  class="hero-social-btn hover:bg-gray-950 hover:text-white">
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
+                  </svg>
+                  GITHUB
                 </a>
                 <a href="https://www.instagram.com/fabiyaan_/" target="_blank"
-                  class="font-mono text-[10px] sm:text-xs font-black uppercase px-3 py-1.5 sm:px-4 sm:py-2 border-2 border-gray-950 rounded-xl bg-white hover:bg-[#FF4D8D] hover:text-white shadow-[2px_2px_0_0_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-0.5 hover:translate-y-0.5 transition-all">
-                  ↗ INSTAGRAM
+                  class="hero-social-btn hover:bg-[#FF4D8D] hover:text-white">
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
+                  </svg>
+                  INSTAGRAM
                 </a>
                 <a href="https://www.tiktok.com/@fabiyaan_" target="_blank"
-                  class="font-mono text-[10px] sm:text-xs font-black uppercase px-3 py-1.5 sm:px-4 sm:py-2 border-2 border-gray-950 rounded-xl bg-white hover:bg-gray-950 hover:text-[#00F2FE] shadow-[2px_2px_0_0_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-0.5 hover:translate-y-0.5 transition-all">
-                  ↗ TIKTOK
+                  class="hero-social-btn hover:bg-gray-950 hover:text-[#00F2FE]">
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
+                  </svg>
+                  TIKTOK
                 </a>
                 <a href="mailto:fabianhendriyansahbusiness@gmail.com"
-                  class="font-mono text-[10px] sm:text-xs font-black uppercase px-3 py-1.5 sm:px-4 sm:py-2 border-2 border-gray-950 rounded-xl bg-white hover:bg-[#EA4335] hover:text-white shadow-[2px_2px_0_0_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-0.5 hover:translate-y-0.5 transition-all">
-                  ↗ GMAIL
+                  class="hero-social-btn hover:bg-[#EA4335] hover:text-white">
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
+                  </svg>
+                  GMAIL
                 </a>
                 <a href="https://www.facebook.com/yan.226312" target="_blank"
-                  class="font-mono text-[10px] sm:text-xs font-black uppercase px-3 py-1.5 sm:px-4 sm:py-2 border-2 border-gray-950 rounded-xl bg-white hover:bg-[#1877F2] hover:text-white shadow-[2px_2px_0_0_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-0.5 hover:translate-y-0.5 transition-all">
-                  ↗ FACEBOOK
+                  class="hero-social-btn hover:bg-[#1877F2] hover:text-white">
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
+                  </svg>
+                  FACEBOOK
                 </a>
                 <span
                   class="font-mono text-[9px] font-black uppercase text-gray-400 tracking-widest ml-auto hidden sm:block animate-bounce">
@@ -529,7 +505,6 @@
           </div>
         </div>
 
-        <!-- Bottom Index Bar -->
         <div
           class="shrink-0 w-full pt-4 mt-6 md:mt-8 border-t-2 border-gray-950 flex justify-between items-end font-mono text-[9px] sm:text-xs uppercase font-black text-gray-950">
           <span class="tracking-widest">01
@@ -546,19 +521,17 @@
 
   </section>
 
-  <!-- ════ STATUS.ACTIVITY ════ -->
+  <!-- Status Activity -->
   <section id="status-activity"
     class="relative bg-[#FAFAFA] border-t-2 border-gray-950 overflow-hidden flex flex-col pt-12 pb-20 sm:pt-16 sm:pb-28">
 
     <div class="relative z-10 flex-1 w-[96%] max-w-[1800px] mx-auto flex items-center justify-center">
 
-      <!-- Big Box Wrapper -->
       <div
         class="w-full bg-white border-2 border-gray-950 shadow-none sm:shadow-[16px_16px_0_0_rgba(0,0,0,0.95)] px-5 py-6 sm:px-10 sm:py-8 lg:px-12 lg:py-10 relative overflow-hidden flex flex-col"
         style="background-image: linear-gradient(to right, #f3f4f6 1px, transparent 1px), linear-gradient(to bottom, #f3f4f6 1px, transparent 1px); background-size: 32px 32px;">
 
 
-        <!-- Section Title Block -->
         <div class="flex items-end justify-between mb-10 pb-5 border-b-2 border-gray-950">
           <div>
             <div class="font-mono text-[10px] font-black uppercase text-gray-400 tracking-widest mb-1">02 / ACTICITY
@@ -571,52 +544,48 @@
             STATUS →</span>
         </div>
 
-        <!-- Replacement Layout (from photo) -->
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-5">
 
-          <!-- Card 1: GLITCH_DASH.EXE (col-span-5) -->
+          <!-- Card 1 -->
           <div
-            class="glitch-card lg:col-span-5 relative group bg-gray-950 border-2 border-gray-950 rounded-2xl p-3 sm:p-5 shadow-[6px_6px_0_0_rgba(0,0,0,1)] hover:-translate-x-1 hover:-translate-y-1 hover:shadow-[8px_8px_0_0_rgba(0,0,0,1)] transition-all flex flex-col overflow-hidden">
-
-            <!-- Scanline overlay -->
-            <div class="absolute inset-0 pointer-events-none z-10"
-              style="background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,0.15) 2px,rgba(0,0,0,0.15) 4px);">
-            </div>
+            class="glitch-card lg:col-span-5 relative group bg-white text-gray-950 border-2 border-gray-950 rounded-2xl p-3 sm:p-5 shadow-[6px_6px_0_0_rgba(0,0,0,1)] hover:-translate-x-1 hover:-translate-y-1 hover:shadow-[8px_8px_0_0_rgba(0,0,0,1)] transition-all flex flex-col overflow-hidden">
 
             <div
-              class="flex justify-between items-center mb-2 sm:mb-3 pb-1 sm:pb-2 border-b-2 border-[#4ADE80] relative z-20">
-              <span class="font-mono text-[7px] sm:text-[9px] font-black uppercase text-[#4ADE80] tracking-widest">[01]
-                GLITCH_DASH.EXE</span>
+              class="flex justify-between items-center mb-2 sm:mb-3 pb-1 sm:pb-2 border-b-2 border-gray-950 relative z-20">
+              <span class="font-mono text-[7px] sm:text-[9px] font-black uppercase text-gray-950 tracking-widest">[01]
+                PINGPONG.EXE</span>
               <span
-                class="font-mono text-[6px] sm:text-[8px] font-bold uppercase text-[#FF4D8D] tracking-widest animate-pulse">AUTO_PILOT</span>
+                class="font-mono text-[6px] sm:text-[8px] font-bold uppercase bg-[#0038FF] text-white px-2 py-0.5 border border-gray-950 rounded-md tracking-widest animate-pulse">//
+                AUTO</span>
             </div>
 
             <!-- Inner Window -->
-            <div class="border-2 border-[#4ADE80] rounded-xl flex-1 flex flex-col overflow-hidden relative z-20">
+            <div
+              class="border-2 border-gray-950 rounded-xl flex-1 flex flex-col overflow-hidden relative z-20 shadow-[3px_3px_0_0_rgba(0,0,0,1)]">
               <!-- Title Bar -->
-              <div class="bg-[#4ADE80] px-2 py-1 sm:px-3 sm:py-1.5 flex justify-between items-center">
-                <span
-                  class="font-mono text-[7px] sm:text-[8px] font-bold text-gray-950 uppercase tracking-widest">GLITCH_RUNNER
+              <div
+                class="bg-[#0038FF] border-b-2 border-gray-950 px-2 py-1 sm:px-3 sm:py-1.5 flex justify-between items-center">
+                <span class="font-mono text-[7px] sm:text-[8px] font-bold text-white uppercase tracking-widest">PINGPONG
                   //
-                  v0.1</span>
+                  v1.0</span>
                 <div class="flex gap-1 sm:gap-1.5">
-                  <div class="w-2 h-2 sm:w-3 sm:h-3 bg-gray-950 rounded-full"></div>
-                  <div class="w-2 h-2 sm:w-3 sm:h-3 bg-[#FACC15] rounded-full"></div>
-                  <div class="w-2 h-2 sm:w-3 sm:h-3 bg-[#FF4D8D] rounded-full"></div>
+                  <div class="w-2 h-2 sm:w-3 sm:h-3 bg-white rounded-full border border-gray-950"></div>
+                  <div class="w-2 h-2 sm:w-3 sm:h-3 bg-[#FACC15] rounded-full border border-gray-950"></div>
+                  <div class="w-2 h-2 sm:w-3 sm:h-3 bg-[#FF4D8D] rounded-full border border-gray-950"></div>
                 </div>
               </div>
 
               <!-- Game Canvas -->
-              <div class="flex-1 flex flex-col bg-gray-950 relative p-0 min-h-[100px] sm:min-h-[140px]">
+              <div class="flex-1 flex flex-col bg-[#F4F2EB] relative p-0 h-[80px] sm:h-auto sm:min-h-[140px]">
                 <canvas id="glitch-canvas" class="w-full h-full block flex-1"></canvas>
               </div>
             </div>
 
             <div class="flex justify-between items-end pt-2 sm:pt-3 relative z-20">
-              <span class="font-mono text-[6px] sm:text-[7px] font-bold uppercase text-gray-500">SCORE: <span
-                  id="glitch-score">00000</span></span>
+              <span class="font-mono text-[6px] sm:text-[7px] font-bold uppercase text-gray-600">MATCH: <span
+                  id="glitch-score" class="text-gray-950 font-black">00 : 00 (RALLIES: 0000)</span></span>
               <span
-                class="font-mono text-[6px] sm:text-[8px] font-black uppercase bg-[#4ADE80] text-gray-950 px-2 py-0.5 sm:px-3 sm:py-1 border-2 border-[#4ADE80] rounded-full">DEBUGGING
+                class="font-mono text-[6px] sm:text-[8px] font-black uppercase bg-[#FACC15] text-gray-950 px-2 py-0.5 sm:px-3 sm:py-1 border border-gray-950 rounded-full shadow-[2px_2px_0_0_rgba(0,0,0,1)]">
                 // LIVE</span>
             </div>
           </div>
@@ -629,244 +598,246 @@
                 const scoreEl = document.getElementById('glitch-score');
 
                 function resize() {
-                  canvas.width = canvas.offsetWidth;
-                  canvas.height = canvas.offsetHeight;
+                  canvas.width = canvas.offsetWidth || 300;
+                  canvas.height = canvas.offsetHeight || 80;
                 }
                 resize();
-                window.addEventListener('resize', () => { resize(); groundY = canvas.height - 22; });
+                window.addEventListener('resize', resize);
 
                 // ── Colors ──
-                const C = { bg: '#09090b', neon: '#4ADE80', pink: '#FF4D8D', yellow: '#FACC15', error: '#FF4D8D', floor: '#1a1a2e' };
+                const C = {
+                  bg: '#F4F2EB',
+                  border: '#09090b',
+                  blue: '#0038FF',
+                  pink: '#FF4D8D',
+                  yellow: '#FACC15',
+                  green: '#4ADE80',
+                  ball: '#09090b',
+                  grid: 'rgba(9, 9, 11, 0.05)'
+                };
 
-                // ── Player ──
-                const P = { x: 38, y: 0, w: 14, h: 18, vy: 0, jumping: false, glitch: 0, trail: [] };
-                let groundY = canvas.height - 22;
+                // ── Game Objects ──
+                const paddleH = 28;
+                const paddleW = 6;
+                const p1 = { x: 10, y: 50, score: 0, color: C.blue };
+                const p2 = { x: 280, y: 50, score: 0, color: C.pink };
+                const ball = { x: 150, y: 70, vx: 3, vy: 2, size: 6, trail: [], speed: 3.5 };
 
-                // ── Obstacles ──
-                let obstacles = [];
-                let obSpawnTimer = 0;
-                let obSpeed = 2.8;
-
-                // ── Particles ──
                 let particles = [];
+                let glitchTimer = 0;
+                let totalRallies = 0;
+                let goalText = '';
+                let goalTimer = 0;
 
-                // ── Score & state ──
-                let score = 0;
-                let frame = 0;
-                let dead = false;
-                let deadTimer = 0;
-
-                function spawnOb() {
-                  const h = 14 + Math.random() * 16;
-                  const stacked = Math.random() > 0.7 ? 2 : 1;
-                  obstacles.push({ x: canvas.width + 10, w: 10 + Math.random() * 8, h: h * stacked, label: ['ERR', 'BUG', 'NULL', 'FAIL'][Math.floor(Math.random() * 4)] });
+                function resetBall(direction = 1) {
+                  const W = canvas.width;
+                  const H = canvas.height;
+                  ball.x = W / 2;
+                  ball.y = H / 2;
+                  const angle = (Math.random() - 0.5) * (Math.PI / 3);
+                  ball.speed = 3.2;
+                  ball.vx = Math.cos(angle) * ball.speed * direction;
+                  ball.vy = Math.sin(angle) * ball.speed;
+                  ball.trail = [];
                 }
 
-                function jump() {
-                  if (!P.jumping) {
-                    P.vy = -7.5;
-                    P.jumping = true;
-                    spawnParticles(P.x + P.w / 2, groundY, C.neon, 6);
-                  }
-                }
-
-                function spawnParticles(x, y, color, n) {
+                function spawnSparks(x, y, color, n = 8) {
                   for (let i = 0; i < n; i++) {
-                    particles.push({ x, y, vx: (Math.random() - 0.5) * 3, vy: -Math.random() * 3 - 1, life: 1, color });
-                  }
-                }
-
-                function resetGame() {
-                  P.y = groundY - P.h;
-                  P.vy = 0;
-                  P.jumping = false;
-                  P.trail = [];
-                  obstacles = [];
-                  obSpawnTimer = 0;
-                  obSpeed = 2.8;
-                  score = 0;
-                  frame = 0;
-                  dead = false;
-                  particles = [];
-                }
-                resetGame();
-
-                function drawGlitchRect(x, y, w, h, color, glitchAmt) {
-                  ctx.fillStyle = color;
-                  ctx.fillRect(x, y, w, h);
-                  if (glitchAmt > 0) {
-                    for (let i = 0; i < 3; i++) {
-                      const sliceY = y + Math.random() * h;
-                      const sliceH = 2 + Math.random() * 4;
-                      const offset = (Math.random() - 0.5) * glitchAmt;
-                      ctx.fillStyle = Math.random() > 0.5 ? C.pink : C.yellow;
-                      ctx.fillRect(x + offset, sliceY, w, sliceH);
-                    }
+                    const angle = Math.random() * Math.PI * 2;
+                    const spd = 1 + Math.random() * 3;
+                    particles.push({
+                      x, y,
+                      vx: Math.cos(angle) * spd,
+                      vy: Math.sin(angle) * spd,
+                      life: 1,
+                      color
+                    });
                   }
                 }
 
                 function tick() {
-                  groundY = canvas.height - 22;
-                  frame++;
                   const W = canvas.width;
+                  const H = canvas.height;
+                  p2.x = W - 16;
 
-                  // ── Auto-jump AI ──
-                  if (!dead) {
-                    const closestOb = obstacles.find(o => o.x + o.w > P.x - 5);
-                    if (closestOb && closestOb.x - (P.x + P.w) < 55 + obSpeed * 8 && !P.jumping) {
-                      jump();
+                  // ── AI Movement ──
+                  const p1Target = ball.vx < 0 ? ball.y - paddleH / 2 : H / 2 - paddleH / 2;
+                  p1.y += (p1Target - p1.y) * 0.12;
+
+                  const p2Target = ball.vx > 0 ? ball.y - paddleH / 2 : H / 2 - paddleH / 2;
+                  p2.y += (p2Target - p2.y) * 0.12;
+
+                  p1.y = Math.max(3, Math.min(H - paddleH - 3, p1.y));
+                  p2.y = Math.max(3, Math.min(H - paddleH - 3, p2.y));
+
+                  // ── Ball Movement ──
+                  ball.x += ball.vx;
+                  ball.y += ball.vy;
+
+                  ball.trail.push({ x: ball.x, y: ball.y });
+                  if (ball.trail.length > 6) ball.trail.shift();
+
+                  // Wall Bounces
+                  if (ball.y - ball.size / 2 <= 2) {
+                    ball.y = 2 + ball.size / 2;
+                    ball.vy *= -1;
+                    spawnSparks(ball.x, ball.y, C.blue, 4);
+                  } else if (ball.y + ball.size / 2 >= H - 2) {
+                    ball.y = H - 2 - ball.size / 2;
+                    ball.vy *= -1;
+                    spawnSparks(ball.x, ball.y, C.blue, 4);
+                  }
+
+                  // Paddle Collisions
+                  if (ball.vx < 0 && ball.x - ball.size / 2 <= p1.x + paddleW && ball.x + ball.size / 2 >= p1.x) {
+                    if (ball.y >= p1.y - 3 && ball.y <= p1.y + paddleH + 3) {
+                      ball.x = p1.x + paddleW + ball.size / 2;
+                      const hitPos = (ball.y - (p1.y + paddleH / 2)) / (paddleH / 2);
+                      ball.speed = Math.min(6.5, ball.speed + 0.15);
+                      const angle = hitPos * (Math.PI / 3.5);
+                      ball.vx = Math.cos(angle) * ball.speed;
+                      ball.vy = Math.sin(angle) * ball.speed;
+                      totalRallies++;
+                      glitchTimer = 3;
+                      spawnSparks(p1.x + paddleW, ball.y, C.blue, 8);
                     }
                   }
 
-                  // ── Physics ──
-                  if (!dead) {
-                    P.vy += 0.45;
-                    P.y += P.vy;
-                    if (P.y >= groundY - P.h) {
-                      P.y = groundY - P.h;
-                      P.vy = 0;
-                      P.jumping = false;
+                  if (ball.vx > 0 && ball.x + ball.size / 2 >= p2.x && ball.x - ball.size / 2 <= p2.x + paddleW) {
+                    if (ball.y >= p2.y - 3 && ball.y <= p2.y + paddleH + 3) {
+                      ball.x = p2.x - ball.size / 2;
+                      const hitPos = (ball.y - (p2.y + paddleH / 2)) / (paddleH / 2);
+                      ball.speed = Math.min(6.5, ball.speed + 0.15);
+                      const angle = hitPos * (Math.PI / 3.5);
+                      ball.vx = -Math.cos(angle) * ball.speed;
+                      ball.vy = Math.sin(angle) * ball.speed;
+                      totalRallies++;
+                      glitchTimer = 3;
+                      spawnSparks(p2.x, ball.y, C.pink, 8);
                     }
-                    P.glitch = Math.max(0, P.glitch - 0.5);
-                    // Trail
-                    P.trail.push({ x: P.x, y: P.y, a: 0.5 });
-                    if (P.trail.length > 8) P.trail.shift();
                   }
 
-                  // ── Obstacles ──
-                  obSpawnTimer++;
-                  const spawnInterval = Math.max(55, 110 - score * 0.04);
-                  if (obSpawnTimer > spawnInterval) { spawnOb(); obSpawnTimer = 0; }
+                  // Scoring
+                  if (ball.x < -10) {
+                    p2.score++;
+                    goalText = 'P2 // POINT';
+                    goalTimer = 35;
+                    spawnSparks(15, H / 2, C.pink, 12);
+                    resetBall(1);
+                  } else if (ball.x > W + 10) {
+                    p1.score++;
+                    goalText = 'P1 // POINT';
+                    goalTimer = 35;
+                    spawnSparks(W - 15, H / 2, C.blue, 12);
+                    resetBall(-1);
+                  }
 
-                  obstacles.forEach(o => { o.x -= obSpeed; });
-                  obstacles = obstacles.filter(o => o.x + o.w > -10);
-                  obSpeed = 2.8 + score * 0.003;
+                  if (scoreEl) {
+                    scoreEl.textContent = `${String(p1.score).padStart(2, '0')} : ${String(p2.score).padStart(2, '0')} (RALLIES: ${String(totalRallies).padStart(4, '0')})`;
+                  }
 
-                  // ── Collision ──
-                  obstacles.forEach(o => {
-                    if (!dead &&
-                      P.x + P.w - 3 > o.x && P.x + 3 < o.x + o.w &&
-                      P.y + P.h - 2 > groundY - o.h && P.y + 2 < groundY) {
-                      dead = true;
-                      P.glitch = 20;
-                      spawnParticles(P.x + P.w / 2, P.y + P.h / 2, C.pink, 20);
-                    }
+                  particles.forEach(p => {
+                    p.x += p.vx;
+                    p.y += p.vy;
+                    p.life -= 0.04;
                   });
-
-                  // ── Score ──
-                  if (!dead) {
-                    score++;
-                    scoreEl.textContent = String(score).padStart(5, '0');
-                  } else {
-                    deadTimer++;
-                    if (deadTimer > 90) { deadTimer = 0; resetGame(); }
-                  }
-
-                  // ── Particles ──
-                  particles.forEach(p => { p.x += p.vx; p.y += p.vy; p.vy += 0.15; p.life -= 0.04; });
                   particles = particles.filter(p => p.life > 0);
 
                   // ════ DRAW ════
-                  ctx.clearRect(0, 0, W, canvas.height);
+                  ctx.clearRect(0, 0, W, H);
 
                   // Background
                   ctx.fillStyle = C.bg;
-                  ctx.fillRect(0, 0, W, canvas.height);
+                  ctx.fillRect(0, 0, W, H);
 
-                  // Scrolling grid lines (floor)
-                  ctx.strokeStyle = 'rgba(57,255,20,0.08)';
+                  // Retro Grid Paper
+                  ctx.strokeStyle = C.grid;
                   ctx.lineWidth = 1;
-                  const gridOff = (frame * obSpeed * 0.5) % 30;
-                  for (let x = -gridOff; x < W; x += 30) {
-                    ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, canvas.height); ctx.stroke();
+                  for (let x = 0; x < W; x += 16) {
+                    ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, H); ctx.stroke();
+                  }
+                  for (let y = 0; y < H; y += 16) {
+                    ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(W, y); ctx.stroke();
                   }
 
-                  // Ground
-                  ctx.fillStyle = C.neon;
-                  ctx.fillRect(0, groundY, W, 2);
-                  // Dashed ground accent
-                  ctx.setLineDash([6, 8]);
-                  ctx.strokeStyle = 'rgba(57,255,20,0.3)';
-                  ctx.lineWidth = 1;
-                  ctx.beginPath(); ctx.moveTo(0, groundY + 4); ctx.lineTo(W, groundY + 4); ctx.stroke();
+                  // ── Authentic Ping Pong Table Court Lines ──
+                  ctx.strokeStyle = 'rgba(9, 9, 11, 0.3)';
+                  ctx.lineWidth = 1.5;
+
+                  // 1. Outer Border Line (inset 4px)
+                  ctx.strokeRect(4, 4, W - 8, H - 8);
+
+                  // 2. Horizontal Center Line (Service Line from left to right)
+                  ctx.beginPath();
+                  ctx.moveTo(4, H / 2);
+                  ctx.lineTo(W - 4, H / 2);
+                  ctx.stroke();
+
+                  // 3. Vertical Net Line (dividing left & right sides)
+                  ctx.setLineDash([3, 3]);
+                  ctx.strokeStyle = 'rgba(9, 9, 11, 0.45)';
+                  ctx.lineWidth = 2;
+                  ctx.beginPath();
+                  ctx.moveTo(W / 2, 2);
+                  ctx.lineTo(W / 2, H - 2);
+                  ctx.stroke();
                   ctx.setLineDash([]);
 
-                  // Trail
-                  P.trail.forEach((t, i) => {
-                    ctx.globalAlpha = t.a * (i / P.trail.length) * 0.6;
-                    ctx.fillStyle = C.neon;
-                    ctx.fillRect(t.x + 2, t.y + 2, P.w - 4, P.h - 4);
+                  // Ball Trail
+                  ball.trail.forEach((t, i) => {
+                    ctx.globalAlpha = (i / ball.trail.length) * 0.35;
+                    ctx.fillStyle = C.blue;
+                    ctx.fillRect(t.x - ball.size / 2, t.y - ball.size / 2, ball.size, ball.size);
                   });
                   ctx.globalAlpha = 1;
 
-                  // Player
-                  if (!dead || Math.floor(frame / 4) % 2 === 0) {
-                    drawGlitchRect(P.x, P.y, P.w, P.h, C.neon, P.glitch);
-                    // Eyes
-                    ctx.fillStyle = C.bg;
-                    ctx.fillRect(P.x + 3, P.y + 4, 3, 3);
-                    ctx.fillRect(P.x + 9, P.y + 4, 3, 3);
-                    // Neon outline
-                    ctx.strokeStyle = dead ? C.pink : 'rgba(57,255,20,0.8)';
-                    ctx.lineWidth = 1.5;
-                    ctx.strokeRect(P.x, P.y, P.w, P.h);
-                  }
+                  // Ball (Solid Black Pixel)
+                  ctx.fillStyle = C.ball;
+                  ctx.fillRect(ball.x - ball.size / 2, ball.y - ball.size / 2, ball.size, ball.size);
 
-                  // Obstacles
-                  obstacles.forEach(o => {
-                    const oy = groundY - o.h;
-                    ctx.fillStyle = '#1a0008';
-                    ctx.fillRect(o.x, oy, o.w, o.h);
-                    ctx.strokeStyle = C.error;
-                    ctx.lineWidth = 2;
-                    ctx.strokeRect(o.x, oy, o.w, o.h);
-                    // Label
-                    if (o.h > 20) {
-                      ctx.fillStyle = C.error;
-                      ctx.font = `bold 6px monospace`;
-                      ctx.textAlign = 'center';
-                      ctx.fillText(o.label, o.x + o.w / 2, oy + o.h / 2 + 2);
-                    }
-                    // Glitch flicker
-                    if (Math.random() > 0.85) {
-                      ctx.fillStyle = 'rgba(255,77,141,0.2)';
-                      ctx.fillRect(o.x, oy + Math.random() * o.h, o.w, 2);
-                    }
-                  });
+                  // Left Paddle (P1 - Blue)
+                  ctx.fillStyle = p1.color;
+                  ctx.fillRect(p1.x, p1.y, paddleW, paddleH);
+                  ctx.strokeStyle = C.border;
+                  ctx.lineWidth = 1.5;
+                  ctx.strokeRect(p1.x, p1.y, paddleW, paddleH);
 
-                  // Particles
+                  // Right Paddle (P2 - Pink)
+                  ctx.fillStyle = p2.color;
+                  ctx.fillRect(p2.x, p2.y, paddleW, paddleH);
+                  ctx.strokeStyle = C.border;
+                  ctx.lineWidth = 1.5;
+                  ctx.strokeRect(p2.x, p2.y, paddleW, paddleH);
+
+                  // Sparks
                   particles.forEach(p => {
                     ctx.globalAlpha = p.life;
                     ctx.fillStyle = p.color;
-                    ctx.fillRect(p.x - 2, p.y - 2, 4, 4);
+                    ctx.fillRect(p.x - 1.5, p.y - 1.5, 3, 3);
                   });
                   ctx.globalAlpha = 1;
 
-                  // Dead overlay
-                  if (dead) {
-                    ctx.fillStyle = 'rgba(255,77,141,0.12)';
-                    ctx.fillRect(0, 0, W, canvas.height);
-                    ctx.fillStyle = C.pink;
-                    ctx.font = 'bold 11px monospace';
+                  // Goal text overlay
+                  if (goalTimer > 0) {
+                    goalTimer--;
+                    ctx.fillStyle = C.border;
+                    ctx.font = '900 10px monospace';
                     ctx.textAlign = 'center';
-                    ctx.fillText('// FATAL_ERROR — RESTARTING...', W / 2, canvas.height / 2);
+                    ctx.fillText(goalText, W / 2, H / 2 - 8);
                   }
 
-                  ctx.textAlign = 'left';
                   requestAnimationFrame(tick);
                 }
 
-                setTimeout(() => { resize(); groundY = canvas.height - 22; resetGame(); tick(); }, 200);
+                setTimeout(() => { resize(); resetBall(); tick(); }, 150);
               })();
           </script>
 
-          <!-- Card 2: OPPORTUNITIES (col-span-7) -->
+          <!-- Card 2 -->
           <div
             class="lg:col-span-7 relative group bg-[#FF4D8D] text-white border-2 border-gray-950 rounded-2xl p-4 sm:p-6 shadow-[6px_6px_0_0_rgba(0,0,0,1)] hover:-translate-x-1 hover:-translate-y-1 hover:shadow-[8px_8px_0_0_rgba(0,0,0,1)] transition-all flex flex-col justify-between overflow-hidden">
-            <!-- Background Grid accent -->
             <div class="absolute inset-0 bg-grid-pattern opacity-10 pointer-events-none"></div>
 
-            <!-- HUD Corners -->
             <div
               class="absolute top-2 left-2 w-3 h-3 border-t-[2px] border-l-[2px] border-gray-950 pointer-events-none opacity-100">
             </div>
@@ -911,7 +882,7 @@
             </div>
           </div>
 
-          <!-- Card 3: GITHUB_ACTIVITY_MATRIX (col-span-12) -->
+          <!-- Card 3 -->
           <div
             class="lg:col-span-12 self-start relative group bg-white border-2 border-gray-950 rounded-2xl p-3 sm:p-5 shadow-[6px_6px_0_0_rgba(0,0,0,1)] hover:-translate-x-1 hover:-translate-y-1 hover:shadow-[8px_8px_0_0_rgba(0,0,0,1)] transition-all overflow-hidden">
 
@@ -1147,24 +1118,24 @@
                 class="text-[#0038FF]">.</span>PROJECTS</h2>
           </div>
           <a href="https://github.com/Rextt1122" target="_blank"
-            class="hidden sm:block font-mono text-[9px] font-black uppercase px-3 py-1.5 border-2 border-gray-950 rounded-xl bg-white hover:bg-gray-950 hover:text-white shadow-[2px_2px_0_0_rgba(0,0,0,1)] transition-all self-start">↗
+            class="hidden sm:inline-flex items-center gap-1.5 font-mono text-[9px] font-black uppercase px-3 py-1.5 border-2 border-gray-950 rounded-xl bg-white hover:bg-gray-950 hover:text-white shadow-[2px_2px_0_0_rgba(0,0,0,1)] transition-all self-start">
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
+            </svg>
             ALL ON GITHUB</a>
         </div>
 
         <!-- Projects Grid — 2 columns, featured layout -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-7">
 
-          <!-- P.01 Weather App -->
           <div class="animate-float" style="animation-duration: 4s; animation-delay: 0s;">
             <a href="https://github.com/Rextt1122/Weather" target="_blank"
               class="h-full group relative md:row-span-1 -rotate-1 hover:rotate-0 bg-white border-2 border-t-[4px] border-gray-950 border-t-[#FF4D8D] rounded-[20px] p-4 sm:p-6 shadow-[6px_6px_0_0_rgba(0,0,0,1)] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[10px_10px_0_0_rgba(0,0,0,1)] transition-all flex flex-col justify-between">
-              <!-- Corner Accents -->
               <div class="absolute top-3 left-3 w-3 h-3 border-t-2 border-l-2 border-gray-950"></div>
               <div class="absolute top-3 right-3 w-3 h-3 border-t-2 border-r-2 border-gray-950"></div>
               <div class="absolute bottom-3 left-3 w-3 h-3 border-b-2 border-l-2 border-gray-950"></div>
               <div class="absolute bottom-3 right-3 w-3 h-3 border-b-2 border-r-2 border-gray-950"></div>
 
-              <!-- Top Bar: Dots & Section -->
               <div class="flex justify-between items-center mb-3 sm:mb-4 border-b-2 border-gray-950 pb-2 sm:pb-3">
                 <div class="flex items-center gap-1.5">
                   <div class="w-3 h-3 bg-gray-950 border border-gray-950"></div>
@@ -1179,7 +1150,6 @@
                   data-repo="Rextt1122/Weather">SYNCING...</span>
               </div>
 
-              <!-- Title Area -->
               <div class="mb-3 sm:mb-4">
                 <div class="flex justify-between items-end mb-1 sm:mb-2">
                   <h3
@@ -1188,7 +1158,6 @@
                   <span
                     class="font-mono text-[9px] font-bold text-gray-950 bg-gray-100 px-2 py-1 rounded-md border border-gray-200 hidden xl:inline-block">(Weather)</span>
                 </div>
-                <!-- Tags -->
                 <div class="flex flex-wrap gap-1.5">
                   <span
                     class="font-mono text-[8px] font-black uppercase bg-[#0038FF] text-white px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full border border-gray-950">FRONTEND
@@ -1196,13 +1165,11 @@
                 </div>
               </div>
 
-              <!-- Description -->
               <p
                 class="font-mono text-[10px] sm:text-sm text-gray-600 leading-relaxed border-b-2 border-gray-950 pb-4 mb-3 sm:pb-6 sm:mb-4">
                 Minimalist forecast app with real-time weather data from OpenWeatherMap API. Clean, responsive UI.
               </p>
 
-              <!-- Bottom Bar -->
               <div class="flex items-center justify-between mt-auto">
                 <div class="flex gap-1.5 flex-wrap">
                   <span
@@ -1220,17 +1187,14 @@
             </a>
           </div>
 
-          <!-- P.02 Sign Language -->
           <div class="animate-float" style="animation-duration: 5s; animation-delay: 1s;">
             <a href="https://github.com/Rextt1122/Real-Time-Sign-Language-Recognition" target="_blank"
               class="h-full group relative rotate-1 hover:rotate-0 bg-white border-2 border-t-[4px] border-gray-950 border-t-[#0038FF] rounded-[20px] p-4 sm:p-6 shadow-[6px_6px_0_0_rgba(0,0,0,1)] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[10px_10px_0_0_rgba(0,0,0,1)] transition-all flex flex-col justify-between">
-              <!-- Corner Accents -->
               <div class="absolute top-3 left-3 w-3 h-3 border-t-2 border-l-2 border-gray-950"></div>
               <div class="absolute top-3 right-3 w-3 h-3 border-t-2 border-r-2 border-gray-950"></div>
               <div class="absolute bottom-3 left-3 w-3 h-3 border-b-2 border-l-2 border-gray-950"></div>
               <div class="absolute bottom-3 right-3 w-3 h-3 border-b-2 border-r-2 border-gray-950"></div>
 
-              <!-- Top Bar: Dots & Section -->
               <div class="flex justify-between items-center mb-3 sm:mb-4 border-b-2 border-gray-950 pb-2 sm:pb-3">
                 <div class="flex items-center gap-1.5">
                   <div class="w-3 h-3 bg-gray-950 border border-gray-950"></div>
@@ -1245,7 +1209,6 @@
                   data-repo="Rextt1122/Real-Time-Sign-Language-Recognition">SYNCING...</span>
               </div>
 
-              <!-- Title Area -->
               <div class="mb-4">
                 <div class="flex justify-between items-end mb-2">
                   <h3
@@ -1254,7 +1217,6 @@
                   <span
                     class="font-mono text-[9px] font-bold text-gray-950 bg-gray-100 px-2 py-1 rounded-md border border-gray-200 hidden xl:inline-block">(cv-recognition)</span>
                 </div>
-                <!-- Tags -->
                 <div class="flex flex-wrap gap-1.5">
                   <span
                     class="font-mono text-[8px] font-black uppercase bg-[#0038FF] text-white px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full border border-gray-950">MACHINE
@@ -1262,13 +1224,11 @@
                 </div>
               </div>
 
-              <!-- Description -->
               <p
                 class="font-mono text-[10px] sm:text-sm text-gray-600 leading-relaxed border-b-2 border-gray-950 pb-4 mb-3 sm:pb-6 sm:mb-4">
                 Real-time CV system recognizing hand gestures from webcam using trained ML models.
               </p>
 
-              <!-- Bottom Bar -->
               <div class="flex items-center justify-between mt-auto">
                 <div class="flex gap-1.5 flex-wrap">
                   <span
@@ -1284,11 +1244,9 @@
             </a>
           </div>
 
-          <!-- P.03 Image Upscaler -->
           <div class="animate-float" style="animation-duration: 4.5s; animation-delay: 0.5s;">
             <a href="https://github.com/Rextt1122/Image-upscaler" target="_blank"
               class="h-full group relative -rotate-2 hover:rotate-0 bg-white border-2 border-t-[4px] border-gray-950 border-t-[#4ADE80] rounded-[20px] p-4 sm:p-6 shadow-[6px_6px_0_0_rgba(0,0,0,1)] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[10px_10px_0_0_rgba(0,0,0,1)] transition-all flex flex-col justify-between">
-              <!-- Corner Accents -->
               <div class="absolute top-3 left-3 w-3 h-3 border-t-2 border-l-2 border-gray-950"></div>
               <div class="absolute top-3 right-3 w-3 h-3 border-t-2 border-r-2 border-gray-950"></div>
               <div class="absolute bottom-3 left-3 w-3 h-3 border-b-2 border-l-2 border-gray-950"></div>
@@ -1636,7 +1594,10 @@
           <span class="font-oswald text-lg sm:text-2xl font-bold uppercase tracking-tighter text-gray-950">GITHUB</span>
           <div
             class="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-[#0038FF] border border-gray-950 flex items-center justify-center group-hover:scale-110 group-hover:-rotate-12 transition-transform shadow-[2px_2px_0_0_rgba(0,0,0,1)]">
-            <span class="text-white text-sm font-black">↗</span>
+            <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white" fill="none" stroke="currentColor" stroke-width="2.5"
+              viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
+            </svg>
           </div>
         </a>
         <a href="https://www.instagram.com/fabiyaan_/" target="_blank"
@@ -1645,7 +1606,10 @@
             class="font-oswald text-lg sm:text-2xl font-bold uppercase tracking-tighter text-gray-950">INSTAGRAM</span>
           <div
             class="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-[#FF4D8D] border border-gray-950 flex items-center justify-center group-hover:scale-110 group-hover:-rotate-12 transition-transform shadow-[2px_2px_0_0_rgba(0,0,0,1)]">
-            <span class="text-white text-sm font-black">↗</span>
+            <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white" fill="none" stroke="currentColor" stroke-width="2.5"
+              viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
+            </svg>
           </div>
         </a>
       </div>
