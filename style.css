@@ -1,7 +1,3 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 :root {
   --bg-color: #fafafa;
   --text-primary: #111827;
@@ -14,8 +10,6 @@
 }
 
 html, body {
-  -webkit-text-size-adjust: 100%;
-  text-size-adjust: 100%;
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -309,8 +303,8 @@ html, body {
   justify-content: center;
   flex-shrink: 0;
   transition: transform 0.1s, box-shadow 0.1s, background 0.15s;
-  user-select: none;
   -webkit-user-select: none;
+  user-select: none;
 }
 
 .lightbox-nav:hover {
@@ -409,6 +403,7 @@ html, body {
   height: 350px;
   max-height: 80vh;
   background-color: rgba(10, 10, 10, 0.95);
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   border-top: 1px solid var(--accent-color);
   z-index: 9999;
@@ -491,8 +486,6 @@ html, body {
 
 /* Cross-Browser Status Strip Normalization */
 #hero-status-strip {
-  -webkit-text-size-adjust: 100%;
-  text-size-adjust: 100%;
   box-sizing: border-box;
 }
 
@@ -625,5 +618,59 @@ html, body {
   .project-filter-btn {
     padding: 0.5rem 1rem;
     font-size: 0.75rem;
+  }
+}
+
+/* Utility classes for clean HTML without inline styles */
+.bg-grid-pattern {
+  background-image: linear-gradient(to right, #f3f4f6 1px, transparent 1px), linear-gradient(to bottom, #f3f4f6 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.bg-hazard-stripe {
+  background-image: repeating-linear-gradient(45deg, #09090b, #09090b 10px, transparent 10px, transparent 20px);
+}
+
+.hero-title-clamp-1 {
+  font-size: clamp(2.6rem, 5.5vw, 5rem);
+  line-height: 0.95;
+}
+
+.hero-title-clamp-2 {
+  font-size: clamp(2.2rem, 5vw, 4.5rem);
+}
+
+.hero-title-clamp-3 {
+  font-size: clamp(2.6rem, 5.5vw, 5.5rem);
+  line-height: 0.95;
+}
+
+.drop-shadow-brutal {
+  filter: drop-shadow(2px 2px 0px rgba(0,0,0,1));
+}
+
+.anim-dur-3-5 { animation-duration: 3.5s; }
+.anim-dur-4 { animation-duration: 4s; }
+.anim-dur-4-2 { animation-duration: 4.2s; }
+.anim-dur-4-5 { animation-duration: 4.5s; }
+.anim-dur-4-6 { animation-duration: 4.6s; }
+.anim-dur-5 { animation-duration: 5s; }
+.anim-dur-12 { animation-duration: 12s; }
+.anim-dur-15 { animation-duration: 15s; }
+.anim-reverse { animation-direction: reverse; }
+.anim-delay-0-2 { animation-delay: 0.2s; }
+.anim-delay-0-4 { animation-delay: 0.4s; }
+.anim-delay-0-5 { animation-delay: 0.5s; }
+.anim-delay-0-7 { animation-delay: 0.7s; }
+.anim-delay-1 { animation-delay: 1s; }
+
+.origin-hang-swing {
+  transform-origin: 50% -32px;
+}
+
+@supports (scrollbar-width: thin) {
+  html {
+    scrollbar-width: thin;
+    scrollbar-color: #111827 #fafafa;
   }
 }

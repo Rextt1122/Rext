@@ -41,11 +41,6 @@
   </script>
   <link rel="stylesheet" href="style.css?v=13.0" />
   <style>
-    html {
-      scrollbar-width: thin;
-      scrollbar-color: #111827 #fafafa;
-    }
-
     ::-webkit-scrollbar {
       width: 6px;
     }
@@ -138,14 +133,14 @@
       class="absolute top-[20%] left-[10%] w-12 h-12 border-2 border-gray-950 bg-[#4ADE80] shadow-[4px_4px_0_0_rgba(0,0,0,1)] animate-spinSlow">
     </div>
     <div
-      class="absolute top-[60%] right-[12%] w-16 h-16 border-2 border-gray-950 bg-[#FACC15] shadow-[6px_6px_0_0_rgba(0,0,0,1)] animate-float"
-      style="animation-duration: 4s;"></div>
+      class="absolute top-[60%] right-[12%] w-16 h-16 border-2 border-gray-950 bg-[#FACC15] shadow-[6px_6px_0_0_rgba(0,0,0,1)] animate-float anim-dur-4">
+    </div>
     <div
-      class="absolute bottom-[20%] left-[15%] w-8 h-8 border-2 border-gray-950 bg-[#FF4D8D] shadow-[3px_3px_0_0_rgba(0,0,0,1)] animate-spinSlow"
-      style="animation-direction: reverse; animation-duration: 15s;"></div>
+      class="absolute bottom-[20%] left-[15%] w-8 h-8 border-2 border-gray-950 bg-[#FF4D8D] shadow-[3px_3px_0_0_rgba(0,0,0,1)] animate-spinSlow anim-reverse anim-dur-15">
+    </div>
     <div
-      class="absolute top-[30%] right-[20%] w-10 h-10 border-2 border-gray-950 bg-white shadow-[4px_4px_0_0_rgba(0,0,0,1)] animate-float"
-      style="animation-delay: 1s; animation-duration: 3.5s;"></div>
+      class="absolute top-[30%] right-[20%] w-10 h-10 border-2 border-gray-950 bg-white shadow-[4px_4px_0_0_rgba(0,0,0,1)] animate-float anim-delay-1 anim-dur-3-5">
+    </div>
   </div>
 
   <!-- Navbar -->
@@ -312,7 +307,7 @@
                 <div
                   class="absolute top-8 sm:top-12 left-0 sm:left-1 md:-left-4 z-30 transform scale-[0.5] sm:scale-[0.85] origin-top-left pointer-events-none hero-floating-snippet">
 
-                  <div class="animate-[hang-swing_4s_ease-in-out_infinite]" style="transform-origin: 50% -32px;">
+                  <div class="animate-[hang-swing_4s_ease-in-out_infinite] origin-hang-swing">
                     <svg
                       class="absolute -top-[40px] left-1/2 -translate-x-1/2 w-[100px] h-[50px] z-[-1] pointer-events-none"
                       viewBox="0 0 100 50">
@@ -339,8 +334,7 @@
 }</code></pre>
                       </div>
                     </div>
-                    <div class="absolute -top-3 -right-2 text-xl sm:text-2xl rotate-12"
-                      style="filter: drop-shadow(2px 2px 0px rgba(0,0,0,1));">
+                    <div class="absolute -top-3 -right-2 text-xl sm:text-2xl rotate-12 drop-shadow-brutal">
                     </div>
                   </div>
                 </div>
@@ -383,25 +377,22 @@
                   class="absolute right-2 top-0 hidden xl:block w-64 h-52 dot-matrix text-gray-400 opacity-50 z-0 pointer-events-none">
                 </div>
 
-                <h1 class="font-oswald font-bold tracking-tighter uppercase text-gray-950 relative z-10 w-full"
-                  style="font-size: clamp(2.6rem, 5.5vw, 5rem); line-height: 0.95;">
+                <h1
+                  class="font-oswald font-bold tracking-tighter uppercase text-gray-950 relative z-10 w-full hero-title-clamp-1">
                   UI/UX, FRONTEND
                 </h1>
                 <div class="flex items-center gap-2 sm:gap-3 flex-wrap">
                   <span
-                    class="font-oswald font-bold uppercase leading-none bg-[#FACC15] text-gray-950 px-3 border-2 border-gray-950 shadow-[4px_4px_0_0_rgba(0,0,0,1)] -rotate-1 inline-block animate-wiggle-yellow"
-                    style="font-size: clamp(2.2rem, 5vw, 4.5rem);">
+                    class="font-oswald font-bold uppercase leading-none bg-[#FACC15] text-gray-950 px-3 border-2 border-gray-950 shadow-[4px_4px_0_0_rgba(0,0,0,1)] -rotate-1 inline-block animate-wiggle-yellow hero-title-clamp-2">
                     & GRAPHIC
                   </span>
                   <div
-                    class="diagonal-stripe w-7 h-7 sm:w-10 sm:h-10 md:w-12 md:h-12 border-2 border-gray-950 shadow-[3px_3px_0_0_rgba(0,0,0,1)] shrink-0 animate-spin"
-                    style="animation-duration: 12s;">
+                    class="diagonal-stripe w-7 h-7 sm:w-10 sm:h-10 md:w-12 md:h-12 border-2 border-gray-950 shadow-[3px_3px_0_0_rgba(0,0,0,1)] shrink-0 animate-spin anim-dur-12">
                   </div>
                 </div>
                 <div class="flex items-center gap-4 flex-wrap">
                   <span
-                    class="font-oswald font-bold tracking-tighter uppercase text-white bg-[#FF4D8D] px-3 sm:px-4 border-2 border-gray-950 shadow-[4px_4px_0_0_rgba(0,0,0,1)] rotate-1 inline-block animate-float-pink max-w-full"
-                    style="font-size: clamp(2.6rem, 5.5vw, 5.5rem); line-height: 0.95;">
+                    class="font-oswald font-bold tracking-tighter uppercase text-white bg-[#FF4D8D] px-3 sm:px-4 border-2 border-gray-950 shadow-[4px_4px_0_0_rgba(0,0,0,1)] rotate-1 inline-block animate-float-pink max-w-full hero-title-clamp-3">
                     DESIGNER
                   </span>
                 </div>
@@ -463,21 +454,21 @@
               </div>
 
               <div class="hero-social-row flex flex-wrap items-center gap-2 sm:gap-3 pt-2">
-                <a href="https://github.com/Rextt1122" target="_blank"
+                <a href="https://github.com/Rextt1122" target="_blank" rel="noopener noreferrer"
                   class="inline-flex items-center gap-1 font-mono text-[9px] sm:text-xs font-black uppercase px-2.5 py-1 sm:px-4 sm:py-2 border-2 border-gray-950 rounded-xl bg-white hover:bg-gray-950 hover:text-white shadow-[2px_2px_0_0_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-0.5 hover:translate-y-0.5 transition-all">
                   <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
                   </svg>
                   GITHUB
                 </a>
-                <a href="https://www.instagram.com/fabiyaan_/" target="_blank"
+                <a href="https://www.instagram.com/fabiyaan_/" target="_blank" rel="noopener noreferrer"
                   class="inline-flex items-center gap-1 font-mono text-[9px] sm:text-xs font-black uppercase px-2.5 py-1 sm:px-4 sm:py-2 border-2 border-gray-950 rounded-xl bg-white hover:bg-[#FF4D8D] hover:text-white shadow-[2px_2px_0_0_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-0.5 hover:translate-y-0.5 transition-all">
                   <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
                   </svg>
                   INSTAGRAM
                 </a>
-                <a href="https://www.tiktok.com/@fabiyaan_" target="_blank"
+                <a href="https://www.tiktok.com/@fabiyaan_" target="_blank" rel="noopener noreferrer"
                   class="inline-flex items-center gap-1 font-mono text-[9px] sm:text-xs font-black uppercase px-2.5 py-1 sm:px-4 sm:py-2 border-2 border-gray-950 rounded-xl bg-white hover:bg-gray-950 hover:text-[#00F2FE] shadow-[2px_2px_0_0_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-0.5 hover:translate-y-0.5 transition-all">
                   <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
@@ -491,7 +482,7 @@
                   </svg>
                   GMAIL
                 </a>
-                <a href="https://www.facebook.com/yan.226312" target="_blank"
+                <a href="https://www.facebook.com/yan.226312" target="_blank" rel="noopener noreferrer"
                   class="inline-flex items-center gap-1 font-mono text-[9px] sm:text-xs font-black uppercase px-2.5 py-1 sm:px-4 sm:py-2 border-2 border-gray-950 rounded-xl bg-white hover:bg-[#1877F2] hover:text-white shadow-[2px_2px_0_0_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-0.5 hover:translate-y-0.5 transition-all">
                   <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
@@ -530,8 +521,7 @@
     <div class="relative z-10 flex-1 w-[96%] max-w-[1800px] mx-auto flex items-center justify-center">
 
       <div
-        class="w-full bg-white border-2 border-gray-950 shadow-none sm:shadow-[16px_16px_0_0_rgba(0,0,0,0.95)] px-5 py-6 sm:px-10 sm:py-8 lg:px-12 lg:py-10 relative overflow-hidden flex flex-col"
-        style="background-image: linear-gradient(to right, #f3f4f6 1px, transparent 1px), linear-gradient(to bottom, #f3f4f6 1px, transparent 1px); background-size: 32px 32px;">
+        class="w-full bg-white border-2 border-gray-950 shadow-none sm:shadow-[16px_16px_0_0_rgba(0,0,0,0.95)] px-5 py-6 sm:px-10 sm:py-8 lg:px-12 lg:py-10 relative overflow-hidden flex flex-col bg-grid-pattern">
 
 
         <div class="flex items-end justify-between mb-10 pb-5 border-b-2 border-gray-950">
@@ -874,12 +864,10 @@
 
             <div class="relative z-10 flex justify-between items-end">
               <span
-                class="animate-float inline-block font-mono text-[8px] sm:text-[10px] font-black uppercase bg-[#4ADE80] text-gray-950 px-3 py-1.5 sm:px-5 sm:py-2 border-2 border-gray-950 shadow-[4px_4px_0_0_rgba(0,0,0,1)] rounded-xl"
-                style="animation-duration: 4s;">AVAILABLE
+                class="animate-float anim-dur-4 inline-block font-mono text-[8px] sm:text-[10px] font-black uppercase bg-[#4ADE80] text-gray-950 px-3 py-1.5 sm:px-5 sm:py-2 border-2 border-gray-950 shadow-[4px_4px_0_0_rgba(0,0,0,1)] rounded-xl">AVAILABLE
                 FOR HIRE</span>
               <a href="#"
-                class="animate-float-pink inline-block font-mono text-[8px] sm:text-[10px] font-black uppercase bg-[#FF4D8D] text-white px-4 py-1.5 sm:px-6 sm:py-2 border-2 border-gray-950 shadow-[6px_6px_0_0_rgba(0,0,0,1)] rounded-full hover:bg-gray-950 transition-colors"
-                style="animation-delay: 0.5s;">LET'S
+                class="animate-float-pink anim-delay-0-5 inline-block font-mono text-[8px] sm:text-[10px] font-black uppercase bg-[#FF4D8D] text-white px-4 py-1.5 sm:px-6 sm:py-2 border-2 border-gray-950 shadow-[6px_6px_0_0_rgba(0,0,0,1)] rounded-full hover:bg-gray-950 transition-colors">LET'S
                 CONNECT [->]</a>
             </div>
           </div>
@@ -911,7 +899,7 @@
 
               <div class="border-t-2 border-b-2 border-gray-950 py-1.5 sm:py-2 mb-2 sm:mb-3">
                 <!-- Snake Canvas -->
-                <canvas id="snake-canvas" class="w-full block" style="height: 60px;" data-desktop-height="80"></canvas>
+                <canvas id="snake-canvas" class="w-full block h-[60px]" data-desktop-height="80"></canvas>
               </div>
 
               <div class="flex justify-between items-end pt-0.5 sm:pt-1">
@@ -1107,8 +1095,7 @@
 
       <!-- Big Box Wrapper -->
       <div
-        class="w-full bg-white border-2 border-gray-950 shadow-none sm:shadow-[16px_16px_0_0_rgba(0,0,0,0.95)] px-5 py-6 sm:px-10 sm:py-8 lg:px-12 lg:py-10 relative overflow-hidden flex flex-col"
-        style="background-image: linear-gradient(to right, #f3f4f6 1px, transparent 1px), linear-gradient(to bottom, #f3f4f6 1px, transparent 1px); background-size: 32px 32px;">
+        class="w-full bg-white border-2 border-gray-950 shadow-none sm:shadow-[16px_16px_0_0_rgba(0,0,0,0.95)] px-5 py-6 sm:px-10 sm:py-8 lg:px-12 lg:py-10 relative overflow-hidden flex flex-col bg-grid-pattern">
 
         <!-- Section Title -->
         <div class="flex items-end justify-between mb-10 pb-5 border-b-2 border-gray-950">
@@ -1119,7 +1106,7 @@
             <h2 class="font-oswald text-5xl sm:text-7xl font-bold uppercase leading-none tracking-tighter">WEB<span
                 class="text-[#0038FF]">.</span>PROJECTS</h2>
           </div>
-          <a href="https://github.com/Rextt1122" target="_blank"
+          <a href="https://github.com/Rextt1122" target="_blank" rel="noopener noreferrer"
             class="hidden sm:inline-flex items-center gap-1.5 font-mono text-[9px] font-black uppercase px-3 py-1.5 border-2 border-gray-950 rounded-xl bg-white hover:bg-gray-950 hover:text-white shadow-[2px_2px_0_0_rgba(0,0,0,1)] transition-all self-start">
             <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
@@ -1130,8 +1117,8 @@
         <!-- Projects Grid — 2 columns, featured layout -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-7">
 
-          <div class="animate-float" style="animation-duration: 4s; animation-delay: 0s;">
-            <a href="https://github.com/Rextt1122/Weather" target="_blank"
+          <div class="animate-float anim-dur-4">
+            <a href="https://github.com/Rextt1122/Weather" target="_blank" rel="noopener noreferrer"
               class="h-full group relative md:row-span-1 -rotate-1 hover:rotate-0 bg-white border-2 border-t-[4px] border-gray-950 border-t-[#FF4D8D] rounded-[20px] p-3.5 sm:p-6 shadow-[4px_4px_0_0_rgba(0,0,0,1)] sm:shadow-[6px_6px_0_0_rgba(0,0,0,1)] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[10px_10px_0_0_rgba(0,0,0,1)] transition-all flex flex-col justify-between">
               <div
                 class="absolute top-2.5 left-2.5 w-2.5 h-2.5 sm:top-3 sm:left-3 sm:w-3 sm:h-3 border-t-2 border-l-2 border-gray-950">
@@ -1197,8 +1184,9 @@
             </a>
           </div>
 
-          <div class="animate-float" style="animation-duration: 5s; animation-delay: 1s;">
+          <div class="animate-float anim-dur-5 anim-delay-1">
             <a href="https://github.com/Rextt1122/Real-Time-Sign-Language-Recognition" target="_blank"
+              rel="noopener noreferrer"
               class="h-full group relative rotate-1 hover:rotate-0 bg-white border-2 border-t-[4px] border-gray-950 border-t-[#0038FF] rounded-[20px] p-3.5 sm:p-6 shadow-[4px_4px_0_0_rgba(0,0,0,1)] sm:shadow-[6px_6px_0_0_rgba(0,0,0,1)] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[10px_10px_0_0_rgba(0,0,0,1)] transition-all flex flex-col justify-between">
               <div
                 class="absolute top-2.5 left-2.5 w-2.5 h-2.5 sm:top-3 sm:left-3 sm:w-3 sm:h-3 border-t-2 border-l-2 border-gray-950">
@@ -1262,8 +1250,8 @@
             </a>
           </div>
 
-          <div class="animate-float" style="animation-duration: 4.5s; animation-delay: 0.5s;">
-            <a href="https://github.com/Rextt1122/Image-upscaler" target="_blank"
+          <div class="animate-float anim-dur-4-5 anim-delay-0-5">
+            <a href="https://github.com/Rextt1122/Image-upscaler" target="_blank" rel="noopener noreferrer"
               class="h-full group relative -rotate-2 hover:rotate-0 bg-white border-2 border-t-[4px] border-gray-950 border-t-[#4ADE80] rounded-[20px] p-3.5 sm:p-6 shadow-[4px_4px_0_0_rgba(0,0,0,1)] sm:shadow-[6px_6px_0_0_rgba(0,0,0,1)] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[10px_10px_0_0_rgba(0,0,0,1)] transition-all flex flex-col justify-between">
               <div
                 class="absolute top-2.5 left-2.5 w-2.5 h-2.5 sm:top-3 sm:left-3 sm:w-3 sm:h-3 border-t-2 border-l-2 border-gray-950">
@@ -1327,8 +1315,8 @@
             </a>
           </div>
 
-          <div class="animate-float" style="animation-duration: 3.5s; animation-delay: 0.2s;">
-            <a href="https://github.com/Rextt1122/_jamkot" target="_blank"
+          <div class="animate-float anim-dur-3-5 anim-delay-0-2">
+            <a href="https://github.com/Rextt1122/_jamkot" target="_blank" rel="noopener noreferrer"
               class="h-full group relative rotate-2 hover:rotate-0 bg-white border-2 border-t-[4px] border-gray-950 border-t-[#FACC15] rounded-[20px] p-3.5 sm:p-6 shadow-[4px_4px_0_0_rgba(0,0,0,1)] sm:shadow-[6px_6px_0_0_rgba(0,0,0,1)] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[10px_10px_0_0_rgba(0,0,0,1)] transition-all flex flex-col justify-between">
               <div
                 class="absolute top-2.5 left-2.5 w-2.5 h-2.5 sm:top-3 sm:left-3 sm:w-3 sm:h-3 border-t-2 border-l-2 border-gray-950">
@@ -1394,8 +1382,8 @@
             </a>
           </div>
 
-          <div class="animate-float" style="animation-duration: 4.2s; animation-delay: 0.7s;">
-            <a href="https://github.com/Rextt1122/Sticker" target="_blank"
+          <div class="animate-float anim-dur-4-2 anim-delay-0-7">
+            <a href="https://github.com/Rextt1122/Sticker" target="_blank" rel="noopener noreferrer"
               class="h-full group relative -rotate-1 hover:rotate-0 bg-white border-2 border-t-[4px] border-gray-950 border-t-[#00F2FE] rounded-[20px] p-3.5 sm:p-6 shadow-[4px_4px_0_0_rgba(0,0,0,1)] sm:shadow-[6px_6px_0_0_rgba(0,0,0,1)] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[10px_10px_0_0_rgba(0,0,0,1)] transition-all flex flex-col justify-between">
               <div
                 class="absolute top-2.5 left-2.5 w-2.5 h-2.5 sm:top-3 sm:left-3 sm:w-3 sm:h-3 border-t-2 border-l-2 border-gray-950">
@@ -1460,8 +1448,8 @@
           </div>
 
           <!-- P.06 Dashboard -->
-          <div class="animate-float" style="animation-duration: 4.6s; animation-delay: 0.4s;">
-            <a href="https://github.com/Rextt1122/Dashboard" target="_blank"
+          <div class="animate-float anim-dur-4-6 anim-delay-0-4">
+            <a href="https://github.com/Rextt1122/Dashboard" target="_blank" rel="noopener noreferrer"
               class="h-full group relative rotate-1 hover:rotate-0 bg-white border-2 border-t-[4px] border-gray-950 border-t-[#4ADE80] rounded-[20px] p-4 sm:p-6 shadow-[6px_6px_0_0_rgba(0,0,0,1)] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[10px_10px_0_0_rgba(0,0,0,1)] transition-all flex flex-col justify-between">
               <!-- Corner Accents -->
               <div class="absolute top-3 left-3 w-3 h-3 border-t-2 border-l-2 border-gray-950"></div>
@@ -1546,8 +1534,7 @@
 
       <!-- Big Box Wrapper -->
       <div
-        class="w-full bg-white border-2 border-gray-950 shadow-none sm:shadow-[16px_16px_0_0_rgba(0,0,0,0.95)] px-5 py-6 sm:px-10 sm:py-8 lg:px-12 lg:py-10 relative overflow-hidden flex flex-col"
-        style="background-image: linear-gradient(to right, #f3f4f6 1px, transparent 1px), linear-gradient(to bottom, #f3f4f6 1px, transparent 1px); background-size: 32px 32px;">
+        class="w-full bg-white border-2 border-gray-950 shadow-none sm:shadow-[16px_16px_0_0_rgba(0,0,0,0.95)] px-5 py-6 sm:px-10 sm:py-8 lg:px-12 lg:py-10 relative overflow-hidden flex flex-col bg-grid-pattern">
 
         <!-- Section Title -->
         <div class="flex items-end justify-between mb-10 pb-5 border-b-2 border-gray-950">
@@ -1586,8 +1573,7 @@
   <footer class="bg-white border-t-2 border-gray-950 relative overflow-hidden flex flex-col">
 
     <!-- Top hazard stripe -->
-    <div class="h-3 w-full border-b-2 border-gray-950 bg-[#FACC15]"
-      style="background-image: repeating-linear-gradient(45deg, #09090b, #09090b 10px, transparent 10px, transparent 20px);">
+    <div class="h-3 w-full border-b-2 border-gray-950 bg-[#FACC15] bg-hazard-stripe">
     </div>
 
     <div
@@ -1612,7 +1598,7 @@
 
       <!-- Right: Links -->
       <div class="p-6 sm:p-8 lg:p-10 bg-[#F4F2EB] flex flex-col justify-center gap-2 lg:gap-3">
-        <a href="https://github.com/Rextt1122" target="_blank"
+        <a href="https://github.com/Rextt1122" target="_blank" rel="noopener noreferrer"
           class="group relative w-full bg-white border-2 border-gray-950 rounded-xl p-1.5 sm:p-3 flex items-center justify-between shadow-[4px_4px_0_0_rgba(0,0,0,1)] hover:shadow-[6px_6px_0_0_rgba(0,0,0,1)] hover:-translate-y-1 transition-all">
           <span class="font-oswald text-lg sm:text-2xl font-bold uppercase tracking-tighter text-gray-950">GITHUB</span>
           <div
@@ -1623,7 +1609,7 @@
             </svg>
           </div>
         </a>
-        <a href="https://www.instagram.com/fabiyaan_/" target="_blank"
+        <a href="https://www.instagram.com/fabiyaan_/" target="_blank" rel="noopener noreferrer"
           class="group relative w-full bg-white border-2 border-gray-950 rounded-xl p-1.5 sm:p-3 flex items-center justify-between shadow-[4px_4px_0_0_rgba(0,0,0,1)] hover:shadow-[6px_6px_0_0_rgba(0,0,0,1)] hover:-translate-y-1 transition-all mt-2 lg:mt-0">
           <span
             class="font-oswald text-lg sm:text-2xl font-bold uppercase tracking-tighter text-gray-950">INSTAGRAM</span>
