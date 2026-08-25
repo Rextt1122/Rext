@@ -21,32 +21,64 @@ document.addEventListener("DOMContentLoaded", () => {
   const mobileLinks = document.querySelectorAll(".mobile-link");
 
   if (mobileMenuBtn && mobileMenu) {
+    const card = document.getElementById("mobile-menu-card");
+    const backdrop = document.getElementById("mobile-menu-backdrop");
+
+    function openMobileMenu() {
+      // Show overlay first (display:flex), then animate card from scale-0 to scale-100
+      mobileMenu.style.display = "flex";
+      // Use rAF to ensure display:flex is applied before transition starts
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          card.style.transform = "scale(1)";
+          card.style.opacity = "1";
+        });
+      });
+    }
+
+    function closeMobileMenu() {
+      // Animate card back to scale-0
+      card.style.transform = "scale(0)";
+      card.style.opacity = "0";
+      // Hide overlay after animation completes
+      setTimeout(() => {
+        mobileMenu.style.display = "none";
+      }, 300);
+    }
+
+    // Set initial card state via inline style
+    card.style.transform = "scale(0)";
+    card.style.opacity = "0";
+
     mobileMenuBtn.addEventListener("click", () => {
-      const isClosed = mobileMenu.classList.contains("-translate-y-full");
-      if (isClosed) {
-        mobileMenu.classList.remove("-translate-y-full");
+      const isHidden = mobileMenu.style.display === "none" || mobileMenu.style.display === "";
+      if (isHidden) {
+        openMobileMenu();
       } else {
-        mobileMenu.classList.add("-translate-y-full");
+        closeMobileMenu();
       }
     });
 
     const mobileMenuClose = document.getElementById("mobile-menu-close");
     if (mobileMenuClose) {
-      mobileMenuClose.addEventListener("click", () => {
-        mobileMenu.classList.add("-translate-y-full");
-      });
+      mobileMenuClose.addEventListener("click", closeMobileMenu);
+    }
+
+    // Close on backdrop click
+    if (backdrop) {
+      backdrop.addEventListener("click", closeMobileMenu);
     }
 
     mobileLinks.forEach(link => {
       link.addEventListener("click", function (e) {
         e.preventDefault();
-        mobileMenu.classList.add("-translate-y-full");
+        closeMobileMenu();
 
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
           setTimeout(() => {
             target.scrollIntoView({ behavior: 'smooth' });
-          }, 300); // Wait for menu to slide up before scrolling
+          }, 300);
         }
       });
     });
