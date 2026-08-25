@@ -191,12 +191,10 @@
   </nav>
 
   <!-- Mobile Menu -->
-  <div id="mobile-menu"
-    class="hidden fixed inset-0 z-[60] flex-col justify-center items-center p-6 md:hidden">
+  <div id="mobile-menu" class="hidden fixed inset-0 z-[60] flex-col justify-center items-center p-6 md:hidden">
 
     <!-- Backdrop -->
-    <div id="mobile-menu-backdrop"
-      class="absolute inset-0 bg-gray-950/80 backdrop-blur-sm"></div>
+    <div id="mobile-menu-backdrop" class="absolute inset-0 bg-gray-950/80 backdrop-blur-sm"></div>
 
     <!-- Card (scale from center) -->
     <div id="mobile-menu-card"
@@ -981,8 +979,8 @@
             let snake = [{ col: 3, row: 2 }];
             let dir = { dc: 1, dr: 0 };
             let score = 0;
-            let frame = 0;
-            const SPEED = 3; // ticks per move (fast & smooth)
+            let lastMove = 0;
+            const MOVE_INTERVAL = 140;
 
             function nextDir() {
               // Simple AI: head towards nearest dot
@@ -1066,9 +1064,11 @@
               });
             }
 
-            function tick() {
-              frame++;
-              if (frame % SPEED === 0) moveSnake();
+            function tick(timestamp = 0) {
+              if (timestamp - lastMove >= MOVE_INTERVAL) {
+                moveSnake();
+                lastMove = timestamp;
+              }
               draw();
               requestAnimationFrame(tick);
             }
@@ -1118,7 +1118,7 @@
             ALL ON GITHUB</a>
         </div>
 
-        <!-- Projects Grid — 2 columns, featured layout -->
+        <!-- Projects Grid 2 columns, featured layout -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-7">
 
           <div class="animate-float anim-dur-4">
