@@ -12,6 +12,8 @@
 html,
 body {
   -webkit-tap-highlight-color: transparent;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 /* Animations */
@@ -116,22 +118,53 @@ body {
   filter: grayscale(0%) brightness(1) contrast(1);
 }
 
+/* ── Gallery Scroll Reveal ─────────────────── */
+.gallery-reveal {
+  opacity: 0;
+  transform: translateY(28px) rotate(var(--rot, 1deg)) scale(0.95);
+  transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.gallery-reveal.gallery-visible {
+  opacity: 1;
+  transform: translateY(0) rotate(var(--rot, 1deg)) scale(1);
+}
+
+/* Keep idle float after reveal — staggered per nth */
+@keyframes gallery-float-up   { 0%,100% { transform: translateY(0px) rotate(var(--rot, 1deg)) } 50% { transform: translateY(-5px) rotate(var(--rot, 1deg)) } }
+@keyframes gallery-float-down { 0%,100% { transform: translateY(0px) rotate(var(--rot, 0deg)) } 50% { transform: translateY(5px)  rotate(var(--rot, 0deg)) } }
+
+.gallery-reveal.gallery-visible:nth-child(odd) {
+  animation: gallery-float-up 4s ease-in-out infinite;
+  animation-delay: calc(var(--idx, 0) * 0.3s);
+}
+.gallery-reveal.gallery-visible:nth-child(even) {
+  animation: gallery-float-down 4.5s ease-in-out infinite;
+  animation-delay: calc(var(--idx, 0) * 0.25s);
+}
+
+/* override on hover to stop float */
+.gallery-item:hover {
+  animation-play-state: paused !important;
+}
+
 /* ══════════════════════════════════════════
-   LIGHTBOX — Brutalist Full-Screen Preview
+   LIGHTBOX — Simple Minimal Preview
    ══════════════════════════════════════════ */
 
 .lightbox {
   position: fixed;
   inset: 0;
-  background-color: rgba(9, 9, 11, 0.93);
+  background-color: rgba(9, 9, 11, 0.92);
+  backdrop-filter: blur(6px);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 9999;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.25s ease;
-  padding: 16px;
+  transition: opacity 0.2s ease;
+  padding: 20px;
   box-sizing: border-box;
 }
 
@@ -140,12 +173,11 @@ body {
   pointer-events: all;
 }
 
-/* Outer wrapper: image + nav buttons side-by-side (desktop) */
 .lightbox-outer {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 14px;
+  gap: 16px;
   width: 100%;
   max-width: 100%;
 }
@@ -154,33 +186,30 @@ body {
 .lightbox-content {
   position: relative;
   width: 100%;
-  max-width: min(88vw, 520px);
-  background-color: #fafafa;
-  border: 3px solid #09090b;
-  box-shadow: 10px 10px 0 #09090b;
+  max-width: min(88vw, 480px);
   display: flex;
   flex-direction: column;
+  border-radius: 4px;
   overflow: hidden;
 }
 
-/* ── Top HUD bar ── */
+/* ── Topbar: just name + counter + close ── */
 .lightbox-topbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #09090b;
-  padding: 7px 12px;
+  padding: 8px 10px;
   gap: 8px;
-  flex-shrink: 0;
+  background: transparent;
 }
 
 .lightbox-label {
   font-family: var(--font-mono);
-  font-size: 0.62rem;
+  font-size: 0.6rem;
   font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: #4ADE80;
+  letter-spacing: 0.1em;
+  color: rgba(255,255,255,0.5);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -188,32 +217,24 @@ body {
   min-width: 0;
 }
 
-.lightbox-label .lb-prefix {
-  color: #fafafa;
-  opacity: 0.45;
-  margin-right: 4px;
-}
+.lightbox-label .lb-prefix { display: none; }
 
 .lightbox-counter {
   font-family: var(--font-mono);
   font-size: 0.58rem;
   font-weight: 700;
-  text-transform: uppercase;
-  color: #FACC15;
-  background: rgba(250, 204, 21, 0.12);
-  border: 1px solid rgba(250, 204, 21, 0.6);
-  padding: 2px 7px;
+  color: rgba(255,255,255,0.4);
   white-space: nowrap;
   flex-shrink: 0;
 }
 
 .lightbox-close {
-  background: #FF5500;
-  color: #fafafa;
-  border: 2px solid #09090b;
-  font-family: var(--font-mono);
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 50%;
   font-size: 1rem;
-  font-weight: 900;
+  font-weight: 700;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -221,179 +242,89 @@ body {
   width: 28px;
   height: 28px;
   flex-shrink: 0;
-  box-shadow: 2px 2px 0 rgba(255, 255, 255, 0.4);
-  transition: transform 0.1s, box-shadow 0.1s, background 0.15s;
+  transition: background 0.15s;
   line-height: 1;
 }
 
 .lightbox-close:hover {
-  background: #4ADE80;
-  color: #09090b;
-  transform: translate(1px, 1px);
-  box-shadow: 1px 1px 0 rgba(255, 255, 255, 0.4);
+  background: rgba(255,255,255,0.25);
 }
 
 /* ── Image area ── */
 .lightbox-img-wrap {
-  background-color: #09090b;
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 180px;
-  max-height: calc(82vh - 90px);
+  max-height: calc(85vh - 60px);
   overflow: hidden;
-  flex: 1;
+  border-radius: 4px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.8);
 }
 
 .lightbox-img {
   max-width: 100%;
-  max-height: calc(82vh - 90px);
+  max-height: calc(85vh - 60px);
   object-fit: contain;
   display: block;
+  border-radius: 4px;
   transition: opacity 0.15s ease;
 }
 
-.lightbox-img.loading {
-  opacity: 0.25;
-}
+.lightbox-img.loading { opacity: 0.2; }
 
-/* ── Bottom info strip ── */
-.lightbox-bottombar {
-  background-color: #fafafa;
-  border-top: 2px solid #09090b;
-  padding: 5px 12px;
-  font-family: var(--font-mono);
-  font-size: 0.55rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  color: #9ca3af;
-  letter-spacing: 0.09em;
-  flex-shrink: 0;
-}
+/* ── Bottombar & swipe hint: hidden ── */
+.lightbox-bottombar,
+.lightbox-swipe-hint { display: none !important; }
 
-/* ── Mobile swipe hint (hidden on desktop) ── */
-.lightbox-swipe-hint {
-  display: none;
-  font-family: var(--font-mono);
-  font-size: 0.55rem;
-  font-weight: 700;
-  text-align: center;
-  color: #6b7280;
-  padding: 4px 0 3px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  background: #fafafa;
-  border-top: 1px solid #e5e7eb;
-  flex-shrink: 0;
-}
-
-/* ── Nav buttons (prev / next) ── */
+/* ── Nav buttons ── */
 .lightbox-nav {
-  width: 48px;
-  height: 48px;
-  background: #FACC15;
-  border: 2px solid #09090b;
-  box-shadow: 4px 4px 0 #09090b;
-  font-family: var(--font-mono);
-  font-size: 1.2rem;
+  width: 40px;
+  height: 40px;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 50%;
+  font-size: 1.1rem;
   font-weight: 900;
-  color: #09090b;
+  color: #fff;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  transition: transform 0.1s, box-shadow 0.1s, background 0.15s;
+  transition: background 0.15s;
   -webkit-user-select: none;
   user-select: none;
 }
 
-.lightbox-nav:hover {
-  background: #09090b;
-  color: #FACC15;
-  transform: translate(2px, 2px);
-  box-shadow: 2px 2px 0 #09090b;
-}
+.lightbox-nav:hover { background: rgba(255,255,255,0.22); }
 
 .lightbox-nav:disabled {
-  opacity: 0.25;
+  opacity: 0.2;
   cursor: default;
   pointer-events: none;
 }
 
-/* ══ MOBILE — bottom sheet style ══ */
+/* ══ MOBILE ══ */
 @media (max-width: 767px) {
-  .lightbox {
-    padding: 0;
-    align-items: flex-end;
-    background-color: rgba(9, 9, 11, 0.96);
-  }
+  .lightbox { padding: 16px; }
 
   .lightbox-outer {
-    flex-direction: column;
-    gap: 0;
-    align-items: stretch;
-    width: 100%;
-    max-width: 100%;
+    gap: 10px;
   }
 
-  .lightbox-content {
-    max-width: 100%;
-    width: 100%;
-    border-left: none;
-    border-right: none;
-    border-bottom: none;
-    border-top: 3px solid #09090b;
-    box-shadow: 0 -8px 0 #09090b;
-    max-height: 90vh;
-  }
-
-  /* Hide side nav buttons on mobile — use swipe instead */
-  .lightbox-nav {
-    display: none;
-  }
-
-  /* Show swipe hint on mobile */
-  .lightbox-swipe-hint {
-    display: block;
-  }
-
-  /* Taller image on mobile */
-  .lightbox-img-wrap {
-    max-height: calc(72vh - 90px);
-    min-height: 200px;
-  }
-
-  .lightbox-img {
-    max-height: calc(72vh - 90px);
-  }
-
-  /* Hide keyboard hint on mobile */
-  .lightbox-bottombar {
-    display: none;
-  }
-}
-
-/* ══ TABLET / DESKTOP ══ */
-@media (min-width: 768px) {
-  .lightbox-content {
-    max-width: min(82vw, 560px);
-    box-shadow: 14px 14px 0 #09090b;
-  }
+  .lightbox-content { max-width: 100%; }
 
   .lightbox-nav {
-    width: 52px;
-    height: 52px;
-    font-size: 1.3rem;
-    box-shadow: 5px 5px 0 #09090b;
+    width: 34px;
+    height: 34px;
+    font-size: 0.95rem;
   }
 }
 
-@media (min-width: 1280px) {
-  .lightbox-content {
-    max-width: min(72vw, 640px);
-  }
-}
+
+
+
+
 
 /* CLI Terminal Easter Egg */
 #terminal-overlay {

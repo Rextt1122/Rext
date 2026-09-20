@@ -199,11 +199,24 @@ document.addEventListener("DOMContentLoaded", () => {
     desainList.forEach((name, idx) => {
       const imgPath = `img/${name}.webp`;
       const item = document.createElement("div");
-      item.className = "gallery-item";
+      item.className = "gallery-item gallery-reveal";
+      item.style.transitionDelay = `${idx * 60}ms`;
       item.innerHTML = `<img src="${imgPath}" alt="${name}" loading="lazy" decoding="async">`;
       item.addEventListener("click", () => openLightbox(idx));
       gallery.appendChild(item);
     });
+
+    // Scroll-reveal with IntersectionObserver
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("gallery-visible");
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: "0px 0px -40px 0px" });
+
+    gallery.querySelectorAll(".gallery-reveal").forEach(el => revealObserver.observe(el));
 
     function updateEmptyCells() {
       gallery.querySelectorAll('.empty-cell').forEach(e => e.remove());
