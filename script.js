@@ -219,6 +219,24 @@ document.addEventListener("DOMContentLoaded", () => {
     gallery.querySelectorAll(".gallery-reveal").forEach(el => revealObserver.observe(el));
   }
 
+  // --- Projects Scroll Reveal ---
+  const projectCards = document.querySelectorAll("#projects .project-reveal");
+  if (projectCards.length > 0) {
+    const projectObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("project-visible");
+          projectObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: "0px 0px -40px 0px" });
+
+    projectCards.forEach((card, idx) => {
+      card.style.setProperty("--card-idx", idx);
+      projectObserver.observe(card);
+    });
+  }
+
   // --- CLI Terminal Easter Egg (open with ` or ~) ---
   let tInit = false;
   let tOverlay, tInput, tOutput, tClose;
