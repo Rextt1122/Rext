@@ -1243,23 +1243,49 @@ html.dark .footer-bottom-bar {
   border-top: 2px solid #52525b !important;
 }
 
-/* Mobile Menu */
+/* Mobile Menu in Dark Mode */
 html.dark #mobile-menu-card {
   background-color: #14151a !important;
   border-color: #52525b !important;
-  box-shadow: 6px 6px 0 0 rgba(255, 255, 255, 0.16) !important;
+  box-shadow: 8px 8px 0 0 rgba(255, 255, 255, 0.16) !important;
 }
 
-html.dark #mobile-menu-card > div:first-child,
-html.dark #mobile-menu-card > div:last-child {
-  background-color: #14151a !important;
+html.dark #mobile-menu-card > div:first-child {
+  background-color: #181920 !important;
   border-color: #52525b !important;
+}
+
+html.dark #mobile-menu-card > div:first-child span {
   color: #f4f4f5 !important;
+}
+
+html.dark #mobile-menu-card .grid-pattern {
+  background-color: #121316 !important;
 }
 
 html.dark #mobile-menu-card .mobile-link {
-  background-color: #1a1b21 !important;
+  background-color: #181920 !important;
   border-color: #52525b !important;
-  color: #f4f4f5 !important;
   box-shadow: 4px 4px 0 0 rgba(255, 255, 255, 0.16) !important;
+}
+
+html.dark #mobile-menu-card .mobile-link span:first-child {
+  color: #f4f4f5 !important;
+}
+
+html.dark #mobile-menu-card .mobile-link span:last-child {
+  color: #a1a1aa !important;
+}
+
+html.dark #mobile-menu-card > div:last-child {
+  background-color: #181920 !important;
+  border-color: #52525b !important;
+}
+
+html.dark #mobile-menu-card > div:last-child span:first-child {
+  color: #a1a1aa !important;
+}
+
+html.dark #mobile-menu-card > div:last-child span:last-child {
+  color: #09090b !important;
 }
