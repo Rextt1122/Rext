@@ -877,15 +877,20 @@ html.dark .nav-item {
   box-shadow: 3px 3px 0 0 rgba(255, 255, 255, 0.16) !important;
 }
 
+html.dark .nav-item:hover {
+  background-color: #27272a !important;
+  border-color: #71717a !important;
+  box-shadow: none !important;
+  transform: translate(3px, 3px) !important;
+}
+
 html.dark .nav-item span.rounded-full {
   background-color: #f4f4f5 !important;
 }
 
-#theme-toggle-text {
-  background-color: transparent !important;
-}
-
 html.dark #theme-toggle {
+  background-color: #181920 !important;
+  border-color: #52525b !important;
   color: #f4f4f5 !important;
 }
 
@@ -955,7 +960,19 @@ html.dark #hero > div > div > div:first-child span.bg-white {
   box-shadow: 2px 2px 0 0 rgba(255, 255, 255, 0.16) !important;
 }
 
-/* Hero Floating Snippet & Decor Blocks */
+/* Hero Badges & Floating Snippet */
+html.dark .hero-subaru-badge {
+  background-color: #0038FF !important;
+  color: #ffffff !important;
+  border-color: #52525b !important;
+}
+
+html.dark .hero-rext-pin {
+  background-color: #FF4D8D !important;
+  color: #ffffff !important;
+  border-color: #52525b !important;
+}
+
 html.dark .hero-floating-snippet span.bg-white {
   background-color: #181920 !important;
   border-color: #52525b !important;
@@ -967,9 +984,11 @@ html.dark .hero-floating-snippet div.bg-white {
   border-color: #52525b !important;
 }
 
-html.dark .hero-floating-snippet pre code {
-  color: #f4f4f5 !important;
-}
+/* Preserve syntax highlight colors in dark mode */
+html.dark .hero-floating-snippet span[class*="text-[#FF4D8D]"] { color: #FF4D8D !important; }
+html.dark .hero-floating-snippet span[class*="text-[#0038FF]"] { color: #60a5fa !important; }
+html.dark .hero-floating-snippet span[class*="text-[#FF5500]"] { color: #FF5500 !important; }
+html.dark .hero-floating-snippet span[class*="text-[#4ADE80]"] { color: #4ADE80 !important; }
 
 html.dark #hero div[class*="bg-white"].shadow-\[4px_4px_0_0_rgba\(0\,0\,0\,1\)\] {
   background-color: #181920 !important;
@@ -985,7 +1004,7 @@ html.dark #hero-status-strip {
   box-shadow: 4px 4px 0 0 rgba(255, 255, 255, 0.16) !important;
 }
 
-/* Hero About Me & Socials */
+/* Hero Socials */
 html.dark .hero-social-row a {
   background-color: #181920 !important;
   border-color: #52525b !important;
@@ -1000,7 +1019,7 @@ html.dark a[href*="github.com/Rextt1122"]:not(.hero-social-row a) {
   box-shadow: 2px 2px 0 0 rgba(255, 255, 255, 0.16) !important;
 }
 
-/* Project Cards */
+/* Project Cards: Frame & Accent Top Borders */
 html.dark .project-reveal > a {
   background-color: #181920 !important;
   border-color: #52525b !important;
@@ -1011,6 +1030,13 @@ html.dark .project-reveal > a:hover {
   border-color: #71717a !important;
   box-shadow: 8px 8px 0 0 rgba(255, 255, 255, 0.22) !important;
 }
+
+/* Explicitly protect top accent borders */
+html.dark .project-reveal a[class*="border-t-[#FF4D8D]"] { border-top-color: #FF4D8D !important; }
+html.dark .project-reveal a[class*="border-t-[#0038FF]"] { border-top-color: #0038FF !important; }
+html.dark .project-reveal a[class*="border-t-[#4ADE80]"] { border-top-color: #4ADE80 !important; }
+html.dark .project-reveal a[class*="border-t-[#FACC15]"] { border-top-color: #FACC15 !important; }
+html.dark .project-reveal a[class*="border-t-[#00F2FE]"] { border-top-color: #00F2FE !important; }
 
 html.dark .project-reveal h3 {
   color: #f4f4f5 !important;
@@ -1026,6 +1052,7 @@ html.dark .project-reveal .github-date {
   border-color: #71717a !important;
 }
 
+/* Project Card Tags & Action Buttons Colors */
 html.dark .project-reveal span[class*="bg-white"] {
   background-color: #24252e !important;
   border-color: #52525b !important;
@@ -1036,6 +1063,36 @@ html.dark .project-reveal span[class*="bg-gray-100"] {
   background-color: #27272a !important;
   border-color: #71717a !important;
   color: #d4d4d8 !important;
+}
+
+html.dark .project-reveal a div[class*="bg-[#FF4D8D]"] {
+  background-color: #FF4D8D !important;
+  color: #ffffff !important;
+  border-color: #52525b !important;
+}
+
+html.dark .project-reveal a div[class*="bg-[#0038FF]"] {
+  background-color: #0038FF !important;
+  color: #ffffff !important;
+  border-color: #52525b !important;
+}
+
+html.dark .project-reveal a div[class*="bg-[#4ADE80]"] {
+  background-color: #4ADE80 !important;
+  color: #09090b !important;
+  border-color: #52525b !important;
+}
+
+html.dark .project-reveal a div[class*="bg-[#FACC15]"] {
+  background-color: #FACC15 !important;
+  color: #09090b !important;
+  border-color: #52525b !important;
+}
+
+html.dark .project-reveal a div[class*="bg-[#00F2FE]"] {
+  background-color: #00F2FE !important;
+  color: #09090b !important;
+  border-color: #52525b !important;
 }
 
 html.dark .project-reveal > a > div:first-child {
@@ -1054,6 +1111,12 @@ html.dark .gallery-item {
   border-color: #52525b !important;
   box-shadow: 6px 6px 0 0 rgba(255, 255, 255, 0.16) !important;
 }
+
+html.dark .gallery-item:nth-child(5n+1) { background-color: #FACC15 !important; }
+html.dark .gallery-item:nth-child(5n+2) { background-color: #FF4D8D !important; }
+html.dark .gallery-item:nth-child(5n+3) { background-color: #1c1d24 !important; }
+html.dark .gallery-item:nth-child(5n+4) { background-color: #4ADE80 !important; }
+html.dark .gallery-item:nth-child(5n+5) { background-color: #0038FF !important; }
 
 /* Pre-Footer & Footer Fixes */
 html.dark footer {
