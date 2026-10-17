@@ -379,7 +379,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const resolveRepoDate = async (repo, cache) => {
       const hit = cache[repo];
       if (hit && Date.now() - hit.t < GH_CACHE_TTL) {
-        return { text: `LAST_PUSH: ${hit.d}`, stale: false };
+        return { text: `LAST PUSH: ${hit.d}`, stale: false };
       }
 
       try {
@@ -391,10 +391,10 @@ document.addEventListener("DOMContentLoaded", () => {
         const data = await response.json();
         const d = formatDate(data.pushed_at || data.updated_at);
         cache[repo] = { d, t: Date.now() };
-        return { text: `LAST_PUSH: ${d}`, stale: false };
+        return { text: `LAST PUSH: ${d}`, stale: false };
       } catch {
         // rate limited, shadowbanned, or offline: a stale date beats no date
-        if (hit) return { text: `LAST_PUSH: ${hit.d}`, stale: true };
+        if (hit) return { text: `LAST PUSH: ${hit.d}`, stale: true };
         return null;
       }
     };
@@ -415,7 +415,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const fallback = span.getAttribute("data-fallback");
         if (fallback) {
-          span.textContent = `LAST_PUSH: ${fallback}`;
+          span.textContent = `LAST PUSH: ${fallback}`;
           span.title = "Fallback date — GitHub API unreachable";
           return;
         }
