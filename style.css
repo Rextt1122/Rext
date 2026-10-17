@@ -940,6 +940,17 @@ html.dark .hero-title-clamp-1 {
   color: #f4f4f5 !important;
 }
 
+/* Watermarks in Dark Mode */
+html.dark .hero-watermark-01 {
+  color: #ffffff !important;
+  opacity: 0.1 !important;
+}
+
+html.dark .hero-watermark-bg {
+  color: #ffffff !important;
+  opacity: 0.04 !important;
+}
+
 html.dark p {
   color: #a1a1aa !important;
 }
