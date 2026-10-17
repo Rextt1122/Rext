@@ -907,11 +907,39 @@ html.dark footer {
   border-color: #52525b !important;
 }
 
-/* Main Section Containers (Big Boxes) */
-html.dark #hero > div > div,
-html.dark #projects > div > div,
+/* Main Section Containers (Big Boxes) in Dark Mode with Ambient Cyber Lighting */
+html.dark #hero > div > div {
+  background-color: #121316 !important;
+  background-image:
+    radial-gradient(circle at 10% 20%, rgba(0, 56, 255, 0.08), transparent 45%),
+    radial-gradient(circle at 90% 80%, rgba(255, 77, 141, 0.06), transparent 45%),
+    linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px) !important;
+  background-size: auto, auto, 32px 32px, 32px 32px !important;
+  border-color: #52525b !important;
+  box-shadow: 10px 10px 0 0 rgba(255, 255, 255, 0.12) !important;
+}
+
+html.dark #projects > div > div {
+  background-color: #121316 !important;
+  background-image:
+    radial-gradient(circle at 85% 15%, rgba(0, 242, 254, 0.07), transparent 45%),
+    radial-gradient(circle at 15% 85%, rgba(74, 222, 128, 0.06), transparent 45%),
+    linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px) !important;
+  background-size: auto, auto, 32px 32px, 32px 32px !important;
+  border-color: #52525b !important;
+  box-shadow: 10px 10px 0 0 rgba(255, 255, 255, 0.12) !important;
+}
+
 html.dark #gallery > div > div {
   background-color: #121316 !important;
+  background-image:
+    radial-gradient(circle at 20% 25%, rgba(168, 85, 247, 0.09), transparent 45%),
+    radial-gradient(circle at 80% 75%, rgba(255, 77, 141, 0.08), transparent 45%),
+    linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px) !important;
+  background-size: auto, auto, 32px 32px, 32px 32px !important;
   border-color: #52525b !important;
   box-shadow: 10px 10px 0 0 rgba(255, 255, 255, 0.12) !important;
 }
@@ -1128,6 +1156,42 @@ html.dark .gallery-item:nth-child(5n+2) { background-color: #FF4D8D !important; 
 html.dark .gallery-item:nth-child(5n+3) { background-color: #1c1d24 !important; }
 html.dark .gallery-item:nth-child(5n+4) { background-color: #4ADE80 !important; }
 html.dark .gallery-item:nth-child(5n+5) { background-color: #0038FF !important; }
+
+/* 8th Slot "More Works" Tile */
+.gallery-more-tile {
+  background-color: #fafafa !important;
+  cursor: default !important;
+}
+
+.gallery-more-tile:hover {
+  transform: none !important;
+  box-shadow: 6px 6px 0px 0px rgba(0, 0, 0, 1) !important;
+  background-color: #fafafa !important;
+}
+
+html.dark .gallery-more-tile {
+  background-color: #16171d !important;
+  border-color: #52525b !important;
+  box-shadow: 6px 6px 0 0 rgba(255, 255, 255, 0.16) !important;
+}
+
+html.dark .gallery-more-tile:hover {
+  transform: none !important;
+  box-shadow: 6px 6px 0 0 rgba(255, 255, 255, 0.16) !important;
+  background-color: #16171d !important;
+}
+
+html.dark .gallery-more-tile > div {
+  border-color: #52525b !important;
+}
+
+html.dark .gallery-more-tile span.font-oswald {
+  color: #f4f4f5 !important;
+}
+
+html.dark .gallery-more-tile span.font-mono {
+  color: #a1a1aa !important;
+}
 
 /* Pre-Footer & Footer Fixes */
 html.dark footer {
