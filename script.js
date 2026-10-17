@@ -36,12 +36,13 @@ document.addEventListener("DOMContentLoaded", () => {
   syncThemeIcons(document.documentElement.classList.contains("dark"));
 
   if (themeToggle) {
-    themeToggle.addEventListener("click", () => {
+    themeToggle.addEventListener("click", function () {
       const isDark = document.documentElement.classList.toggle("dark");
       try {
         localStorage.setItem("theme", isDark ? "dark" : "light");
       } catch (e) { }
       syncThemeIcons(isDark);
+      this.blur();
     });
   }
 

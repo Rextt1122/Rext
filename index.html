@@ -31,6 +31,9 @@
   <script>
     tailwind.config = {
       darkMode: 'class',
+      future: {
+        hoverOnlyWhenSupported: true,
+      },
       theme: {
         extend: {
           fontFamily: {
@@ -66,7 +69,7 @@
       } catch (e) { }
     })();
   </script>
-  <link rel="stylesheet" href="style.css?v=14.5" />
+  <link rel="stylesheet" href="style.css?v=14.6" />
   <style>
     ::-webkit-scrollbar {
       width: 6px;
@@ -202,13 +205,13 @@
 
       <!-- Theme Toggle -->
       <button id="theme-toggle" type="button" aria-label="Toggle dark/light mode" title="Toggle theme"
-        class="nav-item group flex items-center justify-center px-3 py-1.5 sm:py-2 border-2 border-gray-950 rounded-xl shadow-[3px_3px_0_0_rgba(0,0,0,1)] bg-white hover:bg-gray-950 hover:text-white active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all cursor-pointer">
+        class="nav-item group flex items-center justify-center px-3 py-1.5 sm:py-2 border-2 border-gray-950 rounded-xl shadow-[3px_3px_0_0_rgba(0,0,0,1)] bg-white active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all cursor-pointer focus:outline-none">
         <!-- Moon (Light Mode) -->
-        <svg id="theme-icon-moon" class="w-4 h-4 text-gray-950 group-hover:text-white transition-colors" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+        <svg id="theme-icon-moon" class="w-4 h-4 text-gray-950 transition-colors" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z"/>
         </svg>
         <!-- Sun (Dark Mode) -->
-        <svg id="theme-icon-sun" class="w-4 h-4 text-gray-100 group-hover:text-white hidden transition-colors" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+        <svg id="theme-icon-sun" class="w-4 h-4 text-gray-100 hidden transition-colors" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z"/>
         </svg>
       </button>
@@ -1028,7 +1031,7 @@
 
   </footer>
 
-  <script src="script.js?v=13.7"></script>
+  <script src="script.js?v=13.8"></script>
 </body>
 
 </html>

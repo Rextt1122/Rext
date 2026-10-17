@@ -888,14 +888,51 @@ html.dark .nav-item span.rounded-full {
   background-color: #f4f4f5 !important;
 }
 
+/* Theme Toggle Base & Touch Normalization */
+#theme-toggle {
+  background-color: #ffffff !important;
+  color: #09090b !important;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  #theme-toggle:hover {
+    background-color: #09090b !important;
+    color: #ffffff !important;
+  }
+  #theme-toggle:hover svg {
+    color: #ffffff !important;
+  }
+}
+
 html.dark #theme-toggle {
   background-color: #181920 !important;
   border-color: #52525b !important;
   color: #f4f4f5 !important;
 }
 
-html.dark #theme-toggle:hover {
-  background-color: #27272a !important;
+@media (hover: hover) and (pointer: fine) {
+  html.dark #theme-toggle:hover {
+    background-color: #27272a !important;
+    border-color: #71717a !important;
+  }
+}
+
+/* Touch devices: eliminate sticky mobile hover & focus */
+@media (hover: none) {
+  #theme-toggle,
+  #theme-toggle:hover,
+  #theme-toggle:focus,
+  #theme-toggle:active {
+    background-color: #ffffff !important;
+    color: #09090b !important;
+  }
+  html.dark #theme-toggle,
+  html.dark #theme-toggle:hover,
+  html.dark #theme-toggle:focus,
+  html.dark #theme-toggle:active {
+    background-color: #181920 !important;
+    color: #f4f4f5 !important;
+  }
 }
 
 /* Main Section Backgrounds */
