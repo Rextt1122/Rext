@@ -501,13 +501,15 @@ body {
 /* Mobile Overrides (<=480px) */
 @media (max-width: 480px) {
 
-  /* Status strip fit */
+  /* Status strip fit: matches photo width (92%) */
   #hero-status-strip {
-    width: 100% !important;
-    max-width: 100% !important;
+    width: 92% !important;
+    max-width: 92% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
     flex-wrap: nowrap !important;
     justify-content: space-between !important;
-    font-size: clamp(6px, 1.9vw, 7.5px) !important;
+    font-size: clamp(5.5px, 1.8vw, 7.5px) !important;
     letter-spacing: -0.02em !important;
     padding: 2px 4px !important;
     gap: 0 !important;
