@@ -877,18 +877,19 @@ html.dark .nav-item {
   box-shadow: 3px 3px 0 0 rgba(255, 255, 255, 0.16) !important;
 }
 
-html.dark .nav-item span {
+html.dark .nav-item span.rounded-full {
   background-color: #f4f4f5 !important;
 }
 
-/* Theme Toggle Button */
-html.dark .theme-toggle-btn {
-  background-color: #181920 !important;
-  border-color: #52525b !important;
-  box-shadow: 2px 2px 0 0 rgba(255, 255, 255, 0.16) !important;
+#theme-toggle-text {
+  background-color: transparent !important;
 }
 
-html.dark .theme-toggle-btn:hover {
+html.dark #theme-toggle {
+  color: #f4f4f5 !important;
+}
+
+html.dark #theme-toggle:hover {
   background-color: #27272a !important;
 }
 

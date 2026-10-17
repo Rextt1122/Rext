@@ -17,10 +17,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // --- Theme Toggle (Dark / Light Mode) ---
   const themeToggle = document.getElementById("theme-toggle");
+  const themeText = document.getElementById("theme-toggle-text");
   const iconMoon = document.getElementById("theme-icon-moon");
   const iconSun = document.getElementById("theme-icon-sun");
 
   function syncThemeIcons(isDark) {
+    if (themeText) {
+      themeText.textContent = isDark ? "LIGHT" : "DARK";
+    }
     if (iconMoon && iconSun) {
       if (isDark) {
         iconMoon.classList.add("hidden");
