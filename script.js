@@ -217,65 +217,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }, { threshold: 0.1, rootMargin: "0px 0px -40px 0px" });
 
     gallery.querySelectorAll(".gallery-reveal").forEach(el => revealObserver.observe(el));
-
-    function updateEmptyCells() {
-      gallery.querySelectorAll('.empty-cell').forEach(e => e.remove());
-
-      const cols = window.innerWidth >= 768 ? 6 : 2;
-      const totalItems = desainList.length;
-      const remainder = totalItems % cols;
-
-      if (remainder !== 0) {
-        const emptyCount = cols - remainder;
-        for (let i = 0; i < emptyCount; i++) {
-          const emptyItem = document.createElement("div");
-          emptyItem.className = "gallery-item empty-cell";
-          gallery.appendChild(emptyItem);
-        }
-      }
-    }
-
-    updateEmptyCells();
-    window.addEventListener('resize', updateEmptyCells);
   }
 
-  // Typing animation for system ready texts
-  const sysText = "[ SYSTEM_READY ]";
-  const intText = "INT.001";
-  const sysElement = document.getElementById("type-sys");
-  const intElement = document.getElementById("type-int");
-
-  if (sysElement && intElement) {
-    let sysIndex = 0;
-    let intIndex = 0;
-    const typeDelay = 40; // fast typing
-
-    function typeInt() {
-      if (intIndex < intText.length) {
-        intElement.innerHTML = intText.substring(0, intIndex + 1) + '<span class="cursor-blink">_</span>';
-        intIndex++;
-        setTimeout(typeInt, typeDelay);
-      } else {
-        intElement.innerHTML = intText + '<span class="cursor-blink">_</span>';
-      }
-    }
-
-    function typeSys() {
-      if (sysIndex < sysText.length) {
-        sysElement.innerHTML = sysText.substring(0, sysIndex + 1) + '<span class="cursor-blink">_</span>';
-        sysIndex++;
-        setTimeout(typeSys, typeDelay);
-      } else {
-        sysElement.innerHTML = sysText;
-        setTimeout(typeInt, typeDelay * 5); // pause before second line
-      }
-    }
-
-    setTimeout(typeSys, 500); // Start typing immediately
-  }
-
-  // --- CLI Terminal Easter Egg ---
-  const statusIndicator = document.querySelector(".status-indicator");
+  // --- CLI Terminal Easter Egg (open with ` or ~) ---
   let tInit = false;
   let tOverlay, tInput, tOutput, tClose;
 
@@ -374,7 +318,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  if (statusIndicator) statusIndicator.addEventListener("click", togT);
   document.addEventListener("keydown", (e) => {
     if (e.key === "`" || e.key === "~" || (e.ctrlKey && e.key === "`")) {
       e.preventDefault();
@@ -383,28 +326,85 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // --- GitHub Repo Dates Sync ---
-  const githubDateSpans = document.querySelectorAll('.github-date');
+  // Unauthenticated api.github.com allows 60 req/hr per IP, and a shadowban or
+  // offline visit turns every card into ERROR. So: cache in localStorage with a
+  // 6h TTL, fall back to the stale cache when a fetch fails, then to the
+  // hardcoded data-fallback date, and finally hide the badge rather than print
+  // a fake value.
+  const GH_CACHE_KEY = "rext.gh.pushdates";
+  const GH_CACHE_TTL = 6 * 60 * 60 * 1000;
+
+  const githubDateSpans = document.querySelectorAll(".github-date");
   if (githubDateSpans.length > 0) {
-    const fetchRepoDate = async (span) => {
-      const repo = span.getAttribute('data-repo');
-      if (!repo) return;
+    const readCache = () => {
       try {
-        const response = await fetch(`https://api.github.com/repos/${repo}`);
-        if (response.ok) {
-          const data = await response.json();
-          const pushedDate = new Date(data.pushed_at || data.updated_at);
-          const yyyy = pushedDate.getFullYear();
-          const mm = String(pushedDate.getMonth() + 1).padStart(2, '0');
-          const dd = String(pushedDate.getDate()).padStart(2, '0');
-          span.textContent = `LAST_PUSH: ${yyyy}-${mm}-${dd}`;
-        } else {
-          span.textContent = `LAST_PUSH: UNKNOWN`;
-        }
-      } catch (error) {
-        span.textContent = `LAST_PUSH: ERROR`;
+        return JSON.parse(localStorage.getItem(GH_CACHE_KEY)) || {};
+      } catch {
+        return {};
+      }
+    };
+    const writeCache = (cache) => {
+      try {
+        localStorage.setItem(GH_CACHE_KEY, JSON.stringify(cache));
+      } catch {
+        /* private mode / quota — cache is optional, not required */
+      }
+    };
+    const formatDate = (value) => {
+      const d = new Date(value);
+      const yyyy = d.getFullYear();
+      const mm = String(d.getMonth() + 1).padStart(2, "0");
+      const dd = String(d.getDate()).padStart(2, "0");
+      return `${yyyy}-${mm}-${dd}`;
+    };
+
+    const resolveRepoDate = async (repo, cache) => {
+      const hit = cache[repo];
+      if (hit && Date.now() - hit.t < GH_CACHE_TTL) {
+        return { text: `LAST_PUSH: ${hit.d}`, stale: false };
+      }
+
+      try {
+        const response = await fetch(`https://api.github.com/repos/${repo}`, {
+          headers: { Accept: "application/vnd.github+json" },
+        });
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+
+        const data = await response.json();
+        const d = formatDate(data.pushed_at || data.updated_at);
+        cache[repo] = { d, t: Date.now() };
+        return { text: `LAST_PUSH: ${d}`, stale: false };
+      } catch {
+        // rate limited, shadowbanned, or offline: a stale date beats no date
+        if (hit) return { text: `LAST_PUSH: ${hit.d}`, stale: true };
+        return null;
       }
     };
 
-    githubDateSpans.forEach(fetchRepoDate);
+    const cache = readCache();
+
+    Promise.all(
+      [...githubDateSpans].map(async (span) => {
+        const repo = span.getAttribute("data-repo");
+        if (!repo) return;
+
+        const resolved = await resolveRepoDate(repo, cache);
+        if (resolved) {
+          span.textContent = resolved.text;
+          if (resolved.stale) span.title = "Cached date — GitHub API unreachable";
+          return;
+        }
+
+        const fallback = span.getAttribute("data-fallback");
+        if (fallback) {
+          span.textContent = `LAST_PUSH: ${fallback}`;
+          span.title = "Fallback date — GitHub API unreachable";
+          return;
+        }
+
+        // no date of any kind: hide the badge instead of printing a lie
+        span.hidden = true;
+      })
+    ).then(() => writeCache(cache));
   }
 });
