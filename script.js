@@ -236,19 +236,6 @@ document.addEventListener("DOMContentLoaded", () => {
       gallery.appendChild(item);
     });
 
-    // 8th slot: "More Works" brutalist placeholder card to balance the 4-col grid
-    const moreItem = document.createElement("div");
-    moreItem.className = "gallery-item gallery-reveal gallery-more-tile";
-    moreItem.style.transitionDelay = `${desainList.length * 60}ms`;
-    moreItem.innerHTML = `
-      <div class="w-full h-full flex flex-col items-center justify-center text-center p-3 sm:p-4 border-2 border-dashed border-gray-950 rounded-lg select-none">
-        <div class="w-7 h-7 sm:w-9 sm:h-9 rounded-full bg-[#FACC15] border-2 border-gray-950 flex items-center justify-center font-mono font-black text-xs sm:text-sm text-gray-950 shadow-[2px_2px_0_0_rgba(0,0,0,1)] mb-2">+</div>
-        <span class="font-oswald text-sm sm:text-base font-bold uppercase tracking-tight text-gray-950">MORE WORK</span>
-        <span class="font-mono text-[7px] sm:text-[9px] font-bold uppercase text-gray-500 tracking-widest mt-1">COMING SOON</span>
-      </div>
-    `;
-    gallery.appendChild(moreItem);
-
     // Scroll-reveal with IntersectionObserver
     const revealObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {

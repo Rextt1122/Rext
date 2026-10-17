@@ -1157,42 +1157,6 @@ html.dark .gallery-item:nth-child(5n+3) { background-color: #1c1d24 !important; 
 html.dark .gallery-item:nth-child(5n+4) { background-color: #4ADE80 !important; }
 html.dark .gallery-item:nth-child(5n+5) { background-color: #0038FF !important; }
 
-/* 8th Slot "More Works" Tile */
-.gallery-more-tile {
-  background-color: #fafafa !important;
-  cursor: default !important;
-}
-
-.gallery-more-tile:hover {
-  transform: none !important;
-  box-shadow: 6px 6px 0px 0px rgba(0, 0, 0, 1) !important;
-  background-color: #fafafa !important;
-}
-
-html.dark .gallery-more-tile {
-  background-color: #16171d !important;
-  border-color: #52525b !important;
-  box-shadow: 6px 6px 0 0 rgba(255, 255, 255, 0.16) !important;
-}
-
-html.dark .gallery-more-tile:hover {
-  transform: none !important;
-  box-shadow: 6px 6px 0 0 rgba(255, 255, 255, 0.16) !important;
-  background-color: #16171d !important;
-}
-
-html.dark .gallery-more-tile > div {
-  border-color: #52525b !important;
-}
-
-html.dark .gallery-more-tile span.font-oswald {
-  color: #f4f4f5 !important;
-}
-
-html.dark .gallery-more-tile span.font-mono {
-  color: #a1a1aa !important;
-}
-
 /* Pre-Footer & Footer Fixes */
 html.dark footer {
   background-color: #0c0d10 !important;
