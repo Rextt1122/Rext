@@ -53,7 +53,7 @@
       }
     }
   </script>
-  <link rel="stylesheet" href="style.css?v=13.3" />
+  <link rel="stylesheet" href="style.css?v=13.4" />
   <style>
     ::-webkit-scrollbar {
       width: 6px;
@@ -188,7 +188,7 @@
       </div>
 
       <button id="mobile-menu-btn"
-        class="flex md:hidden items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-[#FACC15] border-2 border-gray-950 rounded-full shadow-[3px_3px_0_0_rgba(0,0,0,1)] active:translate-x-1 active:translate-y-1 active:shadow-none transition-all cursor-pointer focus:outline-none">
+        class="flex md:hidden items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-[#FACC15] border-2 border-gray-950 rounded-xl shadow-[3px_3px_0_0_rgba(0,0,0,1)] active:translate-x-1 active:translate-y-1 active:shadow-none transition-all cursor-pointer focus:outline-none">
         <span class="w-2 h-2 rounded-full bg-[#4ADE80] border border-gray-950 animate-pulse shrink-0"></span>
         <span
           class="font-mono text-[10px] sm:text-xs font-black uppercase tracking-wider text-gray-950 mt-0.5">MENU</span>
@@ -209,7 +209,7 @@
 
     <!-- Card (scale from center) -->
     <div id="mobile-menu-card"
-      class="w-full max-w-sm bg-white border-2 border-gray-950 rounded-2xl shadow-[12px_12px_0_0_rgba(0,0,0,1)] flex flex-col overflow-hidden relative z-10 transition-all duration-300 ease-out">
+      class="w-full max-w-sm bg-white border-2 border-gray-950 rounded-2xl shadow-[6px_6px_0_0_rgba(0,0,0,1)] sm:shadow-[12px_12px_0_0_rgba(0,0,0,1)] flex flex-col overflow-hidden relative z-10 transition-all duration-300 ease-out">
 
       <div class="px-5 py-4 flex justify-between items-center border-b-2 border-gray-950 bg-white">
         <div class="flex items-center gap-3">
@@ -218,7 +218,7 @@
             class="font-oswald text-2xl font-black uppercase tracking-tighter text-gray-950 leading-none">NAVIGATION</span>
         </div>
         <button id="mobile-menu-close"
-          class="font-mono text-[9px] font-black uppercase bg-[#FF4D8D] text-white px-3 py-1.5 border-2 border-gray-950 rounded-full shadow-[3px_3px_0_0_rgba(0,0,0,1)] active:translate-x-1 active:translate-y-1 active:shadow-none transition-all cursor-pointer">
+          class="font-mono text-[9px] font-black uppercase bg-[#FF4D8D] text-white px-3 py-1.5 border-2 border-gray-950 rounded-xl shadow-[3px_3px_0_0_rgba(0,0,0,1)] active:translate-x-1 active:translate-y-1 active:shadow-none transition-all cursor-pointer">
           ✕ CLOSE
         </button>
       </div>
@@ -685,7 +685,7 @@
 
           <div class="project-reveal animate-float anim-dur-4-5 anim-delay-0-5" style="--card-idx: 2;">
             <a href="https://github.com/Rextt1122/Image-upscaler" target="_blank" rel="noopener noreferrer"
-              class="h-full group relative -rotate-2 hover:rotate-0 bg-white border-2 border-t-[4px] border-gray-950 border-t-[#4ADE80] rounded-[20px] p-4 sm:p-6 shadow-[4px_4px_0_0_rgba(0,0,0,1)] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[8px_8px_0_0_rgba(0,0,0,1)] transition-all flex flex-col justify-between">
+              class="h-full group relative -rotate-1 hover:rotate-0 bg-white border-2 border-t-[4px] border-gray-950 border-t-[#4ADE80] rounded-[20px] p-4 sm:p-6 shadow-[4px_4px_0_0_rgba(0,0,0,1)] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[8px_8px_0_0_rgba(0,0,0,1)] transition-all flex flex-col justify-between">
               <div
                 class="absolute top-2.5 left-2.5 w-2.5 h-2.5 sm:top-3 sm:left-3 sm:w-3 sm:h-3 border-t-2 border-l-2 border-gray-950">
               </div>
@@ -750,7 +750,7 @@
 
           <div class="project-reveal animate-float anim-dur-3-5 anim-delay-0-2" style="--card-idx: 3;">
             <a href="https://github.com/Rextt1122/_jamkot" target="_blank" rel="noopener noreferrer"
-              class="h-full group relative rotate-2 hover:rotate-0 bg-white border-2 border-t-[4px] border-gray-950 border-t-[#FACC15] rounded-[20px] p-4 sm:p-6 shadow-[4px_4px_0_0_rgba(0,0,0,1)] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[8px_8px_0_0_rgba(0,0,0,1)] transition-all flex flex-col justify-between">
+              class="h-full group relative rotate-1 hover:rotate-0 bg-white border-2 border-t-[4px] border-gray-950 border-t-[#FACC15] rounded-[20px] p-4 sm:p-6 shadow-[4px_4px_0_0_rgba(0,0,0,1)] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[8px_8px_0_0_rgba(0,0,0,1)] transition-all flex flex-col justify-between">
               <div
                 class="absolute top-2.5 left-2.5 w-2.5 h-2.5 sm:top-3 sm:left-3 sm:w-3 sm:h-3 border-t-2 border-l-2 border-gray-950">
               </div>
@@ -885,10 +885,18 @@
             <a href="https://github.com/Rextt1122/Dashboard" target="_blank" rel="noopener noreferrer"
               class="h-full group relative rotate-1 hover:rotate-0 bg-white border-2 border-t-[4px] border-gray-950 border-t-[#4ADE80] rounded-[20px] p-4 sm:p-6 shadow-[4px_4px_0_0_rgba(0,0,0,1)] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[8px_8px_0_0_rgba(0,0,0,1)] transition-all flex flex-col justify-between">
               <!-- Corner Accents -->
-              <div class="absolute top-3 left-3 w-3 h-3 border-t-2 border-l-2 border-gray-950"></div>
-              <div class="absolute top-3 right-3 w-3 h-3 border-t-2 border-r-2 border-gray-950"></div>
-              <div class="absolute bottom-3 left-3 w-3 h-3 border-b-2 border-l-2 border-gray-950"></div>
-              <div class="absolute bottom-3 right-3 w-3 h-3 border-b-2 border-r-2 border-gray-950"></div>
+              <div
+                class="absolute top-2.5 left-2.5 w-2.5 h-2.5 sm:top-3 sm:left-3 sm:w-3 sm:h-3 border-t-2 border-l-2 border-gray-950">
+              </div>
+              <div
+                class="absolute top-2.5 right-2.5 w-2.5 h-2.5 sm:top-3 sm:right-3 sm:w-3 sm:h-3 border-t-2 border-r-2 border-gray-950">
+              </div>
+              <div
+                class="absolute bottom-2.5 left-2.5 w-2.5 h-2.5 sm:bottom-3 sm:left-3 sm:w-3 sm:h-3 border-b-2 border-l-2 border-gray-950">
+              </div>
+              <div
+                class="absolute bottom-2.5 right-2.5 w-2.5 h-2.5 sm:bottom-3 sm:right-3 sm:w-3 sm:h-3 border-b-2 border-r-2 border-gray-950">
+              </div>
 
               <!-- Top Bar: Dots & Section -->
               <div class="flex justify-between items-center mb-3 sm:mb-4 border-b-2 border-gray-950 pb-2 sm:pb-3">
