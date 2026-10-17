@@ -863,7 +863,7 @@ html.dark body {
 /* Nav */
 html.dark nav {
   background-color: #0c0d10 !important;
-  border-bottom-color: #27272a !important;
+  border-bottom-color: #3f3f46 !important;
 }
 
 html.dark nav a .text-gray-950 {
@@ -872,9 +872,9 @@ html.dark nav a .text-gray-950 {
 
 html.dark .nav-item {
   background-color: #181920 !important;
-  border-color: #27272a !important;
+  border-color: #3f3f46 !important;
   color: #f4f4f5 !important;
-  box-shadow: 3px 3px 0 0 #000000 !important;
+  box-shadow: 3px 3px 0 0 rgba(255, 255, 255, 0.12) !important;
 }
 
 html.dark .nav-item span {
@@ -884,29 +884,30 @@ html.dark .nav-item span {
 /* Theme Toggle Button */
 html.dark .theme-toggle-btn {
   background-color: #181920 !important;
-  border-color: #27272a !important;
-  box-shadow: 2px 2px 0 0 #000000 !important;
+  border-color: #3f3f46 !important;
+  box-shadow: 2px 2px 0 0 rgba(255, 255, 255, 0.15) !important;
 }
 
 html.dark .theme-toggle-btn:hover {
   background-color: #27272a !important;
 }
 
-/* Main Section Containers */
+/* Main Section Backgrounds */
 html.dark #hero,
 html.dark #projects,
 html.dark #gallery,
 html.dark footer {
   background-color: #0c0d10 !important;
-  border-color: #27272a !important;
+  border-color: #3f3f46 !important;
 }
 
+/* Main Section Containers (Big Boxes) */
 html.dark #hero > div > div,
 html.dark #projects > div > div,
 html.dark #gallery > div > div {
   background-color: #121316 !important;
-  border-color: #27272a !important;
-  box-shadow: 12px 12px 0 0 #000000 !important;
+  border-color: #3f3f46 !important;
+  box-shadow: 10px 10px 0 0 rgba(255, 255, 255, 0.08) !important;
 }
 
 @media (max-width: 639px) {
@@ -921,8 +922,8 @@ html.dark #gallery > div > div {
 html.dark .bg-grid-pattern,
 html.dark .grid-pattern {
   background-image:
-    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px) !important;
+    linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px) !important;
 }
 
 /* Typography & Dividers */
@@ -938,52 +939,75 @@ html.dark p {
 }
 
 html.dark .border-gray-950 {
-  border-color: #27272a !important;
+  border-color: #3f3f46 !important;
 }
 
 /* Hero Box Sub-header */
 html.dark #hero > div > div > div:first-child {
-  border-color: #27272a !important;
+  border-color: #3f3f46 !important;
 }
 
 html.dark #hero > div > div > div:first-child span.bg-white {
   background-color: #181920 !important;
-  border-color: #27272a !important;
+  border-color: #3f3f46 !important;
   color: #f4f4f5 !important;
-  box-shadow: 2px 2px 0 0 #000000 !important;
+  box-shadow: 2px 2px 0 0 rgba(255, 255, 255, 0.12) !important;
+}
+
+/* Hero Floating Snippet & Decor Blocks */
+html.dark .hero-floating-snippet span.bg-white {
+  background-color: #181920 !important;
+  border-color: #3f3f46 !important;
+  color: #f4f4f5 !important;
+}
+
+html.dark .hero-floating-snippet div.bg-white {
+  background-color: #0d0e12 !important;
+  border-color: #3f3f46 !important;
+}
+
+html.dark .hero-floating-snippet pre code {
+  color: #f4f4f5 !important;
+}
+
+html.dark #hero div[class*="bg-white"].shadow-\[4px_4px_0_0_rgba\(0\,0\,0\,1\)\] {
+  background-color: #181920 !important;
+  border-color: #3f3f46 !important;
+  box-shadow: 4px 4px 0 0 rgba(255, 255, 255, 0.12) !important;
 }
 
 /* Status Strip */
 html.dark #hero-status-strip {
   background-color: #181920 !important;
-  border-color: #27272a !important;
+  border-color: #3f3f46 !important;
   color: #f4f4f5 !important;
-  box-shadow: 4px 4px 0 0 #000000 !important;
+  box-shadow: 4px 4px 0 0 rgba(255, 255, 255, 0.12) !important;
 }
 
 /* Hero About Me & Socials */
 html.dark .hero-social-row a {
   background-color: #181920 !important;
-  border-color: #27272a !important;
+  border-color: #3f3f46 !important;
   color: #f4f4f5 !important;
-  box-shadow: 2px 2px 0 0 #000000 !important;
+  box-shadow: 2px 2px 0 0 rgba(255, 255, 255, 0.15) !important;
 }
 
 html.dark a[href*="github.com/Rextt1122"]:not(.hero-social-row a) {
   background-color: #181920 !important;
-  border-color: #27272a !important;
+  border-color: #3f3f46 !important;
   color: #f4f4f5 !important;
+  box-shadow: 2px 2px 0 0 rgba(255, 255, 255, 0.15) !important;
 }
 
 /* Project Cards */
 html.dark .project-reveal > a {
-  background-color: #16171b !important;
-  border-color: #27272a !important;
-  box-shadow: 4px 4px 0 0 #000000 !important;
+  background-color: #181920 !important;
+  border-color: #3f3f46 !important;
+  box-shadow: 4px 4px 0 0 rgba(255, 255, 255, 0.12) !important;
 }
 
 html.dark .project-reveal > a:hover {
-  box-shadow: 8px 8px 0 0 #000000 !important;
+  box-shadow: 8px 8px 0 0 rgba(255, 255, 255, 0.18) !important;
 }
 
 html.dark .project-reveal h3 {
@@ -992,60 +1016,108 @@ html.dark .project-reveal h3 {
 
 html.dark .project-reveal p {
   color: #a1a1aa !important;
-  border-color: #27272a !important;
+  border-color: #3f3f46 !important;
 }
 
 html.dark .project-reveal .github-date {
   color: #a1a1aa !important;
-  border-color: #3f3f46 !important;
+  border-color: #52525b !important;
 }
 
 html.dark .project-reveal span[class*="bg-white"] {
-  background-color: #1e1f26 !important;
-  border-color: #27272a !important;
+  background-color: #24252e !important;
+  border-color: #3f3f46 !important;
   color: #e4e4e7 !important;
 }
 
 html.dark .project-reveal span[class*="bg-gray-100"] {
   background-color: #27272a !important;
-  border-color: #3f3f46 !important;
+  border-color: #52525b !important;
   color: #d4d4d8 !important;
 }
 
 html.dark .project-reveal > a > div:first-child {
-  border-color: #27272a !important;
+  border-color: #3f3f46 !important;
 }
 
 /* Section Bottom Index Bars */
 html.dark .bg-white\/80 {
-  background-color: rgba(18, 19, 22, 0.85) !important;
-  border-color: #27272a !important;
+  background-color: rgba(18, 19, 22, 0.9) !important;
+  border-color: #3f3f46 !important;
   color: #f4f4f5 !important;
 }
 
 /* Gallery Items */
 html.dark .gallery-item {
-  border-color: #27272a !important;
-  box-shadow: 6px 6px 0 0 #000000 !important;
+  border-color: #3f3f46 !important;
+  box-shadow: 6px 6px 0 0 rgba(255, 255, 255, 0.12) !important;
+}
+
+/* Pre-Footer & Footer Fixes */
+html.dark footer {
+  background-color: #0c0d10 !important;
+  border-color: #3f3f46 !important;
+}
+
+html.dark footer .grid-pattern {
+  background-color: #121316 !important;
+  border-color: #3f3f46 !important;
+}
+
+html.dark footer .bg-\[\#F4F2EB\] {
+  background-color: #15161c !important;
+  border-color: #3f3f46 !important;
+}
+
+html.dark footer .divide-gray-950 > :not([hidden]) ~ :not([hidden]),
+html.dark footer .border-gray-950 {
+  border-color: #3f3f46 !important;
+}
+
+html.dark footer h2 {
+  color: #f4f4f5 !important;
+}
+
+html.dark footer p {
+  color: #a1a1aa !important;
+}
+
+html.dark footer a.group {
+  background-color: #181920 !important;
+  border-color: #3f3f46 !important;
+  box-shadow: 4px 4px 0 0 rgba(255, 255, 255, 0.12) !important;
+}
+
+html.dark footer a.group:hover {
+  box-shadow: 6px 6px 0 0 rgba(255, 255, 255, 0.18) !important;
+}
+
+html.dark footer a.group span {
+  color: #f4f4f5 !important;
+}
+
+html.dark .footer-bottom-bar {
+  background-color: #050507 !important;
+  border-top: 2px solid #3f3f46 !important;
 }
 
 /* Mobile Menu */
 html.dark #mobile-menu-card {
   background-color: #14151a !important;
-  border-color: #27272a !important;
-  box-shadow: 6px 6px 0 0 #000000 !important;
+  border-color: #3f3f46 !important;
+  box-shadow: 6px 6px 0 0 rgba(255, 255, 255, 0.12) !important;
 }
 
 html.dark #mobile-menu-card > div:first-child,
 html.dark #mobile-menu-card > div:last-child {
   background-color: #14151a !important;
-  border-color: #27272a !important;
+  border-color: #3f3f46 !important;
   color: #f4f4f5 !important;
 }
 
 html.dark #mobile-menu-card .mobile-link {
   background-color: #1a1b21 !important;
-  border-color: #27272a !important;
+  border-color: #3f3f46 !important;
   color: #f4f4f5 !important;
-  box-shadow: 4px 4px 0 0 #000000 !important;
+  box-shadow: 4px 4px 0 0 rgba(255, 255, 255, 0.12) !important;
 }

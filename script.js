@@ -244,9 +244,14 @@ document.addEventListener("DOMContentLoaded", () => {
           revealObserver.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.1, rootMargin: "0px 0px -40px 0px" });
+    }, { threshold: 0.05, rootMargin: "0px 0px 100px 0px" });
 
     gallery.querySelectorAll(".gallery-reveal").forEach(el => revealObserver.observe(el));
+
+    // Fallback: reveal after 600ms so nothing stays hidden
+    setTimeout(() => {
+      gallery.querySelectorAll(".gallery-reveal").forEach(el => el.classList.add("gallery-visible"));
+    }, 600);
   }
 
   // --- Projects Scroll Reveal ---
@@ -259,12 +264,17 @@ document.addEventListener("DOMContentLoaded", () => {
           projectObserver.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.1, rootMargin: "0px 0px -40px 0px" });
+    }, { threshold: 0.05, rootMargin: "0px 0px 100px 0px" });
 
     projectCards.forEach((card, idx) => {
       card.style.setProperty("--card-idx", idx);
       projectObserver.observe(card);
     });
+
+    // Fallback: reveal after 600ms so cards never stay blank
+    setTimeout(() => {
+      projectCards.forEach(c => c.classList.add("project-visible"));
+    }, 600);
   }
 
   // --- CLI Terminal Easter Egg (open with ` or ~) ---
