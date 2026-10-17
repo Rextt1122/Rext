@@ -15,6 +15,36 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  // --- Theme Toggle (Dark / Light Mode) ---
+  const themeToggle = document.getElementById("theme-toggle");
+  const iconMoon = document.getElementById("theme-icon-moon");
+  const iconSun = document.getElementById("theme-icon-sun");
+
+  function syncThemeIcons(isDark) {
+    if (iconMoon && iconSun) {
+      if (isDark) {
+        iconMoon.classList.add("hidden");
+        iconSun.classList.remove("hidden");
+      } else {
+        iconMoon.classList.remove("hidden");
+        iconSun.classList.add("hidden");
+      }
+    }
+  }
+
+  // Initial sync
+  syncThemeIcons(document.documentElement.classList.contains("dark"));
+
+  if (themeToggle) {
+    themeToggle.addEventListener("click", () => {
+      const isDark = document.documentElement.classList.toggle("dark");
+      try {
+        localStorage.setItem("theme", isDark ? "dark" : "light");
+      } catch (e) { }
+      syncThemeIcons(isDark);
+    });
+  }
+
   // --- Mobile Menu Toggle ---
   const mobileMenuBtn = document.getElementById("mobile-menu-btn");
   const mobileMenu = document.getElementById("mobile-menu");

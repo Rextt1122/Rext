@@ -846,3 +846,206 @@ nav {
   padding-left: max(12px, env(safe-area-inset-left, 0px));
   padding-right: max(12px, env(safe-area-inset-right, 0px));
 }
+
+/* ══════════════════════════════════════════
+   DARK MODE (Cyber-Brutalism)
+   ══════════════════════════════════════════ */
+
+html.dark {
+  color-scheme: dark;
+}
+
+html.dark body {
+  background-color: #0c0d10 !important;
+  color: #f4f4f5 !important;
+}
+
+/* Nav */
+html.dark nav {
+  background-color: #0c0d10 !important;
+  border-bottom-color: #27272a !important;
+}
+
+html.dark nav a .text-gray-950 {
+  color: #f4f4f5 !important;
+}
+
+html.dark .nav-item {
+  background-color: #181920 !important;
+  border-color: #27272a !important;
+  color: #f4f4f5 !important;
+  box-shadow: 3px 3px 0 0 #000000 !important;
+}
+
+html.dark .nav-item span {
+  background-color: #f4f4f5 !important;
+}
+
+/* Theme Toggle Button */
+html.dark .theme-toggle-btn {
+  background-color: #181920 !important;
+  border-color: #27272a !important;
+  box-shadow: 2px 2px 0 0 #000000 !important;
+}
+
+html.dark .theme-toggle-btn:hover {
+  background-color: #27272a !important;
+}
+
+/* Main Section Containers */
+html.dark #hero,
+html.dark #projects,
+html.dark #gallery,
+html.dark footer {
+  background-color: #0c0d10 !important;
+  border-color: #27272a !important;
+}
+
+html.dark #hero > div > div,
+html.dark #projects > div > div,
+html.dark #gallery > div > div {
+  background-color: #121316 !important;
+  border-color: #27272a !important;
+  box-shadow: 12px 12px 0 0 #000000 !important;
+}
+
+@media (max-width: 639px) {
+  html.dark #hero > div > div,
+  html.dark #projects > div > div,
+  html.dark #gallery > div > div {
+    box-shadow: none !important;
+  }
+}
+
+/* Grid Patterns in Dark Mode */
+html.dark .bg-grid-pattern,
+html.dark .grid-pattern {
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px) !important;
+}
+
+/* Typography & Dividers */
+html.dark h1,
+html.dark h2,
+html.dark h3,
+html.dark .hero-title-clamp-1 {
+  color: #f4f4f5 !important;
+}
+
+html.dark p {
+  color: #a1a1aa !important;
+}
+
+html.dark .border-gray-950 {
+  border-color: #27272a !important;
+}
+
+/* Hero Box Sub-header */
+html.dark #hero > div > div > div:first-child {
+  border-color: #27272a !important;
+}
+
+html.dark #hero > div > div > div:first-child span.bg-white {
+  background-color: #181920 !important;
+  border-color: #27272a !important;
+  color: #f4f4f5 !important;
+  box-shadow: 2px 2px 0 0 #000000 !important;
+}
+
+/* Status Strip */
+html.dark #hero-status-strip {
+  background-color: #181920 !important;
+  border-color: #27272a !important;
+  color: #f4f4f5 !important;
+  box-shadow: 4px 4px 0 0 #000000 !important;
+}
+
+/* Hero About Me & Socials */
+html.dark .hero-social-row a {
+  background-color: #181920 !important;
+  border-color: #27272a !important;
+  color: #f4f4f5 !important;
+  box-shadow: 2px 2px 0 0 #000000 !important;
+}
+
+html.dark a[href*="github.com/Rextt1122"]:not(.hero-social-row a) {
+  background-color: #181920 !important;
+  border-color: #27272a !important;
+  color: #f4f4f5 !important;
+}
+
+/* Project Cards */
+html.dark .project-reveal > a {
+  background-color: #16171b !important;
+  border-color: #27272a !important;
+  box-shadow: 4px 4px 0 0 #000000 !important;
+}
+
+html.dark .project-reveal > a:hover {
+  box-shadow: 8px 8px 0 0 #000000 !important;
+}
+
+html.dark .project-reveal h3 {
+  color: #f4f4f5 !important;
+}
+
+html.dark .project-reveal p {
+  color: #a1a1aa !important;
+  border-color: #27272a !important;
+}
+
+html.dark .project-reveal .github-date {
+  color: #a1a1aa !important;
+  border-color: #3f3f46 !important;
+}
+
+html.dark .project-reveal span[class*="bg-white"] {
+  background-color: #1e1f26 !important;
+  border-color: #27272a !important;
+  color: #e4e4e7 !important;
+}
+
+html.dark .project-reveal span[class*="bg-gray-100"] {
+  background-color: #27272a !important;
+  border-color: #3f3f46 !important;
+  color: #d4d4d8 !important;
+}
+
+html.dark .project-reveal > a > div:first-child {
+  border-color: #27272a !important;
+}
+
+/* Section Bottom Index Bars */
+html.dark .bg-white\/80 {
+  background-color: rgba(18, 19, 22, 0.85) !important;
+  border-color: #27272a !important;
+  color: #f4f4f5 !important;
+}
+
+/* Gallery Items */
+html.dark .gallery-item {
+  border-color: #27272a !important;
+  box-shadow: 6px 6px 0 0 #000000 !important;
+}
+
+/* Mobile Menu */
+html.dark #mobile-menu-card {
+  background-color: #14151a !important;
+  border-color: #27272a !important;
+  box-shadow: 6px 6px 0 0 #000000 !important;
+}
+
+html.dark #mobile-menu-card > div:first-child,
+html.dark #mobile-menu-card > div:last-child {
+  background-color: #14151a !important;
+  border-color: #27272a !important;
+  color: #f4f4f5 !important;
+}
+
+html.dark #mobile-menu-card .mobile-link {
+  background-color: #1a1b21 !important;
+  border-color: #27272a !important;
+  color: #f4f4f5 !important;
+  box-shadow: 4px 4px 0 0 #000000 !important;
+}

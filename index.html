@@ -30,6 +30,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
+      darkMode: 'class',
       theme: {
         extend: {
           fontFamily: {
@@ -53,7 +54,19 @@
       }
     }
   </script>
-  <link rel="stylesheet" href="style.css?v=13.7" />
+  <script>
+    (function () {
+      try {
+        const theme = localStorage.getItem('theme');
+        if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+      } catch (e) { }
+    })();
+  </script>
+  <link rel="stylesheet" href="style.css?v=13.8" />
   <style>
     ::-webkit-scrollbar {
       width: 6px;
@@ -186,6 +199,19 @@
           GALLERY
         </a>
       </div>
+
+      <!-- Theme Toggle -->
+      <button id="theme-toggle" type="button" aria-label="Toggle dark/light mode" title="Toggle theme"
+        class="theme-toggle-btn flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 bg-white border-2 border-gray-950 rounded-xl shadow-[2px_2px_0_0_rgba(0,0,0,1)] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none hover:bg-gray-100 transition-all cursor-pointer">
+        <!-- Moon (Light Mode) -->
+        <svg id="theme-icon-moon" class="w-4 h-4 text-gray-800" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z"/>
+        </svg>
+        <!-- Sun (Dark Mode) -->
+        <svg id="theme-icon-sun" class="w-4 h-4 text-gray-200 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z"/>
+        </svg>
+      </button>
 
       <button id="mobile-menu-btn"
         class="flex md:hidden items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-[#FACC15] border-2 border-gray-950 rounded-xl shadow-[3px_3px_0_0_rgba(0,0,0,1)] active:translate-x-1 active:translate-y-1 active:shadow-none transition-all cursor-pointer focus:outline-none">
@@ -1002,7 +1028,7 @@
 
   </footer>
 
-  <script src="script.js?v=13.1"></script>
+  <script src="script.js?v=13.2"></script>
 </body>
 
 </html>
