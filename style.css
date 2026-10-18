@@ -1030,6 +1030,13 @@ html.dark #hero > div > div > div:first-child {
   border-color: #52525b !important;
 }
 
+html.dark .hero-brand-pill {
+  background-color: #ffffff !important;
+  border-color: #52525b !important;
+  color: #09090b !important;
+  box-shadow: 2px 2px 0 0 rgba(255, 255, 255, 0.16) !important;
+}
+
 html.dark #hero > div > div > div:first-child span.bg-white {
   background-color: #181920 !important;
   border-color: #52525b !important;
