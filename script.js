@@ -2,9 +2,49 @@
 history.scrollRestoration = 'manual';
 window.scrollTo(0, 0);
 
+// --- Top Loading Progress Bar ---
+const progressBar = document.getElementById("page-progress-bar");
+if (progressBar) {
+  progressBar.style.width = "40%";
+  const completeProgress = () => {
+    progressBar.style.width = "100%";
+    setTimeout(() => {
+      progressBar.style.opacity = "0";
+      setTimeout(() => {
+        progressBar.style.display = "none";
+      }, 350);
+    }, 200);
+  };
+
+  if (document.readyState === "complete") {
+    completeProgress();
+  } else {
+    window.addEventListener("load", completeProgress);
+    setTimeout(completeProgress, 800);
+  }
+}
+
 document.addEventListener("DOMContentLoaded", () => {
+  if (progressBar && progressBar.style.display !== "none") {
+    progressBar.style.width = "80%";
+  }
+
   document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
+      if (progressBar) {
+        progressBar.style.display = "block";
+        progressBar.style.opacity = "1";
+        progressBar.style.width = "0%";
+        requestAnimationFrame(() => {
+          progressBar.style.width = "100%";
+          setTimeout(() => {
+            progressBar.style.opacity = "0";
+            setTimeout(() => {
+              progressBar.style.display = "none";
+            }, 350);
+          }, 300);
+        });
+      }
       e.preventDefault();
       const target = document.querySelector(this.getAttribute('href'));
       if (target) {

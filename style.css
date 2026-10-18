@@ -38,6 +38,26 @@ body {
   padding-right: env(safe-area-inset-right, 0px);
 }
 
+/* Top Loading Bar */
+#page-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3.5px;
+  width: 0%;
+  background-color: #FF4D8D;
+  border-bottom: 1.5px solid #09090b;
+  z-index: 99999;
+  pointer-events: none;
+  transition: width 0.35s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.35s ease;
+}
+
+html.dark #page-progress-bar {
+  background-color: #FF4D8D;
+  border-bottom-color: #52525b;
+  box-shadow: 0 0 10px rgba(255, 77, 141, 0.6);
+}
+
 /* Animations */
 @keyframes hang-swing {
 
