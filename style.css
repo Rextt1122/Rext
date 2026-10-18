@@ -944,42 +944,11 @@ html.dark footer {
   border-color: #52525b !important;
 }
 
-/* Main Section Containers (Big Boxes) in Dark Mode with Ambient Cyber Lighting */
+/* Main Section Containers (Big Boxes) in Dark Mode */
 html.dark #hero > div > div,
-html.dark #hero > div > div.grid-pattern {
-  background-color: #121316 !important;
-  background-image:
-    radial-gradient(circle at 85% 15%, rgba(255, 77, 141, 0.16), transparent 50%),
-    radial-gradient(circle at 15% 85%, rgba(0, 56, 255, 0.12), transparent 50%),
-    linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px) !important;
-  background-size: auto, auto, 32px 32px, 32px 32px !important;
-  border-color: #52525b !important;
-  box-shadow: 10px 10px 0 0 rgba(255, 255, 255, 0.12) !important;
-}
-
 html.dark #projects > div > div,
-html.dark #projects > div > div.bg-grid-pattern {
+html.dark #gallery > div > div {
   background-color: #121316 !important;
-  background-image:
-    radial-gradient(circle at 85% 15%, rgba(0, 242, 254, 0.15), transparent 50%),
-    radial-gradient(circle at 15% 85%, rgba(74, 222, 128, 0.10), transparent 50%),
-    linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px) !important;
-  background-size: auto, auto, 32px 32px, 32px 32px !important;
-  border-color: #52525b !important;
-  box-shadow: 10px 10px 0 0 rgba(255, 255, 255, 0.12) !important;
-}
-
-html.dark #gallery > div > div,
-html.dark #gallery > div > div.bg-grid-pattern {
-  background-color: #121316 !important;
-  background-image:
-    radial-gradient(circle at 85% 15%, rgba(168, 85, 247, 0.18), transparent 50%),
-    radial-gradient(circle at 15% 85%, rgba(255, 77, 141, 0.12), transparent 50%),
-    linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px) !important;
-  background-size: auto, auto, 32px 32px, 32px 32px !important;
   border-color: #52525b !important;
   box-shadow: 10px 10px 0 0 rgba(255, 255, 255, 0.12) !important;
 }
@@ -992,9 +961,9 @@ html.dark #gallery > div > div.bg-grid-pattern {
   }
 }
 
-/* Grid Patterns in Dark Mode (excluding Big Boxes which have custom ambient glow gradients) */
-html.dark .bg-grid-pattern:not(#hero *):not(#projects *):not(#gallery *),
-html.dark .grid-pattern:not(#hero *):not(#projects *):not(#gallery *) {
+/* Grid Patterns in Dark Mode */
+html.dark .bg-grid-pattern,
+html.dark .grid-pattern {
   background-image:
     linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px) !important;
