@@ -19,7 +19,9 @@
   <meta property="og:image" content="https://rext.me/img/waguri_banner.webp" />
   <meta property="og:image:alt" content="Rext portfolio banner" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="theme-color" content="#FAFAFA" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="theme-color" content="#FAFAFA" id="meta-theme-color" />
+  <meta name="mobile-web-app-capable" content="yes" />
 
   <link rel="canonical" href="https://rext.me/" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -61,15 +63,19 @@
     (function () {
       try {
         const theme = localStorage.getItem('theme');
-        if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        const isDark = theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        const metaTheme = document.getElementById('meta-theme-color');
+        if (isDark) {
           document.documentElement.classList.add('dark');
+          if (metaTheme) metaTheme.setAttribute('content', '#0c0d10');
         } else {
           document.documentElement.classList.remove('dark');
+          if (metaTheme) metaTheme.setAttribute('content', '#FAFAFA');
         }
       } catch (e) { }
     })();
   </script>
-  <link rel="stylesheet" href="style.css?v=15.1" />
+  <link rel="stylesheet" href="style.css?v=15.2" />
   <style>
     ::-webkit-scrollbar {
       width: 6px;
@@ -1030,7 +1036,7 @@
 
   </footer>
 
-  <script src="script.js?v=14.1"></script>
+  <script src="script.js?v=14.2"></script>
 </body>
 
 </html>

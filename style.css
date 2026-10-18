@@ -15,7 +15,15 @@
   --safe-right: env(safe-area-inset-right, 0px);
 }
 
+*,
+*::before,
+*::after {
+  -webkit-tap-highlight-color: transparent !important;
+}
+
 html {
+  background-color: #FAFAFA !important;
+  color-scheme: light;
   scroll-behavior: smooth;
   scroll-padding-top: calc(4.5rem + env(safe-area-inset-top, 0px));
 }
@@ -28,12 +36,12 @@ html {
 
 html,
 body {
-  -webkit-tap-highlight-color: transparent;
   overflow-x: hidden;
   max-width: 100%;
 }
 
 body {
+  background-color: #FAFAFA;
   padding-left: env(safe-area-inset-left, 0px);
   padding-right: env(safe-area-inset-right, 0px);
 }
@@ -872,7 +880,8 @@ nav {
    ══════════════════════════════════════════ */
 
 html.dark {
-  color-scheme: dark;
+  background-color: #0c0d10 !important;
+  color-scheme: dark !important;
 }
 
 html.dark body {

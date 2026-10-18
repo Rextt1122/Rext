@@ -81,6 +81,10 @@ document.addEventListener("DOMContentLoaded", () => {
       try {
         localStorage.setItem("theme", isDark ? "dark" : "light");
       } catch (e) { }
+      const metaTheme = document.getElementById("meta-theme-color");
+      if (metaTheme) {
+        metaTheme.setAttribute("content", isDark ? "#0c0d10" : "#FAFAFA");
+      }
       syncThemeIcons(isDark);
       this.blur();
     });
