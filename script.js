@@ -391,7 +391,7 @@ document.addEventListener("DOMContentLoaded", () => {
             "- Jamkot",
             "- Sticker",
             "- Dashboard",
-            "- Pharma (Smart Greenhouse)"
+            "- Pharma Medic (Pharmacy IoT Storage)"
           ],
           sudo: () => [
             "Nice try. You are not in the sudoers file. This incident will be reported."
