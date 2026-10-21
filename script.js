@@ -390,7 +390,8 @@ document.addEventListener("DOMContentLoaded", () => {
             "- Image Upscaler",
             "- Jamkot",
             "- Sticker",
-            "- Dashboard"
+            "- Dashboard",
+            "- Pharma (Smart Greenhouse)"
           ],
           sudo: () => [
             "Nice try. You are not in the sudoers file. This incident will be reported."
