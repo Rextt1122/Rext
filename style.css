@@ -1247,23 +1247,23 @@ html.dark footer a.group span {
 }
 
 html.dark footer .feedback-note {
-  background-color: #181920 !important;
-  border-color: #52525b !important;
-  box-shadow: 2px 2px 0 0 rgba(255, 255, 255, 0.16) !important;
-}
-
-html.dark footer .feedback-note:hover {
-  background-color: #27272a !important;
-  border-color: #71717a !important;
-  box-shadow: none !important;
+  background-color: #ffffff !important;
+  border-color: #ffffff !important;
+  box-shadow: 2px 2px 0 0 rgba(255, 255, 255, 0.25) !important;
 }
 
 html.dark footer .feedback-note span {
-  color: #f4f4f5 !important;
+  color: #09090b !important;
 }
 
-html.dark footer .feedback-note span:last-child {
-  color: #00F2FE !important;
+html.dark footer .feedback-note:hover {
+  background-color: #FF4D8D !important;
+  border-color: #FF4D8D !important;
+  box-shadow: none !important;
+}
+
+html.dark footer .feedback-note:hover span {
+  color: #ffffff !important;
 }
 
 html.dark .footer-bottom-bar {
