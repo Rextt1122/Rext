@@ -511,4 +511,56 @@ document.addEventListener("DOMContentLoaded", () => {
       })
     ).then(() => writeCache(cache));
   }
+
+  // --- Feedback Modal Logic ---
+  const fbBtn = document.getElementById("open-feedback-btn");
+  const fbModal = document.getElementById("feedback-modal");
+  const fbClose = document.getElementById("feedback-modal-close");
+  const fbBackdrop = document.getElementById("feedback-modal-backdrop");
+  const fbForm = document.getElementById("feedback-form");
+
+  if (fbBtn && fbModal) {
+    const openFb = () => {
+      fbModal.classList.remove("hidden");
+      fbModal.classList.add("flex");
+      document.body.style.overflow = "hidden";
+      const nameInput = document.getElementById("fb-name");
+      if (nameInput) setTimeout(() => nameInput.focus(), 150);
+    };
+
+    const closeFb = () => {
+      fbModal.classList.add("hidden");
+      fbModal.classList.remove("flex");
+      document.body.style.overflow = "";
+    };
+
+    fbBtn.addEventListener("click", openFb);
+    if (fbClose) fbClose.addEventListener("click", closeFb);
+    if (fbBackdrop) fbBackdrop.addEventListener("click", closeFb);
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && !fbModal.classList.contains("hidden")) {
+        closeFb();
+      }
+    });
+
+    if (fbForm) {
+      fbForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const name = document.getElementById("fb-name")?.value.trim() || "";
+        const email = document.getElementById("fb-email")?.value.trim() || "";
+        const subject = document.getElementById("fb-subject")?.value.trim() || "Portfolio Feedback";
+        const message = document.getElementById("fb-message")?.value.trim() || "";
+
+        const bodyLines = [
+          `Dari: ${name}${email ? ` (${email})` : ""}`,
+          "",
+          message
+        ];
+        const mailtoUrl = `mailto:fabianhendriyansahbusiness@gmail.com?subject=${encodeURIComponent(`[Feedback] ${subject}`)}&body=${encodeURIComponent(bodyLines.join("\n"))}`;
+        window.location.href = mailtoUrl;
+        closeFb();
+      });
+    }
+  }
 });
